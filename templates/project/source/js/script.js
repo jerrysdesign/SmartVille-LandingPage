@@ -20,7 +20,7 @@ var $win = $(window),
 		$s5Top = $s5.offset().top,
 		$s6Top = $s6.offset().top,
 
-		$menu = $('#menu'),
+		$menu = $('#menu_top'),
 		$menuTop = $menu.offset().top,
 
 		$s0TextA  = $('.text-a'),
@@ -316,4 +316,9 @@ $(function(){
 		horizontalScrolling: false,
 		verticalOffset: 0
 	});
+});
+
+// Scroll up bar
+$(function(){
+	$('#menu_top').scrollupbar();
 });

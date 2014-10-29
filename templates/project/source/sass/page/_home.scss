@@ -201,16 +201,14 @@ body {
 }
 
 // MENU
-#menu {
-
-}
 #menu_top {
-  position: fixed;
+  position: absolute;
   background: white;
   width: 100%;
-  min-height: 90px;
+  height: 90px;
   z-index: 1000;
-  top: 0px;
+  left: 0;
+  top: 0;
 }
 #menu_cover {
   @include size(100% 8px);
