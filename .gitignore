@@ -1,0 +1,35 @@
+.DS_Store
+
+.scssc
+.sass-cache
+templates/project/source/css/
+templates/project/source/.coffeescript-cache/**/*
+templates/project/source/fire_app_log.txt
+
+
+#TEST
+#Vendor
+templates/project/source/glide/.gitignore
+templates/project/source/jquery-animate-css-rotate-scale/.gitignore
+templates/project/source/jquery.localScroll/.gitignore
+templates/project/source/jquery.scrollTo/.gitignore
+templates/project/source/skrollr/.gitignore
+templates/project/source/stellar.js/.gitignore
+templates/project/source/TooltipStylesInspiration/.gitignore
+
+
+# Dep
+# project/source/assets/*
+# project/source/images/*
+
+# Design (設計原始檔)
+design/*
+
+#Reference (參考資料)
+reference/*
+
+# Require  (需求文件)
+require/*
+
+# Resource  (資源圖檔)
+resource/*

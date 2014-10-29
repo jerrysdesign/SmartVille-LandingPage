@@ -1,0 +1,28 @@
+.page-control-bar
+	.col1.short
+		| 排序方式
+		select<
+			option 相關度(遞減)
+			option select1
+			option select2
+	.col2.pagination
+		a.icon-first href="javasctipt:;"
+		a.icon-prev href="javasctipt:;"
+		ul.page
+		  li: span 1
+		  li: a href="javasctipt:;"  2
+		  li: a href="javasctipt:;"  3
+		  li: a href="javasctipt:;"  4
+		  li: a href="javasctipt:;"  5
+		a.icon-next href="javasctipt:;"
+		a.icon-last href="javasctipt:;"
+	.col3.jump-to
+		a.btn--df href="javascript:;" 跳至
+		input<> type="text" size="2"
+		| / 20頁
+	.col4.item-pre-page
+		| 每頁顯示
+		select<>
+			option 10
+			option 20
+		| 筆

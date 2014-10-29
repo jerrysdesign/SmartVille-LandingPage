@@ -1,0 +1,43 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// 
+//-----------------------------------------------------
+
+// SMACSS 建議規則
+
+// Base
+// Layout
+// Module
+// Partial
+// State
+// Theme
+
+
+// 0
+// Req
+@import "compass";
+// @import "vendor/animation";
+// @import "vendor/glide/glide";
+// 1
+// Base styles
+@import "base";
+
+// 2
+// Module Styles
+@import "modules";
+
+// 3
+// Layout styles
+@import "layouts";
+
+// JS-based classes
+// @import "states";
+
+// Vendor classes
+// @import "vendor/animation";
+// @import "vendor/glide/glide";
+// 轉換 vendor 的樣式為 SCSS（基本上只改附檔名），並在這裡導入。
+
+// Pages
+@import "partials/loader";
+@import "page/home";

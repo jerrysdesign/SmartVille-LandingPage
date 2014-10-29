@@ -1,0 +1,357 @@
+// TeST
+doctype html
+| <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+| <!--[if IE 7]>  <html class="no-js lt-ie9 lt-ie8">      <![endif]-->
+| <!--[if IE 8]>  <html class="no-js lt-ie9">         <![endif]-->
+| <!--[if gt IE 8]> <!-->
+html.no-js lang="zh-TW"
+	| <!--<![endif]-->
+	head
+		meta charset="utf-8"
+		meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" 
+		title SmartVille
+		meta name="description" content=""
+		meta name="viewport" content="width=device-width, initial-scale=1"
+		link href="img/favicon.png" rel="shortcut icon"
+		/ link href="css/vendor/glide/animate.css" rel="stylesheet" type="text/css"
+		link href="css/vendor/animation/animate.min.css" rel="stylesheet" type="text/css"
+		link href="vendor/TooltipStylesInspiration/css/tooltip-curved.css" rel="stylesheet" type="text/css"
+		link href="css/style.css" rel="stylesheet" type="text/css"
+		
+	body
+		#loading_box
+			#loading_text
+				.logo-smartville--w
+				#loading_progress
+		
+		/! 右選單
+		#menu_right.menu
+			ul
+				li style="height: 36px"
+					img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
+				li
+					a#menu_rc2.menu_right_circle title="智慧家居解決方案" 
+				li
+					a#menu_rc3.menu_right_circle title="裝置配件" 
+				li
+					a#menu_rc4.menu_right_circle title="無限家庭 無限便利" 
+				li
+					a#menu_rc5.menu_right_circle title="使用說明" 
+				li
+					a#menu_rc6.menu_right_circle title="使用情境" 
+		
+		#menu
+			/ #menu data-96="top:-96px" data-start="top:0px" data-end="top:-96px"
+			#menu_top.with-shadow
+				#menu_cover 
+				.container
+					#menu_tag
+						h1#menu_tag_pointer
+							span.smv-logo SmartVille
+							span.logo-slogan 智慧家居解決方案 
+					nav.navigation role="navigation" 
+						ul
+							li.active
+								a#nav_01
+									| Home
+							li
+								a#nav_02
+									| 特點
+							li
+								a#nav_03
+									| 使用情境
+							li
+								a#nav_04
+									| 購買
+		.hp-group
+			.pad-1280
+			.hand--l
+			.hand--r
+			.screen-bg data-pic='1'
+				.screen-01
+				.screen-02
+				.screen-03
+				.screen-04
+		#header
+			.slide-mask-wrapper
+				.slide-mask
+			/! 上選單
+			// banner
+			#section-0.banner
+				ul#mian-slider
+					li.slide-1
+						.slide-1-3__bg data-stellar-background-ratio='1'
+						.slide-1__bg data-stellar-background-ratio='-0.15'
+						.slide-1-2__bg data-stellar-background-ratio='0.15'
+						.text-a
+							h3.slide__slogan SMARTVILLE 居家控制
+							h2.slide__title 讓你的家電長智慧
+							.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" 了解更多
+					li.slide-2
+						.slide-2__bg data-stellar-background-ratio='-0.15'
+						.text-b
+							h3.slide__slogan SMARTVILLE 安防監控
+							h2.slide__title 讓你的居家更安全
+							.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" 了解更多
+					li.slide-3
+						.slide-3__bg data-stellar-background-ratio='-0.15'
+						.text-c
+							h3.slide__slogan SMARTVILLE 健康照護
+							h2.slide__title 讓你的身體更健康
+							.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" 了解更多
+					li.slide-4
+						.slide-4__bg data-stellar-background-ratio='-0.15'
+						.text-d
+							h3.slide__slogan SMARTVILLE 生活助手
+							h2.slide__title 讓你的生活更便利
+							.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" 了解更多
+			#slide-change-layer-wrapper
+				#slide-change-layer
+		
+		#section-1.section.bg-color.bg-white
+			.container
+				= render "partials/main-slide-nav"
+				//svg
+		#section-2.section.bg-color.bg-gray
+			.container
+				h3.section-title 智慧家居解決方案
+				h5.section-description
+					| (文案BANNER1)
+				.advantages
+					.left-side
+						.adv-01.wow.bounceInRight data-wow-offset="200"
+							h3 居家控制
+							h4 讓你的家電長智慧
+							ul
+								li 	透過控制主機面板及智慧型手機、平板電腦操控設定，感應器、無線智慧插座等周邊設備。
+								li 	簡單安裝不須牽線或是繁複的步驟作設定，降低安裝技術的門檻。
+								li 	輕鬆簡單開始享受智慧家居帶來的便利生活。
+						.adv-02.wow.bounceInRight data-wow-offset="200"
+							h3 安防監控
+							h4  讓你的居家更安全
+							ul
+								li 	搭配網路攝影機及門窗感應器可以進行住家室內及室外的錄影監控。
+								li 	使用者/家庭成員在外工作、出差、旅遊也可以透過智慧型手機、平板電腦了解住家狀況。
+								li 	如有門窗被破壞或是監控異常狀況，控制主機也會主動通知用戶，提供後續處理。
+					.right-side
+						.adv-03.wow.bounceInLeft data-wow-offset="60"
+							h3 健康照護
+							h4 讓你的身體更健康
+							ul
+								li 	用戶可以使用 SMARTVILLE™ 搭配的居家醫療電子裝置，例如血壓計、血糖儀、體重機等，每日進行量測時。
+								li 	量測的資訊即能夠同部存入 SMARTVILLE™ 控制主機中，作為後續分析資料。
+								li 	用戶可以透過這些儲存的記錄了解本身的健康狀況，或是在進行醫療諮詢、診療用藥時提供給醫生做參考。
+						.adv-04.wow.bounceInLeft data-wow-offset="60"
+							h3 生活助手
+							h4 讓你的生活更便利。
+							ul
+								li 	提供在地商店服務串連。
+								li 	使用者可以選擇需要的服務進行食品外送、家電換修等服務。
+								li 	使用者可聯繫常用商店，或查詢過往紀錄。
+
+		#section-3.section.bg-image
+			.container
+				h3.section-title SMARTVILLE™
+				h5.section-description 標準產品盒
+				img src="assets/product-01.png" style="margin:-60px 0 -10px 0"
+				p.ss
+					| 包含以下裝置：
+					br
+					| 控制中心（Control Center）1台、Z-Wave Gateway1台、電源切換開關2個、門/窗感應器2個、網路攝影機1台、煙霧偵測器1台
+		#section-4.section.bg-color.bg-white
+			.container
+				h3.section-title 無線家庭 無限便利 
+				h5.section-description
+					| (文案Banner2)
+				.wireless-home
+					.top
+						.icon-01.wow.fadeInDown
+							img src="img/tuchphone.svg"
+							h4.text-h4 Devices
+					.bottom
+						.icon-02.wow.fadeInDown data-wow-delay=".5s"
+							img src="img/ihome.svg"
+							h4.text-h4 Control Center
+						h4 
+						.leftside
+							.icon-03.wow.bounceInRight data-wow-offset="100" data-wow-delay="2s"
+								img src="img/lightbulb.svg"
+							.icon-04.wow.bounceInRight data-wow-offset="-100" data-wow-delay="1s"
+								img src="img/cooler.svg"
+							h4.text-h4.wow.bounceInRight data-wow-offset="100" data-wow-delay="0.5s" Electric Appliances
+						.rightside
+							.icon-05.wow.bounceInLeft data-wow-offset="100" data-wow-delay="2.5s"
+								img src="img/cctv.svg"
+							.icon-06.wow.bounceInLeft data-wow-offset="-100" data-wow-delay="1.5s"
+								img src="img/audio.svg"
+							h4.text-h4.wow.bounceInLeft data-wow-offset="100" data-wow-delay="0.75s" Electric Appliances
+		#section-5.section.bg-color.bg-gray
+			.container
+				h3.section-title 使用說明
+				h5.section-description
+					| (影片)
+				.vedio-wrp
+					iframe src="//player.vimeo.com/video/80932433?title=0&amp;byline=0&amp;portrait=0&amp;color=7fba24" width="744" height="418" frameborder="0"
+				//img.video src="../assets/section5.png" 
+		#section-6.section.bg-image
+			.container#section-cont
+				h3.section-title 使用情境
+				h5.section-description
+					| (互動)
+				
+		#section-7.section.bg-color.bg-white
+			.container
+				ul.tag-tab-cont
+					li
+						img src="img/house3d-01-2.png"
+						.tag-box.living-room
+							.tag-01.icn-tag.tooltip.tooltip-west
+								image.icon src="img/icon-el.svg"
+								span.tooltip-content.clearfix
+									h4 Wall Switches
+									ul
+										li 智慧切換廚房情境燈控
+										li 智慧管控家電、例如: Smart TV、家庭劇院
+							.tag-02.icn-tag.tooltip.tooltip-west
+								image.icon src="img/icon-se.svg"
+								span.tooltip-content.clearfix
+									h4 Door / Windows Sensors
+									ul
+										li 居家安防管控
+										li 提出警訊
+							.tag-03.icn-tag.tooltip.tooltip-west
+								image.icon src="img/icon-se.svg"
+								span.tooltip-content.clearfix
+									h4 Door / Windows Sensors
+									ul
+										li 居家安防管控
+
+					li
+						img src="img/house3d-02-2.png"
+						.tag-box.kitchen
+							.tag-01.icn-tag.tooltip.tooltip-west
+								image.icon src="img/icon-al.svg"
+								span.tooltip-content.clearfix
+									h4 Smoke Detector
+									ul
+										li 進行廚房煙霧偵測
+										li 提出警訊
+							.tag-02.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-co.svg"
+								span.tooltip-content.clearfix
+									h4 CO Detector
+									ul
+										li 進行廚房一氧化碳偵測
+										li 提出警訊
+							.tag-03.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-el.svg"
+								span.tooltip-content.clearfix
+									h4 Wall Switches
+									ul
+										li 智慧切換廚房情境燈控
+										li 智慧管控家電、例如: 電鍋、咖啡機
+							.tag-04.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-se.svg"
+								span.tooltip-content.clearfix
+									h4 Door / Windows Sensors
+									ul
+										li 居家安防管控
+										li 提出警訊
+					li
+						img src="img/house3d-03-2.png"
+						.tag-box.bed-room
+							.tag-01.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-ip.svg"
+								span.tooltip-content.clearfix
+									h4 IP / Cam
+									ul
+										li 居家安防管控
+										li 提出警訊
+							.tag-02.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-me.svg"
+								span.tooltip-content.clearfix
+									h4 醫療量測設備
+									ul
+										li 量測記錄
+										li 過往結果比對/分析
+							.tag-03.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-el.svg"
+								span.tooltip-content.clearfix
+									h4 Wall Switches
+									ul
+										li 智慧切換房間情境燈控
+										li 智慧管控家電、例如: 電腦、組合音響
+							.tag-04.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-se.svg"
+								span.tooltip-content.clearfix
+									h4 Door / Windows Sensors
+									ul
+										li 居家安防管控
+										li 提出警訊
+					li
+						img src="img/house3d-04-2.png"
+						.tag-box.balcony
+							.tag-01.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-ip.svg"
+								span.tooltip-content.clearfix
+									h4 IP / Cam
+									ul
+										li 居家安防管控
+										li 提出警訊
+							.tag-02.icn-tag.animate.tooltip.tooltip-west
+								image.icon src="img/icon-se.svg"
+								span.tooltip-content.clearfix
+									h4 Door / Windows Sensors
+									ul
+										li 居家安防管控
+										li 提出警訊
+
+				.scenetab
+					ul.tag-tab
+						li.active: a href="javascript:;" Living Room
+						li: a href="javascript:;" Kitchen
+						li: a href="javascript:;" Bed Room
+						li: a href="javascript:;" Balcony
+					/ = render "assets/_lightbulb-svg.html.erb"
+
+		/ #section-8.section.bg-color.bg-white
+		/! FOOTER
+		#footer.section.bg-image
+			.container
+				.copyright
+					ul
+						li
+							span.logo-smartville--w
+								| SmartVille
+							br
+							span.logo-slogan
+								| 智慧家居解決方案
+						li
+							span.logo-shuttle--w
+								| Shuttle
+							br
+							| 浩鑫股份有限公司
+						li 
+							i.icon-add
+							| 臺北市內湖區瑞光路76巷30號
+						li
+							i.icon-phone
+							| 886-2-87926168
+						li
+							i.icon-mail
+							a href="maillto:smartville@tw.shuttle.com" smartville@tw.shuttle.com
+		/script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" 
+		/| <script>window.jQuery || document.write('<script src="/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		script src="vendor/jquery-1.9.1.min.js"
+		script src="vendor/jquery-migrate-git.min.js"
+		script src="vendor/jquery.easing.1.3.min.js"
+		script src="vendor/stellar.js/jquery.stellar.min.js"
+		script src="vendor/jquery.scrollTo/jquery.scrollTo.min.js"
+		script src="vendor/jquery.localScroll/jquery.localScroll.min.js"
+		/! Smooth Scroll Effect
+		/ script src="vendor/jquery.smooth-scroll.js"
+		/! Elements Animation On Scroll
+		script src="vendor/wow/wow.min.js" 
+		/ script src="vendor/Snap.svg/dist/snap.svg-min.js"
+		script src="js/script.js"
+		= render "partials/layout_livereload"

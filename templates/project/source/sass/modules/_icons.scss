@@ -1,0 +1,71 @@
+// // =======================
+// //   Module/Icons
+// //   Method by @vtcreative
+// //   Documentation : http://goo.gl/kWyRmT
+// //   ======================= 
+
+// // 再研究怎麼管理csssprite source
+// @import "compass/utilities/sprites";
+// // @import "icons/page-control/*.png";
+// // @import "icons-2x/page-control/*.png";
+// $sprites: sprite-map("icons/*.png");
+// $sprites2x: sprite-map("icons-2x/*.png");
+
+// @mixin sprite-background($name) {
+//   background-position: sprite-position($sprites, $name);
+//   height: image-height(sprite-file($sprites, $name));
+//   width: image-width(sprite-file($sprites, $name));
+
+//   @media (-webkit-min-device-pixel-ratio: 1.5),
+//          (-o-min-device-pixel-ratio: 3/2),
+//          (min-device-pixel-ratio: 1.5) {
+//     background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+//   }
+// }
+
+
+// @import "icons/page-control/*.png";
+
+// $height: page-control-sprite-height(page-first);
+// $width: page-control-sprite-width(page-first);
+// .icon-first {
+//   @include page-control-sprite(page-first);
+//   &:hover {
+//     @include page-control-sprite(page-first-o);
+//   }
+// }
+// .icon-last {
+//   @include page-control-sprite(page-last);
+//   &:hover {
+//     @include page-control-sprite(page-last-o);
+//   }
+// }
+// .icon-next {
+//   @include page-control-sprite(page-next);
+//   &:hover {
+//     @include page-control-sprite(page-next-o);
+//   }
+// }
+// .icon-prev {
+//   @include page-control-sprite(page-prev);
+//   &:hover {
+//     @include page-control-sprite(page-prev-o);
+//   }
+// }
+// [class^="icon-"],
+// [class*=" icon-"] {
+//   // @import "icons-2x/page-control/*.png";
+//   background-repeat: no-repeat;
+//   @include is-show-inline;
+//   background-image: sprite-url($sprites);
+//   width: $width;
+//   height: $height;
+//   @media (-webkit-min-device-pixel-ratio: 1.5),
+//          (-o-min-device-pixel-ratio: 3/2),
+//          (min-device-pixel-ratio: 1.5) {
+//     background-image: sprite-url($sprites2x);
+//     background-size: ceil(image-width(sprite-path($sprites2x)) / 2) auto;
+//   }
+// }
+
+// // @include all-page-control-sprites;

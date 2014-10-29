@@ -1,0 +1,11 @@
+/* =======================
+   Layout/Footer
+   ======================= */
+
+.footer {
+
+}
+.copyright {
+	@include span-columns(12, 12);
+	padding-top: 5px;
+}

@@ -1,0 +1,50 @@
+// Loder
+#loading_box {
+  position: fixed;
+  display: block;
+  background: rgba($primary,.9);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  text-align: center;
+}
+#loading_text {
+  color: #fff;
+  position: absolute;
+  // @include animation(loadlogo 1.5s infinite);
+
+  left: 50%;
+  top: 35%;
+  width: 300px;
+  margin-left: -150px;
+  
+  @include at-breakpoint($ipad) {
+    left: 50%;
+    top: 40%;
+    width: 600px;
+    height: 200px;
+    margin-left: -300px;
+  }
+  @include at-breakpoint($desktop) {
+    left: 50%;
+    top: 45%;
+    width: 800px;
+    height: 200px;
+    margin-left: -400px;
+  }
+
+  .logo-smartville--w {
+    @extend %center-block;
+    margin-bottom: 25px;
+  }
+}
+@include keyframes(loadlogo) {
+  0% { @include opacity(100); }
+  50% { @include opacity(50); }
+  100% { @include opacity(100); }
+}
+#loading_progress {
+  font-size: 1.25em;
+}

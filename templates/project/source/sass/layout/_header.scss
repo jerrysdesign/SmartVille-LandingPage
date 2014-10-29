@@ -1,0 +1,15 @@
+/* =======================
+   Layout/Header
+   ======================= */
+.logo {
+	@extend %ir;
+}
+.header {
+	.logo {
+		margin-top: 15px;
+		margin-left: 20px;
+		@include ir;
+		float: left;
+	}
+}
+

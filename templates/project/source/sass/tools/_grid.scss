@@ -1,0 +1,35 @@
+// ----------------------
+// Susy Grids Config
+// ----------------------
+
+// @import "susy"; // Requires Susy 2.0.0 or later
+// $susy: (
+// 	columns: 17,
+// 	column-width: 2.5em,
+// 	gutters: 1.25em,
+// 	show-grids: show-columns,
+// 	box-sizing: border-box
+// );
+
+// 以下千萬不要動
+// 這是拿來設compass跟susy
+// $baseFontSize	: 16px;
+// $baseLineHeight	: 24px;
+// 以上千萬不要動
+
+@import "vendor/susy";
+@include border-box-sizing;
+
+// 基本設定
+$total-columns  : 5;
+$column-width   : 3.75em;
+$gutter-width   : 1.25em;
+$grid-padding   : $gutter-width;
+
+// add media
+$ipad           : 8;  // min-width 641px 寬度超過 641px 後的欄位數量
+$desktop        : 12; // min-width 941px 寬度超過 941px 後的欄位數量
+
+// More info here: http://susydocs.oddbird.net/en/latest/settings/
+
+// >> TO layout seeting
