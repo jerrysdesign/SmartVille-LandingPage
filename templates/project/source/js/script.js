@@ -66,13 +66,13 @@ $(function(){
 	}
 
 	//上方tag 動態
-	$("#menu_tag_pointer").hover(
-		function(){
-			$('#menu_tag').stop(true,false).animate({top:'20px'}, 250 );
-		},
-		function(){
-			$('#menu_tag').stop(true,false).animate({top:'10px'}, 250 );
-	});
+	// $("#menu_tag_pointer").hover(
+	// 	function(){
+	// 		$('#menu_tag').stop(true,false).animate({top:'20px'}, 250 );
+	// 	},
+	// 	function(){
+	// 		$('#menu_tag').stop(true,false).animate({top:'10px'}, 250 );
+	// });
 
 
 	//---- 不分行動一律做---------
