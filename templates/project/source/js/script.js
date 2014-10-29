@@ -222,7 +222,7 @@ function slide_mask(idx,old){
 		_spd  = 1500,
 		_dfh  = 620;
 	// 遮罩
-	_wrap.stop().animate({'height':_dfh}, 0).delay(_spd).animate({'op':0}, 0);
+	_wrap.stop().animate({'height':_dfh}, 0).delay(_spd).animate({'height':0}, 0);
 	_mask.stop().animate({'top':_dfh}, _spd).animate({'top': -_dfh}, 0);
 	_scbg
 	.children().css('z-index', 0)
