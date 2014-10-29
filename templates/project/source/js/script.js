@@ -25,7 +25,7 @@ var $win = $(window),
 
 		$s0TextA  = $('.text-a'),
 		$hpGroup = $('.hp-group'),
-		$pad = $('.pad-1280'),
+		$pad = $('.pad'),
 		$previewBlock = $('.preview-block'),
 		
 		winWidth = $win.width(),
@@ -174,13 +174,13 @@ $(function(){
 			$previewBlock.delay(500).addClass('show');
 		}
 		if ( winScrollTop <= 206 ) {
-			$hpGroup.css({'width':'900px','margin-left':460*-1});
-			$pad.css({'left':'220px'});
-			$('.screen-bg').css({'left':'261px'});
+			$hpGroup.css({'width':'630px','margin-left':315*-1});
+			$pad.css({'left':'83px'});
+			$('.screen-bg').css({'left':'125px'});
 			$('.hand--l, .hand--r').fadeIn(0);
 		}
 		if ( winScrollTop > 207 ){
-			$hpGroup.css({'width':'464px','margin-left':239*-1});
+			$hpGroup.css({'width':'464px','margin-left':232*-1});
 			$pad.css({'left':'0px'});
 			$('.screen-bg').css({'left':'40px'});
 			$('.hand--l, .hand--r').fadeOut(0);
@@ -210,7 +210,7 @@ $(document).ready(function() {
 	var $win = $(window);
 
 	$win.scroll(function(){
-	console.log($win.scrollTop());
+		console.log($win.scrollTop());
 	}).scroll();
 
 });
@@ -228,7 +228,7 @@ function slide_mask(idx,old){
 	.children().css('z-index', 0)
 	.eq(old).css('z-index', 3).end()
 	// pad screenshot
-	.eq(idx).css({'top':0,'z-index': 4,'opacity':'0'}).stop().delay(_spd/1.5).animate({'top': 0,'opacity':'1'}, _spd/2.5);
+	.eq(idx).css({'z-index': 4,'opacity':'0'}).stop().delay(_spd/1.5).animate({'opacity':'1'}, _spd/2.5);
 }
 
 function tag_tab(obj){
@@ -267,28 +267,28 @@ $(function(){
 				$('.screen-bg')
 				.children().css('z-index', 0)
 				.eq(_old).css('z-index', 3).end()
-				.eq(0).css({'top':'238px','z-index': 4}).stop().delay(300).animate({'top': 0}, 600);
+				.eq(0).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
 				$('.screen-bg').attr('data-pic',0);
 			break;
 			case '2':
 				$('.screen-bg')
 				.children().css('z-index', 0)
 				.eq(_old).css('z-index', 3).end()
-				.eq(1).css({'top':'238px','z-index': 4}).stop().delay(300).animate({'top': 0}, 600);
+				.eq(1).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
 				$('.screen-bg').attr('data-pic',1);
 			break;
 			case '3':
 				$('.screen-bg')
 				.children().css('z-index', 0)
 				.eq(_old).css('z-index', 3).end()
-				.eq(2).css({'top':'238px','z-index': 4}).stop().delay(300).animate({'top': 0}, 600);
+				.eq(2).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
 				$('.screen-bg').attr('data-pic',2);
 			break;
 			case '4':
 				$('.screen-bg')
 				.children().css('z-index', 0)
 				.eq(_old).css('z-index', 3).end()
-				.eq(3).css({'top':'238px','z-index': 4}).stop().delay(300).animate({'top': 0}, 600);
+				.eq(3).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
 				$('.screen-bg').attr('data-pic',3);
 			break;
 		}
