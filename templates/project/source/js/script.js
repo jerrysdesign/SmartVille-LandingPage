@@ -312,8 +312,9 @@ $(function(){
 
 $(function(){
 	
+
 	// Scroll up bar
-	$('#menu_top').scrollupbar();
+	$menu.scrollupbar();
 
 	// 滾動視差
 	$.stellar({
