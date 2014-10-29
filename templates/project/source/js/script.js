@@ -187,11 +187,17 @@ $(function(){
 		}
 		if ( winScrollTop < 500 ) {
 			$('.text-a,.text-b,.text-c,.text-d').fadeIn(0);
+
+			// #menu_top 的背景透明度變化
+			$menu.css('background-color', 'rgba(255,255,255,' + .25 + ')');
 		}
 		if ( winScrollTop > 500 ){
 			$('.text-a,.text-b,.text-c,.text-d').fadeOut(0);
+
+			// #menu_top 的背景透明度變化
+			$menu.css('background-color', 'rgba(255,255,255,' + 1 + ')');
 		}
-		
+
 	}).scroll();
 });
 
