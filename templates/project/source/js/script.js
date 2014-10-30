@@ -32,14 +32,8 @@ var $win = $(window),
 
 	winScrollTop = $win.scrollTop();
 
-var brands_timer ;
-var brands_title = ['/assets/bg_01.jpg','/assets/bg_02.jpg'];
-var brands_plate = ['/assets/bg_01.jpg','/assets/bg_02.jpg'];
-var mySlider;
-
 var loading_timer ;
 var loading_count = 0;
-
 
 // 關閉loading  開啟換盤動畫
 $win.load(function(){
@@ -64,20 +58,8 @@ $(function(){
 		}
 		$("#loading_progress").html("Please wait..  "+loading_count + "%");
 	}
-
-	//上方tag 動態
-	// $("#menu_tag_pointer").hover(
-	// 	function(){
-	// 		$('#menu_tag').stop(true,false).animate({top:'20px'}, 250 );
-	// 	},
-	// 	function(){
-	// 		$('#menu_tag').stop(true,false).animate({top:'10px'}, 250 );
-	// });
-
 });
 
-
-//-----FUNCTIONs ----------------
 
 $(function(){
 
@@ -256,12 +238,12 @@ $(function(){
 		$rightLinksDatasection.addClass('active');
 	});
 
-	// $win.scroll(function(){
-	// 	if ($win.scrollTop() == 0){
-	// 		$Links.removeClass('active');
-	// 		$('.navigation li[data-section="0"]').addClass('active');
-	// 	}
-	// }).scroll();
+	$win.scroll(function(){
+		if ($win.scrollTop() == 0){
+			$Links.removeClass('active');
+			$('.navigation li[data-section="0"]').addClass('active');
+		}
+	}).scroll();
 
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;

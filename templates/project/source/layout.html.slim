@@ -19,22 +19,13 @@ html.no-js lang="zh-TW"
 		link href="css/style.css" rel="stylesheet" type="text/css"
 		
 	body
+		// 預載
 		#loading_box
 			#loading_text
 				.logo-smartville--w
 				#loading_progress
 		
-		/! 右選單
-		#menu_right.menu
-			ul
-				li style="height: 36px" data-section="0" data-title="home" 
-					img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
-				li data-section="2" data-title="智慧家居解決方案" 
-				li data-section="3" data-title="裝置配件" 
-				li data-section="3" date-title="無限家庭 無限便利" 
-				li data-section="4" data-title="使用說明" 
-				li data-section="5" dade-title="使用情境"
-		
+		// 上選單
 		#menu_top.with-shadow
 			#menu_cover 
 			.container
@@ -50,6 +41,18 @@ html.no-js lang="zh-TW"
 						li data-section="8" 購買
 						li: a.logo-shuttle Shuttle
 
+		// 右選單
+		#menu_right.menu
+			ul
+				li style="height: 36px" data-section="0" data-title="home" 
+					img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
+				li data-section="2" data-title="智慧家居解決方案" 
+				li data-section="3" data-title="裝置配件" 
+				li data-section="4" date-title="無限家庭 無限便利" 
+				li data-section="5" data-title="使用說明" 
+				li data-section="6" dade-title="使用情境"
+		
+		// 手拿平板
 		.hp-group
 			.pad
 			.hand--l
@@ -60,10 +63,10 @@ html.no-js lang="zh-TW"
 				.screen-03
 				.screen-04
 		
-		#header
+		.header
 			.slide-mask-wrapper
 				.slide-mask
-			/! 上選單
+			
 			// banner
 			#section-0.banner.section data-section="0"
 				ul#mian-slider
@@ -190,7 +193,7 @@ html.no-js lang="zh-TW"
 				h5.section-description
 					| (互動)
 				
-		#section-7.section.bg-color.bg-white data-section="7"
+		#section-7.section.bg-color.bg-white
 			.container
 				ul.tag-tab-cont
 					li
@@ -303,9 +306,7 @@ html.no-js lang="zh-TW"
 						li: a href="javascript:;" Kitchen
 						li: a href="javascript:;" Bed Room
 						li: a href="javascript:;" Balcony
-					/ = render "assets/_lightbulb-svg.html.erb"
 
-		/ #section-8.section.bg-color.bg-white
 		/! FOOTER
 		#footer.section.bg-image data-section="8"
 			.container
