@@ -21,6 +21,35 @@ body {
 	a { font-weight: bolder; text-decoration: underline; color: #fff;}
 }
 
+%logo {
+	@extend %ir;
+	color: transparent !important;
+	@extend %is-show;
+}
+.smv-logo {
+	@include size(206px 54px);
+	background-image: url(#{$imagesPath}/smartville-logo.svg);
+	background-size: 206px auto;
+	@extend %no-repeat;
+	@extend %logo;
+}
+.logo-slogan {
+	text-align: center;
+	font-size: .8em;
+	letter-spacing: 1em;
+	color: $black-50;
+
+	font-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+.logo-shuttle--w {background-image: url(#{$imagesPath}/logo-shuttle--w.svg);@extend %logo;}
+.logo-shuttle {background-image: url(#{$imagesPath}/logo-shuttle.svg);@extend %logo;}
+.logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);@extend %logo;}
+
+%cp {cursor: pointer;}
+%no-repeat {
+	background-repeat: no-repeat;
+}
 // MENU right
 #menu_right{
 	position:fixed;
@@ -37,9 +66,9 @@ body {
 }
 .menu li {
 	@extend %ir;
-	display: block;
+	@extend %is-show;
 	@include size(52px 32px);
-	cursor: pointer;
+	@extend %cp;
 	background: url(#{$imagesPath}/menu_right_circle.svg);
 	&:hover {
 		@include transform (scale(1.2));
@@ -78,7 +107,7 @@ body {
 	@extend %screen-00;
 	background: url(#{$imagesPath}/sv01.png);
 	background-size: cover;
-	display: block;
+	@extend %is-show;
 	top: 0;
 }
 .screen-02 {
@@ -153,7 +182,7 @@ body {
 	background-color:#82c250;
 	background-image: url(#{$imagesPath}/logocover-2.png);
 	background-position: 50%;
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 	// &:active {
 	//   @include animation(slidemask 1.3s 1);
 	// }
@@ -169,25 +198,8 @@ body {
 	position: relative;
 	z-index: index($z-index, header);
 	height: 620px;
-	.smv-logo {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-}
-.smv-logo {
-	@extend %ir;
-	@include size(206px 54px);
-	background-image: url(#{$imagesPath}/smartville-logo.svg);
-	background-size: 206px auto;
-	background-repeat: no-repeat;
-	@extend %is-show;
 }
 
-.logo-slogan {
-	font-size: .8em;
-	letter-spacing: 1em;
-	color: $black-50;
-}
 
 // MENU
 #menu_top {
@@ -198,6 +210,15 @@ body {
 	z-index: 1000;
 	left: 0;
 	top: 0;
+	// .smv-logo {
+	// 	margin-top: 10px;
+	// 	margin-bottom: 10px;
+	// }
+	.logo-shuttle {
+		@include size(114px 20px);
+		@include background-size(cover);
+		margin-top: 5px;
+	}
 }
 #menu_cover {
 	@include size(100% 8px);
@@ -218,27 +239,28 @@ body {
 	border-bottom: 5px solid $primary;
 }
 .navigation {
-	display: none;
-	@include at-breakpoint($ipad) {display: block;}
-	@include at-breakpoint($desktop) {display: block;}
+	// display: none;
+	@include at-breakpoint($ipad) {@extend %is-show;}
+	@include at-breakpoint($desktop) {@extend %is-show;}
 	@extend %navbar;
 	@extend %navbar-right;
 	margin-top: 42px;
 	ul > li {
 		margin-left: 4px;
-		display: block;
+		@extend %is-show;
 		padding: 0 15px;
 		color: #484848;
 		font-size: 1.2em;
 		@include border-radius(15px);
 		@include transition (background 0.3s ease);
-		cursor: pointer;
+		@extend %cp;
 		&:hover {
 			background-color: #e2e2e2;
 		}
 		&.active {
 			color: #fff;
 			background-color: $primary;
+			@include transition (background 0.3s ease);
 		}
 	}
 }
@@ -473,16 +495,16 @@ section {
 }
 .slide-1__bg {
 	background-image: url(#{$imagesPath}/people.png);
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 }
 .slide-1-2__bg {
 	background-image: url(#{$imagesPath}/light.png);
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 	background-position: right top;
 }
 .slide-1-3__bg {
 	background-image: url(#{$imagesPath}/window.png);
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 	background-position: left top;
 }
 .slide-2__bg{
@@ -490,11 +512,11 @@ section {
 }
 .slide-3__bg{
 	background-image: url(#{$imagesPath}/oldman.png);
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 }
 .slide-4__bg{
 	background-image: url(#{$imagesPath}/robot.png);
-	background-repeat: no-repeat;
+	@extend %no-repeat;
 }
 .text-a,.text-b,.text-c,.text-d {
 	// margin-top: 140px;
@@ -542,10 +564,10 @@ section {
 .gos2 {
 	color: #fff;
 	background-color: $primary;
-	display: block;
+	@extend %is-show;
 	padding: 5px 15px;
 	font-size: 1.25em;
-	cursor: pointer;
+	@extend %cp;
 	width: 15%;
 	@extend %center-block;
 	@include border-radius(15px);
@@ -565,7 +587,7 @@ section {
 		&:last-child { @include nth-omega(last);}
 		a {
 			overflow: hidden;
-			display: block;
+			@extend %is-show;
 			@include size(96px);
 			background-color: rgba(255, 255, 255, 0.25);
 			@include border-radius(100%);
@@ -666,11 +688,13 @@ section {
 		font-size: 1.5em;
 		color: $primary;
 		font-weight: bold;
+		@extend %cp;
 	}
 	h4 {
 		font-size: 1.2em;
 		color: $primary;
 		margin-bottom: .5em;
+		@extend %cp;
 	}
 	li {
 		font-size: .8em
@@ -1065,7 +1089,7 @@ section {
 // footer
 %logo {
 	@extend %ir;
-	display: block;
+	@extend %is-show;
 }
 .logo-shuttle--w {
 	@extend %logo;
@@ -1089,7 +1113,7 @@ section {
 		margin-right: .5em;
 	}
 	li {
-		display: block;
+		@extend %is-show;
 		text-align: center;
 		vertical-align: bottom;
 	}
@@ -1111,8 +1135,6 @@ section {
 .icon-add {background-image: url(#{$imagesPath}/icon-add.svg);}
 .icon-phone {background-image: url(#{$imagesPath}/icon-phone.svg);}
 .icon-mail {background-image: url(#{$imagesPath}/icon-mail.svg);}
-.logo-shuttle--w {background-image: url(#{$imagesPath}/logo-shuttle--w.svg);}
-.logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);}
 
 
 
@@ -1140,7 +1162,7 @@ section {
 //test svg
 
 .iconic-lightbulb {
-	cursor: pointer;
+	@extend %cp;
 	* {
 		-webkit-transition: .4s;
 		-moz-transition: .4s;
