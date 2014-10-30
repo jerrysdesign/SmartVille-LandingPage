@@ -74,55 +74,11 @@ $(function(){
 	// 		$('#menu_tag').stop(true,false).animate({top:'10px'}, 250 );
 	// });
 
-
-	//---- 不分行動一律做---------
-
-	// 網站捲動local scroll
-	// $.localScroll.hash({
-	// 	duration:1500
-		// 時間
-	// });
-	// $(".menu,.navigation").localScroll({
-	// 	duration:1500,
-	// 	hash:true
-	// });
-
-	// 網站回最上方go top
-	// $("#menu_tag_pointer,#menu_home,nav_01").click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:0}, 1500 , 'easeInOutSine');
-	// }
-	// );
-	// // side menu
-	// $('#menu_rc2, #nav_02, .gos2').click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:784}, 1500 , 'easeInOutSine');
-	// });
-	// $('#menu_rc3').click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:1754}, 1500 , 'easeInOutSine');
-	// });
-	// $('#menu_rc4').click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:2520}, 1500 , 'easeInOutSine');
-	// });
-	// $('#menu_rc5').click(function(){
-	// 	$('body,html').animate({scrollTop:3474}, 1500 , 'easeInOutSine');
-	// });
-	// $('#menu_rc6, #nav_03').click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:4294}, 1500 , 'easeInOutSine');
-	// });
-	// $('#nav_04').click(function(){
-	// 	$('body,html').stop(true,false).animate({scrollTop:5200}, 1500 , 'easeInOutSine');
-	// });
-	// scroll navigation
-	// $win.scroll(navigation);
-
 });
 
 
 //-----FUNCTIONs ----------------
 
-
-
-
-//
 $(function(){
 
 	$win.scroll(function() {
