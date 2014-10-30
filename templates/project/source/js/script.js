@@ -267,7 +267,6 @@ $(function(){
 	// $menu.scrollupbar();
 	$menu.css({'position':'fixed'});
 	// 滾動視差
-	$win.stellar();
 	$.stellar({
 		horizontalScrolling: false,
 		verticalOffset: 0
