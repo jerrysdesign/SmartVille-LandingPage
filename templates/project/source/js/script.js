@@ -80,7 +80,7 @@ $(function(){
 	// 網站捲動local scroll
 	// $.localScroll.hash({
 	// 	duration:1500
-	// 	// 時間
+		// 時間
 	// });
 	// $(".menu,.navigation").localScroll({
 	// 	duration:1500,
@@ -92,24 +92,24 @@ $(function(){
 	// 	$('body,html').stop(true,false).animate({scrollTop:0}, 1500 , 'easeInOutSine');
 	// }
 	// );
-	// side menu
+	// // side menu
 	// $('#menu_rc2, #nav_02, .gos2').click(function(){
-	// $('body,html').stop(true,false).animate({scrollTop:784}, 1500 , 'easeInOutSine');
+	// 	$('body,html').stop(true,false).animate({scrollTop:784}, 1500 , 'easeInOutSine');
 	// });
 	// $('#menu_rc3').click(function(){
-	// $('body,html').stop(true,false).animate({scrollTop:1754}, 1500 , 'easeInOutSine');
+	// 	$('body,html').stop(true,false).animate({scrollTop:1754}, 1500 , 'easeInOutSine');
 	// });
 	// $('#menu_rc4').click(function(){
-	// $('body,html').stop(true,false).animate({scrollTop:2520}, 1500 , 'easeInOutSine');
+	// 	$('body,html').stop(true,false).animate({scrollTop:2520}, 1500 , 'easeInOutSine');
 	// });
 	// $('#menu_rc5').click(function(){
-	// $('body,html').animate({scrollTop:3474}, 1500 , 'easeInOutSine');
+	// 	$('body,html').animate({scrollTop:3474}, 1500 , 'easeInOutSine');
 	// });
 	// $('#menu_rc6, #nav_03').click(function(){
-	// $('body,html').stop(true,false).animate({scrollTop:4294}, 1500 , 'easeInOutSine');
+	// 	$('body,html').stop(true,false).animate({scrollTop:4294}, 1500 , 'easeInOutSine');
 	// });
 	// $('#nav_04').click(function(){
-	// $('body,html').stop(true,false).animate({scrollTop:5200}, 1500 , 'easeInOutSine');
+	// 	$('body,html').stop(true,false).animate({scrollTop:5200}, 1500 , 'easeInOutSine');
 	// });
 	// scroll navigation
 	// $win.scroll(navigation);
@@ -126,7 +126,6 @@ $(function(){
 $(function(){
 
 	$win.scroll(function() {
-		
 		var winScrollTop = $win.scrollTop();
 		var margin = 0,
 			topOfWindow = winScrollTop + margin;
@@ -267,7 +266,7 @@ $(function(){
 	// $menu.scrollupbar();
 	$menu.css({'position':'fixed'});
 	// 滾動視差
-	$win.stellar();
+	// $win.stellar();
 	$.stellar({
 		horizontalScrolling: false,
 		verticalOffset: 0
@@ -288,49 +287,50 @@ $(function(){
 	// menu-top
 	var $topLinks = $('.navigation').find('li'),
 		$rightLinks = $('.menu').find('li'),
-		$Links = $topLinks,$rightLinks,
+		$Links = $('.navigation, .menu').find('li'),
 		$section = $('.section'),
 		htmlbody = $('html,body');
 
-	$section.waypoint(function(event, direction){
+	$section.waypoint(function(){
 		var datasection = $(this).attr('data-section'),
-			$topLinksDatasection = $('.navigation li[data-section="' + datasection + '"]');
+			$topLinksDatasection = $('.navigation li[data-section="' + datasection + '"]'),
 			$rightLinksDatasection = $('.menu li[data-section="' + datasection + '"]');
-		
-		// 向上 scrool 時
+
+		// scrool 增減樣式
 		$Links.removeClass('active');
-		if (direction === 'down'){
-			$topLinksDatasection.addClass('active');
-			$rightLinksDatasection.addClass('active');
-		}
-		// 向下 scrool 時
-		else{
-			$topLinksDatasection.addClass('active');
-			$rightLinksDatasection.addClass('active');
-		}
+		$topLinksDatasection.addClass('active');
+		$rightLinksDatasection.addClass('active');
 	});
 
-	$win.scroll(function(){
-		if ($win.scrollTop() == 0){
-			$Links.removeClass('active');
-			$('.navigation li[data-section="0"]').addClass('active');
-		}
-	}).scroll();
-	
+	// $win.scroll(function(){
+	// 	if ($win.scrollTop() == 0){
+	// 		$Links.removeClass('active');
+	// 		$('.navigation li[data-section="0"]').addClass('active');
+	// 	}
+	// }).scroll();
+
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
 		if ($win.scrollTop() < goal){
-			var goalPx = goal + 500;
+			var goalPx = goal + 104;
 		}
 		else{
 			var goalPx = goal - 50;
 		}
-		htmlbody.animate({
+		htmlbody.stop().animate({
 			scrollTop: goalPx
 		}, 1500, 'easeInOutQuint');
 	}
 
-	$topLinks.click(function (e){
+	// Logo
+	$('#menu_tag,.gos2').click(function (e){
+		e.preventDefault(e);
+		datasection = $(this).attr('data-section');
+		goToByScroll(datasection);
+	});
+
+	// Menu & Nav
+	$Links.click(function (e){
 		e.preventDefault(e);
 		datasection = $(this).attr('data-section');
 		goToByScroll(datasection);
