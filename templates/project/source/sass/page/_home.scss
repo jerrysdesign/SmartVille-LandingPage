@@ -21,7 +21,31 @@ body {
 	a { font-weight: bolder; text-decoration: underline; color: #fff;}
 }
 
+%logo {
+	@extend %ir;
+	color: transparent !important;
+	@extend %is-show;
+}
+.smv-logo {
+	@include size(206px 54px);
+	background-image: url(#{$imagesPath}/smartville-logo.svg);
+	background-size: 206px auto;
 	@extend %no-repeat;
+	@extend %logo;
+}
+.logo-slogan {
+	text-align: center;
+	font-size: .8em;
+	letter-spacing: 1em;
+	color: $black-50;
+
+	font-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+.logo-shuttle--w {background-image: url(#{$imagesPath}/logo-shuttle--w.svg);@extend %logo;}
+.logo-shuttle {background-image: url(#{$imagesPath}/logo-shuttle.svg);@extend %logo;}
+.logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);@extend %logo;}
+
 %cp {cursor: pointer;}
 %no-repeat {
 	background-repeat: no-repeat;
@@ -174,23 +198,8 @@ body {
 	position: relative;
 	z-index: index($z-index, header);
 	height: 620px;
-	.smv-logo {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-}
-.smv-logo {
-	@extend %ir;
-	@include size(206px 54px);
-	background-image: url(#{$imagesPath}/smartville-logo.svg);
-	background-size: 206px auto;
 }
 
-.logo-slogan {
-	font-size: .8em;
-	letter-spacing: 1em;
-	color: $black-50;
-}
 
 // MENU
 #menu_top {
@@ -201,6 +210,15 @@ body {
 	z-index: 1000;
 	left: 0;
 	top: 0;
+	// .smv-logo {
+	// 	margin-top: 10px;
+	// 	margin-bottom: 10px;
+	// }
+	.logo-shuttle {
+		@include size(114px 20px);
+		@include background-size(cover);
+		margin-top: 5px;
+	}
 }
 #menu_cover {
 	@include size(100% 8px);
@@ -242,6 +260,7 @@ body {
 		&.active {
 			color: #fff;
 			background-color: $primary;
+			@include transition (background 0.3s ease);
 		}
 	}
 }
@@ -1116,8 +1135,6 @@ section {
 .icon-add {background-image: url(#{$imagesPath}/icon-add.svg);}
 .icon-phone {background-image: url(#{$imagesPath}/icon-phone.svg);}
 .icon-mail {background-image: url(#{$imagesPath}/icon-mail.svg);}
-.logo-shuttle--w {background-image: url(#{$imagesPath}/logo-shuttle--w.svg);}
-.logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);}
 
 
 
