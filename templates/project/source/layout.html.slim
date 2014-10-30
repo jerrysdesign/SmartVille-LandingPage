@@ -27,18 +27,18 @@ html.no-js lang="zh-TW"
 		/! 右選單
 		#menu_right.menu
 			ul
-				li style="height: 36px"
+				li style="height: 36px" data-section="0"
 					img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
 				li
-					a#menu_rc2.menu_right_circle title="智慧家居解決方案" 
+					#menu_rc2.menu_right_circle title="智慧家居解決方案" data-section="2"
 				li
-					a#menu_rc3.menu_right_circle title="裝置配件" 
+					#menu_rc3.menu_right_circle title="裝置配件" data-section="3"
 				li
-					a#menu_rc4.menu_right_circle title="無限家庭 無限便利" 
+					#menu_rc4.menu_right_circle title="無限家庭 無限便利" data-section="4"
 				li
-					a#menu_rc5.menu_right_circle title="使用說明" 
+					#menu_rc5.menu_right_circle title="使用說明" data-section="5"
 				li
-					a#menu_rc6.menu_right_circle title="使用情境" 
+					#menu_rc6.menu_right_circle title="使用情境" data-section="6"
 		
 		#menu_top.with-shadow
 			#menu_cover 
@@ -49,18 +49,10 @@ html.no-js lang="zh-TW"
 						span.logo-slogan 智慧家居解決方案 
 				nav.navigation role="navigation" 
 					ul
-						li.active
-							a#nav_01
-								| Home
-						li
-							a#nav_02
-								| 特點
-						li
-							a#nav_03
-								| 使用情境
-						li
-							a#nav_04
-								| 購買
+						li data-section="0" Home
+						li data-section="2" 特點
+						li data-section="6" 使用情境
+						li data-section="8" 購買
 		.hp-group
 			.pad
 			.hand--l
@@ -75,7 +67,7 @@ html.no-js lang="zh-TW"
 				.slide-mask
 			/! 上選單
 			// banner
-			#section-0.banner
+			#section-0.banner.section data-section="0"
 				ul#mian-slider
 					li.slide-1
 						.slide-1-3__bg data-stellar-background-ratio='1'
@@ -106,11 +98,11 @@ html.no-js lang="zh-TW"
 			#slide-change-layer-wrapper
 				#slide-change-layer
 		
-		#section-1.section.bg-color.bg-white
+		#section-1.section.bg-color.bg-white data-section="1"
 			.container
 				= render "partials/main-slide-nav"
 				//svg
-		#section-2.section.bg-color.bg-gray
+		#section-2.section.bg-color.bg-gray data-section="2"
 			.container
 				h3.section-title 智慧家居解決方案
 				h5.section-description
@@ -147,7 +139,7 @@ html.no-js lang="zh-TW"
 								li 	使用者可以選擇需要的服務進行食品外送、家電換修等服務。
 								li 	使用者可聯繫常用商店，或查詢過往紀錄。
 
-		#section-3.section.bg-image
+		#section-3.section.bg-image data-section="3"
 			.container
 				h3.section-title SMARTVILLE™
 				h5.section-description 標準產品盒
@@ -156,7 +148,7 @@ html.no-js lang="zh-TW"
 					| 包含以下裝置：
 					br
 					| 控制中心（Control Center）1台、Z-Wave Gateway1台、電源切換開關2個、門/窗感應器2個、網路攝影機1台、煙霧偵測器1台
-		#section-4.section.bg-color.bg-white
+		#section-4.section.bg-color.bg-white data-section="4"
 			.container
 				h3.section-title 無線家庭 無限便利 
 				h5.section-description
@@ -183,7 +175,7 @@ html.no-js lang="zh-TW"
 							.icon-06.wow.bounceInLeft data-wow-offset="-100" data-wow-delay="1.5s"
 								img src="img/audio.svg"
 							h4.text-h4.wow.bounceInLeft data-wow-offset="100" data-wow-delay="0.75s" Electric Appliances
-		#section-5.section.bg-color.bg-gray
+		#section-5.section.bg-color.bg-gray data-section="5"
 			.container
 				h3.section-title 使用說明
 				h5.section-description
@@ -191,13 +183,13 @@ html.no-js lang="zh-TW"
 				.vedio-wrp
 					iframe src="//player.vimeo.com/video/80932433?title=0&amp;byline=0&amp;portrait=0&amp;color=7fba24" width="744" height="418" frameborder="0"
 				//img.video src="../assets/section5.png" 
-		#section-6.section.bg-image
+		#section-6.section.bg-image data-section="6"
 			.container#section-cont
 				h3.section-title 使用情境
 				h5.section-description
 					| (互動)
 				
-		#section-7.section.bg-color.bg-white
+		#section-7.section.bg-color.bg-white data-section="7"
 			.container
 				ul.tag-tab-cont
 					li
@@ -314,7 +306,7 @@ html.no-js lang="zh-TW"
 
 		/ #section-8.section.bg-color.bg-white
 		/! FOOTER
-		#footer.section.bg-image
+		#footer.section.bg-image data-section="8"
 			.container
 				.copyright
 					ul
@@ -352,5 +344,6 @@ html.no-js lang="zh-TW"
 		script src="vendor/wow/wow.min.js" 
 		/ script src="vendor/Snap.svg/dist/snap.svg-min.js"
 		script src="vendor/scroll-up-bar/dist/scroll-up-bar.min.js"
+		script src="vendor/jquery-waypoints/waypoints.min.js"
 		script src="js/script.js"
 		= render "partials/layout_livereload"
