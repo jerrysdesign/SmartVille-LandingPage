@@ -262,8 +262,7 @@ $(function(){
 	var $win = $(window);
 
 	// Scroll up bar
-	// 先 commit 起來
-	// $menu.scrollupbar();
+	$menu.scrollupbar();
 	$menu.css({'position':'fixed'});
 	// 滾動視差
 	$.stellar({
