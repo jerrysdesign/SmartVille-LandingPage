@@ -160,39 +160,6 @@ body {
 	z-index: 88;
 }
 
-.slide-mask-wrapper {
-	@include size(100% 0);
-	position: absolute;
-	top:0;
-	z-index: index($z-index, slidermask);
-	overflow: hidden;
-}
-.slide-mask {
-	width:100%;
-	height:620px;
-	position: absolute;
-	top:-620px;
-	background-color:#82c250;
-	background-image: url(#{$imagesPath}/logocover-2.png);
-	background-position: 50%;
-	@extend %no-repeat;
-	// &:active {
-	//   @include animation(slidemask 1.3s 1);
-	// }
-}
-@include keyframes(slidemask) {
-	0% { top: -620px;}
-	100% { top: 620px;}
-}
-
-
-//
-.header {
-	position: relative;
-	z-index: index($z-index, header);
-	height: 620px;
-}
-
 
 // MENU
 #menu_top {
@@ -286,14 +253,6 @@ section {
 	position: relative;
 	background-attachment: fixed;
 	@include pie-clearfix;
-	// &:before {
-	//   @extend %curved;
-	//   top: -50px;
-	// }
-	// &:after {
-	//   @extend %curved;
-	//   bottom: -50px;
-	// }
 	&.bg-color {
 		background-attachment: scroll;
 		padding: 50px 0px;
@@ -385,11 +344,10 @@ section {
 // SECTCTION 0
 // Main Slider (Banner)
 #section-0 {
-	position:absolute;
-	width:100%;
-	height:620px;
-	top:0px;
-	z-index:0;
+	// .header
+	position: relative;
+	z-index: index($z-index, header);
+	height: 620px;
 	.container {
 		position: relative;
 	}
@@ -465,10 +423,36 @@ section {
 // sub-element
 
 // Section 0
+.slide-mask-wrapper {
+	@include size(100% 0);
+	position: absolute;
+	top:0;
+	z-index: index($z-index, slidermask);
+	overflow: hidden;
+}
+.slide-change-layer {
+	width:100%;
+	height:620px;
+	position: absolute;
+	top:-620px;
+	background-color:#82c250;
+	background-image: url(#{$imagesPath}/logocover-2.png);
+	background-position: 50%;
+	@extend %no-repeat;
+}
+@include keyframes(slidemask) {
+	0% { top: -620px;}
+	100% { top: 620px;}
+}
 .banner {
 	height: 620px;
-	// padding-top: 200px;
-	z-index: index($z-index, section0)
+	z-index: index($z-index, section0);
+
+	//
+	position: absolute;
+	width: 100%;
+	height: 620px;
+	top: 0px;
 }
 .slide-1__bg, .slide-2__bg, .slide-1-2__bg, .slide-1-3__bg, .slide-3__bg, .slide-4__bg {
 	position:absolute;
@@ -610,10 +594,6 @@ section {
 				left: 0;
 			}
 		}
-		// &.item-a a {}
-		// &.item-b a {}
-		// &.item-c a {}
-		// &.item-d a {}
 	}
 	li {
 		&:hover, &.active {

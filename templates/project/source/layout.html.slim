@@ -1,4 +1,3 @@
-// TeST
 doctype html
 | <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 | <!--[if IE 7]>  <html class="no-js lt-ie9 lt-ie8">      <![endif]-->
@@ -11,7 +10,7 @@ html.no-js lang="zh-TW"
 		meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" 
 		title SmartVille
 		meta name="description" content=""
-		meta name="viewport" content="width=device-width, initial-scale=1"
+		meta name="viewport" content="width=device-width, initial-scale=100"
 		link href="img/favicon.png" rel="shortcut icon"
 		/ link href="css/vendor/glide/animate.css" rel="stylesheet" type="text/css"
 		link href="vendor/animation/animate.min.css" rel="stylesheet" type="text/css"
@@ -19,6 +18,7 @@ html.no-js lang="zh-TW"
 		link href="css/style.css" rel="stylesheet" type="text/css"
 		
 	body
+
 		// 預載
 		#loading_box
 			#loading_text
@@ -39,7 +39,7 @@ html.no-js lang="zh-TW"
 						li data-section="2" 特點
 						li data-section="6" 使用情境
 						li data-section="8" 購買
-						li: a.logo-shuttle Shuttle
+						li: a.logo-shuttle href="http://shuttle.com" Shuttle
 
 		// 右選單
 		#menu_right.menu
@@ -63,12 +63,15 @@ html.no-js lang="zh-TW"
 				.screen-03
 				.screen-04
 		
-		.header
+		// section0 , Banner
+		#section-0.section data-section="0"
+			
+			// banner 的遮罩
 			.slide-mask-wrapper
-				.slide-mask
+				.slide-change-layer
 			
 			// banner
-			#section-0.banner.section data-section="0"
+			.banner
 				ul#mian-slider
 					li.slide-1
 						.slide-1-3__bg data-stellar-background-ratio='1'
@@ -96,13 +99,13 @@ html.no-js lang="zh-TW"
 							h3.slide__slogan SMARTVILLE 生活助手
 							h2.slide__title 讓你的生活更便利
 							.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
-			#slide-change-layer-wrapper
-				#slide-change-layer
 		
+		// section1 // banner slide 的按鈕
 		#section-1.section.bg-color.bg-white data-section="1"
 			.container
 				= render "partials/main-slide-nav"
 		
+		// section2 // 智慧家居解決方案區塊
 		#section-2.section.bg-color.bg-gray data-section="2"
 			.container
 				h3.section-title 智慧家居解決方案
@@ -140,6 +143,7 @@ html.no-js lang="zh-TW"
 								li 	使用者可以選擇需要的服務進行食品外送、家電換修等服務。
 								li 	使用者可聯繫常用商店，或查詢過往紀錄。
 
+		// section3 // 標準產品盒
 		#section-3.section.bg-image data-section="3"
 			.container
 				h3.section-title SMARTVILLE™
@@ -150,6 +154,7 @@ html.no-js lang="zh-TW"
 					br
 					| 控制中心（Control Center）1台、Z-Wave Gateway1台、電源切換開關2個、門/窗感應器2個、網路攝影機1台、煙霧偵測器1台
 		
+		// section3 // 標準產品盒
 		#section-4.section.bg-color.bg-white data-section="4"
 			.container
 				h3.section-title 無線家庭 無限便利 
@@ -313,7 +318,7 @@ html.no-js lang="zh-TW"
 				.copyright
 					ul
 						li
-							span.logo-smartville--w
+							span.logo-smartville--w 
 								| SmartVille
 							br
 							span.logo-slogan
