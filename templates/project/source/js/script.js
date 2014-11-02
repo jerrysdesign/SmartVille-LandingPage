@@ -221,19 +221,20 @@ $(function(){
 	// 捲動換單元
 
 	// menu-top
-	var $topLinks = $('.navigation').find('li'),
-		$rightLinks = $('.menu').find('li'),
-		$Links = $('.navigation, .menu').find('li'),
+	var $topLinks = $('.navigation-top').find('li'),
+		$rightLinks = $('.navigation-right').find('li'),
+		$Links = $('nav').find('li'),
 		$section = $('.section'),
 		htmlbody = $('html,body');
 
 	$section.waypoint(function(){
 		var datasection = $(this).attr('data-section'),
-			$topLinksDatasection = $('.navigation li[data-section="' + datasection + '"]'),
-			$rightLinksDatasection = $('.menu li[data-section="' + datasection + '"]');
+			$topLinksDatasection = $('.navigation-top li[data-section="' + datasection + '"]'),
+			$rightLinksDatasection = $('.navigation-right li[data-section="' + datasection + '"]');
 
 		// scrool 增減樣式
 		$Links.removeClass('active');
+
 		$topLinksDatasection.addClass('active');
 		$rightLinksDatasection.addClass('active');
 	});
@@ -241,7 +242,7 @@ $(function(){
 	$win.scroll(function(){
 		if ($win.scrollTop() == 0){
 			$Links.removeClass('active');
-			$('.navigation li[data-section="0"]').addClass('active');
+			$('.navigation-top li[data-section="0"]').addClass('active');
 		}
 	}).scroll();
 
@@ -259,7 +260,7 @@ $(function(){
 	}
 
 	// Logo
-	$('#menu_tag,.gos2').click(function (e){
+	$('.menu_tag,.gos2').click(function (e){
 		e.preventDefault(e);
 		datasection = $(this).attr('data-section');
 		goToByScroll(datasection);

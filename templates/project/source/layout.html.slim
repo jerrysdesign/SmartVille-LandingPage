@@ -25,32 +25,36 @@ html.no-js lang="zh-TW"
 				.logo-smartville--w
 				#loading_progress
 		
+		.color_bar
+
 		// 上選單
-		#menu_top.with-shadow
-			#menu_cover 
+		#menu_top
 			.container
-				#menu_tag data-section="0"
-					h1#menu_tag_pointer
+				.menu_tag data-section="0"
+					h1.menu_tag_pointer
 						span.smv-logo SmartVille
 						span.logo-slogan 智慧家居解決方案 
-				nav.navigation role="navigation" 
+				nav.navigation-top role="navigation" 
 					ul
 						li data-section="0" Home
 						li data-section="2" 特點
-						li data-section="6" 使用情境
-						li data-section="8" 購買
+						li data-section="3" 裝置
+						li data-section="4" 優勢
+						li data-section="5" 影片
+						li data-section="6" 情境
 						li: a.logo-shuttle href="http://shuttle.com" Shuttle
 
 		// 右選單
-		#menu_right.menu
-			ul
-				li style="height: 36px" data-section="0" data-title="home" 
-					img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
-				li data-section="2" data-title="智慧家居解決方案" 
-				li data-section="3" data-title="裝置配件" 
-				li data-section="4" date-title="無限家庭 無限便利" 
-				li data-section="5" data-title="使用說明" 
-				li data-section="6" dade-title="使用情境"
+		#menu_right
+			nav.navigation-right role="navigation" 
+				ul
+					li style="height: 36px" data-section="0" data-title="home" 
+						img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
+					li data-section="2" 智慧家居解決方案
+					li data-section="3" 裝置配件
+					li data-section="4" 無限家庭 無限便利
+					li data-section="5" 使用說明
+					li data-section="6" 使用情境
 		
 		// 手拿平板
 		.hp-group
