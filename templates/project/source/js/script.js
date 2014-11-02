@@ -279,17 +279,17 @@ $(function(){
 	$('.player .video-wrapper').css('background','#D8D8D8');
 
 	// console
-	// console.log('$s0Top'+':'+$s0Top);
-	// console.log('$s1Top'+':'+$s0Top);
-	// console.log('$s2Top'+':'+$s2Top);
-	// console.log('$s3Top'+':'+$s3Top);
-	// console.log('$s4Top'+':'+$s4Top);
-	// console.log('$s5Top'+':'+$s5Top);
-	// console.log('$s6Top'+':'+$s6Top);
-	// console.log('$menuTop'+':'+$menuTop);
+	console.log('$s0Top'+':'+$s0Top);
+	console.log('$s1Top'+':'+$s0Top);
+	console.log('$s2Top'+':'+$s2Top);
+	console.log('$s3Top'+':'+$s3Top);
+	console.log('$s4Top'+':'+$s4Top);
+	console.log('$s5Top'+':'+$s5Top);
+	console.log('$s6Top'+':'+$s6Top);
+	console.log('$menuTop'+':'+$menuTop);
 
-	// $win.scroll(function(){
-	// 	console.log($win.scrollTop());
-	// }).scroll();
+	$win.scroll(function(){
+		console.log($win.scrollTop());
+	}).scroll();
 
 });
