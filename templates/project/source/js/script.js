@@ -248,11 +248,14 @@ $(function(){
 
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
+		console.log("goal"+"="+ goal);
 		if ($win.scrollTop() < goal){
-			var goalPx = goal + 104;
+			var goalPx = goal + 50;
+			console.log("goalPxif"+"="+ goalPx);
 		}
 		else{
 			var goalPx = goal - 50;
+			console.log("goalPxelse"+"="+ goalPx);
 		}
 		htmlbody.stop().animate({
 			scrollTop: goalPx
