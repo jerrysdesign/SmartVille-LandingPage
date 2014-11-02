@@ -678,10 +678,11 @@ section {
 }
 // Section 2-2
 .advantages {
-	@include span-columns(12,12);
-	min-height: 280px;
+	@include pre(2,12);
+	@include span-columns(8,12);//HD
 	.right-side {
-		@include span-columns(5 omega,12);
+		// @include span-columns(4 omega,12);
+		// @include post(1,12);
 	}
 	h3 {
 		font-size: 1.5em;
@@ -689,19 +690,28 @@ section {
 		font-weight: bold;
 		@extend %cp;
 	}
-	span {
-		font-size: .8em;
+	h4 {
+		font-size: 1.2em;
 		color: $primary;
 		margin-bottom: .5em;
 		@extend %cp;
 	}
 	li {
 		font-size: 1em;
-		text-align: left;
+		margin-bottom: .25em;
 	}
 	.adv-01, .adv-02, .adv-03, .adv-04 {
-		// margin-bottom: 1.5em;
-		// border: 1px solid $black-50;
+	}
+	&.current {
+		@include span-columns(12,12);
+		margin-left: inherit;
+		.right-side {
+			@include span-columns(4 omega,12);
+			@include post(1,12);
+		}
+		li {
+			text-align: left;
+		}
 	}
 }
 // Section 3
@@ -1230,4 +1240,48 @@ section {
 .sticky {
   position: fixed;
   top: 0;
+}
+
+// override bxslider
+.bx-pager {
+	text-align: center;
+	font-size: .85em;
+	padding-top: 20px;
+}
+.bx-pager-item {
+	display: inline-block;
+}
+.bx-wrapper, .bx-pager {
+	margin-bottom: 0;
+	.bx-pager.bx-default-pager a {
+		@include border-radius(8px);
+		@include size(16px);
+		background-color: #fff;
+		@include box-shadow(0 0 5px $black-15);
+		@extend %is-show;
+		&.active,&:hover {
+			background-color: #F9A33A;
+		}
+	}
+	.bx-viewport {
+		border: none;
+		background: none;
+		@include box-shadow(none);
+		left: 0;
+	}
+	.bx-prev {
+		left: auto;
+		right: 100%;
+		margin-right: 10px;
+	}
+	.bx-next {
+		right: aauto;
+		left: 100%;
+		margin-left: 10px;
+	}
+}
+.bx-pager {
+	.bx-pager-item a {
+		margin: 0 5px;
+	}
 }

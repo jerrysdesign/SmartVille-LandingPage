@@ -69,8 +69,21 @@ $(function(){
 
 
 $(function(){
-
-
+	var slider = $('.bxslider').bxSlider({
+		mode: 'fade',
+		captions: true,
+		adaptiveHeight: true,
+		pagerCustom: '.bx-pager',
+		onSlideAfter: function(){
+		// do mind-blowing JS stuff here
+		}
+	});
+	// $win.scroll(function(e) {
+	// 	if ( winScrollTop = 508 ) {
+	// 		e.preventDefault();
+	// 		slider.reloadSlider();
+	// 	}
+	// }).scroll();
 	$win.scroll(function() {
 		var winScrollTop = $win.scrollTop();
 		var margin = 0,
@@ -87,13 +100,21 @@ $(function(){
 		if ( winScrollTop > 207 ){
 			$('.hand--l, .hand--r').addClass("hide");
 		}
+		
 		if (winScrollTop < 508) {
 			$hpGroup.removeClass("transform");
 			$hpGroup.removeClass("gogo");
+			$(".advantages").removeClass("current");
+			$(".bx-viewport").css({'height':165});
+			$(".bxslider > li").css({'width':646,'height':165});
+
 		}
 		if (winScrollTop > 508) {
 			$hpGroup.addClass("transform");
 			$hpGroup.addClass("gogo");
+			$(".advantages").addClass("current");
+			$(".bx-viewport").css({'height':265});
+			$(".bxslider > li").css({'width':313,'height':265});
 		}
 		if ($s2Top > topOfWindow) {
 			$previewBlock.delay(100).removeClass('show');
@@ -286,6 +307,20 @@ $(function(){
 		goToByScroll(datasection);
 	});
 
+
+	//
+	// $('.bxslider').bxSlider({
+	// 	mode: 'fade',
+	// 	captions: true,
+	// 	adaptiveHeight: true,
+	// 	pagerCustom: '.bx-pager',
+	// 	onSlideAfter: function(){
+	// 	// do mind-blowing JS stuff here
+	// 	}
+	// });
+	
+
+	//
 	$('.player .video-wrapper').css('background','#D8D8D8');
 
 	// console
