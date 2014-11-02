@@ -125,11 +125,41 @@ body {
 	position: fixed;
 	top: 320px;
 	left: 50%;
-	margin-left: -365px;
+	margin-left: -315px;
 	@include size(630px 282px);
-	@include clearfix;
 	z-index: index($z-index,pad);
+	overflow: hidden;
+	&.transform {
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform-origin: 50% 50% 0;
+		position: absolute;
+		width: 464px;
+		top: 1128px;
+		margin-left: -464px;
+		.pad {
+			left: 0;
+		}
+		.screen-bg {
+			left: 40px;
+		}
+		&.gogo {
+			
+			-webkit-animation: GOSECTION2 .75s ease-out;
+			// @include ;
+		}
+		// &.backback {
+		// 	-webkit-animation: BACKSECTION0 1s 1 ease-out;
+		// }
+	}
 }
+@include keyframes(GOSECTION2) {
+	0% {-webkit-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);}
+	100% {-webkit-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);}
+}
+// @include keyframes(BACKSECTION0) {
+// 	0% {-webkit-transform:  perspective(1000) rotate3d(0,1,0, 0deg) translate3d(0,0,0);}
+// 	100% {-webkit-transform:  perspective(1000) rotate3d(0,1,0, 360deg) translate3d(0,-200px,0);}
+// }
 %sub-element {
 	position: absolute;
 	background-size: contain;
@@ -137,7 +167,8 @@ body {
 %hand {
 	@extend %sub-element;
 	background-image: url(#{$imagesPath}/hand.png);
-	@include size(108px 296px);
+	background-repeat: no-repeat;
+	@include size(108px 280px);
 	top: 80px;
 	z-index: 99;
 }
@@ -152,7 +183,9 @@ body {
 	background-position: left;
 	right: 0;
 }
-
+.hide {
+	display: none;
+}
 .pad {
 	@extend %sub-element;
 	background-image: url(#{$imagesPath}/pad.png);

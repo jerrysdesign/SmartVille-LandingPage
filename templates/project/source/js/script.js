@@ -3,6 +3,15 @@
 
 // if (typeof console == "undefined") var console = { log: function() {} };
 
+// var $section = $('section'),
+// 	si = $section.index();
+// 	console.log(si);
+
+// for(i=0; i<=si; i++) {
+// 	console.log($section.index(i).offset().top);
+// }
+
+
 var $win = $(window),
 	$s0 = $('#section-0'),
 	$s1 = $('#section-1'),
@@ -23,13 +32,11 @@ var $win = $(window),
 	$menu = $('#menu_top'),
 	$menuTop = $menu.offset().top,
 
-	$s0TextA  = $('.text-a'),
 	$hpGroup = $('.hp-group'),
 	$pad = $('.pad'),
 	$previewBlock = $('.preview-block'),
 	
 	winWidth = $win.width(),
-
 	winScrollTop = $win.scrollTop();
 
 var loading_timer ;
@@ -63,16 +70,30 @@ $(function(){
 
 $(function(){
 
+
 	$win.scroll(function() {
 		var winScrollTop = $win.scrollTop();
 		var margin = 0,
 			topOfWindow = winScrollTop + margin;
 		
 		if ($s2Top > topOfWindow) {
-			$hpGroup.css({'position': 'fixed','top':'320px'});
+			$hpGroup.removeClass().addClass("hp-group");
 		}
-		if ($s2Top < topOfWindow) {
-			$hpGroup.css({'position': 'absolute','top':'1193px'});
+		// senction 0 時
+		if ( winScrollTop <= 206 ) {
+			$('.hand--l, .hand--r').removeClass("hide");
+		}
+		// senction 0 to section 1
+		if ( winScrollTop > 207 ){
+			$('.hand--l, .hand--r').addClass("hide");
+		}
+		if (winScrollTop < 508) {
+			$hpGroup.removeClass("transform");
+			$hpGroup.removeClass("gogo");
+		}
+		if (winScrollTop > 508) {
+			$hpGroup.addClass("transform");
+			$hpGroup.addClass("gogo");
 		}
 		if ($s2Top > topOfWindow) {
 			$previewBlock.delay(100).removeClass('show');
@@ -80,18 +101,7 @@ $(function(){
 		if ($s2Top-200 < topOfWindow) {
 			$previewBlock.delay(500).addClass('show');
 		}
-		if ( winScrollTop <= 206 ) {
-			$hpGroup.css({'width':'630px','margin-left':315*-1});
-			$pad.css({'left':'83px'});
-			$('.screen-bg').css({'left':'125px'});
-			$('.hand--l, .hand--r').fadeIn(0);
-		}
-		if ( winScrollTop > 207 ){
-			$hpGroup.css({'width':'464px','margin-left':232*-1});
-			$pad.css({'left':'0px'});
-			$('.screen-bg').css({'left':'40px'});
-			$('.hand--l, .hand--r').fadeOut(0);
-		}
+		
 		if ( winScrollTop < 500 ) {
 			$('.text-a,.text-b,.text-c,.text-d').fadeIn(0);
 
@@ -279,8 +289,10 @@ $(function(){
 	$('.player .video-wrapper').css('background','#D8D8D8');
 
 	// console
+	// console.log(si);
+
 	console.log('$s0Top'+':'+$s0Top);
-	console.log('$s1Top'+':'+$s0Top);
+	console.log('$s1Top'+':'+$s1Top);
 	console.log('$s2Top'+':'+$s2Top);
 	console.log('$s3Top'+':'+$s3Top);
 	console.log('$s4Top'+':'+$s4Top);
