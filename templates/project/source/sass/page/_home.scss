@@ -705,6 +705,7 @@ section {
 	&.current {
 		@include span-columns(12,12);
 		margin-left: inherit;
+		@include transition(all .3s);
 		.right-side {
 			@include span-columns(4 omega,12);
 			@include post(1,12);
