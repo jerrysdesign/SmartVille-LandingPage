@@ -134,7 +134,7 @@ body {
 		-webkit-transform-origin: 50% 50% 0;
 		position: absolute;
 		width: 464px;
-		top: 1128px;
+		top: 1050px;
 		margin-left: -464px;
 		.pad {
 			left: 0;
@@ -361,7 +361,7 @@ section {
 .section-description {
 	font-size: 1.5em;
 	line-height: 1.6;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	.bg-image & {
 		color: #fff;
 	}
@@ -584,8 +584,8 @@ section {
 	position: relative;
 }
 #main-slider-nav {
-	@include prefix(2,12);
-	@include span-columns(10,12);//HD
+	@include pre(2,12);
+	@include span-columns(8,12);//HD
 	li {
 		position: relative;
 		@include span-columns(2,8);//HD
@@ -593,16 +593,18 @@ section {
 		a {
 			overflow: hidden;
 			@extend %is-show;
-			@include size(96px);
+			@include size(72px);
 			background-color: rgba(255, 255, 255, 0.25);
 			@include border-radius(100%);
 			@extend %center-block;
 			outline: none;
-			border: 2px solid $primary;
+			border: 3px solid $black-20;
+			color: $black-20;
+			@include transition(all .3s);
 			svg {
 				position: absolute;
 				@extend %is-show;
-				fill: $primary;
+				fill: $black-20;
 				top: 50%;
 				left: 50%;
 				opacity: 1;
@@ -610,6 +612,7 @@ section {
 				margin-left: $icon-size/2*-1;
 				margin-top: $icon-size/2*-1;
 				@include size($icon-size);
+				@include transition(all .3s);
 				@extend %ir;
 			}
 			span {
@@ -626,9 +629,10 @@ section {
 	li {
 		&:hover, &.active {
 			a {
-				background-color: $primary;
+				border: 3px solid $primary;
+				color: $primary;
 				svg {
-					fill: #fff;
+					fill: $primary;
 				}
 			}
 		}
@@ -673,38 +677,37 @@ section {
 }
 // Section 2-2
 .advantages {
-	.left-side,.right-side {
-		width: 25%;
-		padding: 1em;
-		overflow: hidden;
-	}
-	.left-side {
-		@include fl;
-	}
+	@include span-columns(12,12);
+	min-height: 280px;
 	.right-side {
-		@include fr;
+		@include span-columns(5 omega,12);
 	}
-	
 	h3 {
 		font-size: 1.5em;
 		color: $primary;
 		font-weight: bold;
 		@extend %cp;
 	}
-	h4 {
-		font-size: 1.2em;
+	span {
+		font-size: .8em;
 		color: $primary;
 		margin-bottom: .5em;
 		@extend %cp;
 	}
 	li {
-		font-size: .8em
+		font-size: 1em;
+		text-align: left;
 	}
 	.adv-01, .adv-02, .adv-03, .adv-04 {
-		margin-bottom: 1.5em;
+		// margin-bottom: 1.5em;
+		// border: 1px solid $black-50;
 	}
 }
 // Section 3
+.product {
+	@include pre(1,12);
+	@include span-columns(10,12);
+}
 .tooltip-item {
 	@include size(120px);
 	top: 50%;
@@ -763,6 +766,8 @@ section {
 }
 
 .wireless-home {
+	@include pre(1,12);
+	@include span-columns(10,12);
 	ul {
 		position: relative;
 		height: 520px;
@@ -841,9 +846,11 @@ section {
 }
 // Section 6
 .vedio-wrp {
-	width: 764px;
-	height: 438px;
-	@include center-block;
+	@include pre(2,12);
+	@include span-columns(8,12);
+	// width: 764px;
+	// height: 438px;
+	// @include center-block;
 	border-radius: 20px;
 	border: 2px solid #D8D8D8;
 	padding: 10px;
@@ -852,6 +859,14 @@ section {
 	}
 	.video-wrapper {
 		
+	}
+}
+
+.tag-tab-cont {
+	@include pre(1,12);
+	@include span-columns(10,12);
+	ul > li {
+		position: relative;
 	}
 }
 
@@ -1063,17 +1078,22 @@ section {
 // Section 7
 
 .scenetab {
+	@extend %navbar;
 	margin-top: 10px;
-	// width: 432px;
-	width: 610px;
+	@include pre(2,12);
+	@include span-columns(8,12);
 	z-index: 5;
 	position: relative;
-	@extend %navbar;
 	// @extend %nav-fullwidth;
-	@extend %center-block;
+	// @extend %center-block;
+	li {
+		// @include span-columns(2,8);
+		width: 25%;
+		&:last-child { @include nth-omega(last);}
+	}
 	a {
 		color: #00ADEE;
-		padding: 15px 40px;
+		padding: 15px 10px;
 		border-bottom: 7px solid lighten(#00ADEE,20%);
 	}
 	li a:hover, li.active a {
