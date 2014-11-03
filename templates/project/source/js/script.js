@@ -69,21 +69,24 @@ $(function(){
 
 
 $(function(){
+
+
 	var slider = $('.bxslider').bxSlider({
 		mode: 'fade',
 		captions: true,
-		adaptiveHeight: true,
-		pagerCustom: '.bx-pager',
+		// pagerCustom: '.bx-pager',
 		onSlideAfter: function(){
 		// do mind-blowing JS stuff here
 		}
 	});
-	// $win.scroll(function(e) {
-	// 	if ( winScrollTop = 508 ) {
-	// 		e.preventDefault();
-	// 		slider.reloadSlider();
-	// 	}
-	// }).scroll();
+
+	$win.scroll(function(e) {
+		if ( winScrollTop = 508 ) {
+			e.preventDefault();
+			// slider.reloadSlider();
+		}
+	}).scroll();
+
 	$win.scroll(function() {
 		var winScrollTop = $win.scrollTop();
 		var margin = 0,
@@ -161,6 +164,45 @@ function tag_tab(obj){
 	_cont.eq(obj.index()).show().siblings().hide();
 }
 
+function banner1_area(obj){
+    var _old = $('.screen-bg').attr('data-pic');
+
+    if(obj != _old){
+	    switch (obj)
+	    {
+	        case 0:
+	            $('.screen-bg')
+	            .children().css('z-index', 0)
+	            .eq(_old).css('z-index', 3).end()
+	            .eq(0).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
+	            $('.screen-bg').attr('data-pic',0);
+	        break;
+	        case 1:
+	            $('.screen-bg')
+	            .children().css('z-index', 0)
+	            .eq(_old).css('z-index', 3).end()
+	            .eq(1).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
+	            $('.screen-bg').attr('data-pic',1);
+	        break;
+	        case 2:
+	            $('.screen-bg')
+	            .children().css('z-index', 0)
+	            .eq(_old).css('z-index', 3).end()
+	            .eq(2).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
+	            $('.screen-bg').attr('data-pic',2);
+	        break;
+	        case 3:
+	            $('.screen-bg')
+	            .children().css('z-index', 0)
+	            .eq(_old).css('z-index', 3).end()
+	            .eq(3).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
+	            $('.screen-bg').attr('data-pic',3);
+	        break;
+	    }
+    }
+}
+
+
 $(function(){
 	// menu-area
 	$('#slide-btn li').click(function(){
@@ -177,46 +219,20 @@ $(function(){
 				$('#mian-slider > li').eq(_this.index()).show().siblings().hide();
 			}, 400);
 		}
+		// pages btn 
+		$('.bx-pager-item').eq(_this.index()).children().click();
 	});
 
-	// banner1-area
-	$('.adv-01,.adv-02,.adv-03,.adv-04').mouseenter(function(){
-		var _class  = $(this).attr('class'),
-			_items = _class.substr(5,1),
-			_old = $('.screen-bg').attr('data-pic');
-		switch (_items)
-		{
-			case '1':
-				$('.screen-bg')
-				.children().css('z-index', 0)
-				.eq(_old).css('z-index', 3).end()
-				.eq(0).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
-				$('.screen-bg').attr('data-pic',0);
-			break;
-			case '2':
-				$('.screen-bg')
-				.children().css('z-index', 0)
-				.eq(_old).css('z-index', 3).end()
-				.eq(1).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
-				$('.screen-bg').attr('data-pic',1);
-			break;
-			case '3':
-				$('.screen-bg')
-				.children().css('z-index', 0)
-				.eq(_old).css('z-index', 3).end()
-				.eq(2).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
-				$('.screen-bg').attr('data-pic',2);
-			break;
-			case '4':
-				$('.screen-bg')
-				.children().css('z-index', 0)
-				.eq(_old).css('z-index', 3).end()
-				.eq(3).css({'z-index': 4,'opacity':'0'}).stop().animate({'opacity':'1'}, 500);
-				$('.screen-bg').attr('data-pic',3);
-			break;
-		}
+	// pages
+	$('body').on('click','.bx-pager-item a',function(){
+		banner1_area($(this).parent().index());
 	});
 	
+	// prev & next
+	$('body').on('click','.bx-controls-direction a',function(){
+		$('.bx-pager-item .active').click();
+	});
+
 	// tag-tabs
 	$('.tag-tab li').click(function(){
 		tag_tab($(this));
@@ -282,6 +298,7 @@ $(function(){
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
 		// console.log("goal"+"="+ goal);
+<<<<<<< HEAD
 
 		// if ($win.scrollTop() < goal){
 		// 	var goalPx = goal + 50;
@@ -336,6 +353,15 @@ $(function(){
 		}
 		if (datasection==6){
 			offSetKey2();
+=======
+		if ($win.scrollTop() < goal){
+			var goalPx = goal + 50;
+			// console.log("goalPxif"+"="+ goalPx);
+		}
+		else{
+			var goalPx = goal - 50;
+			// console.log("goalPxelse"+"="+ goalPx);
+>>>>>>> CP_/_V1
 		}
 	}
 
@@ -359,7 +385,7 @@ $(function(){
 	// 	mode: 'fade',
 	// 	captions: true,
 	// 	adaptiveHeight: true,
-	// 	pagerCustom: '.bx-pager',
+	// 	// pagerCustom: '.bx-pager',
 	// 	onSlideAfter: function(){
 	// 	// do mind-blowing JS stuff here
 	// 	}
@@ -382,17 +408,13 @@ $(function(){
 	// console
 	// console.log(si);
 
-	console.log('$s0Top'+':'+$s0Top);
-	console.log('$s1Top'+':'+$s1Top);
-	console.log('$s2Top'+':'+$s2Top);
-	console.log('$s3Top'+':'+$s3Top);
-	console.log('$s4Top'+':'+$s4Top);
-	console.log('$s5Top'+':'+$s5Top);
-	console.log('$s6Top'+':'+$s6Top);
-	console.log('$menuTop'+':'+$menuTop);
-
-	$win.scroll(function(){
-		console.log($win.scrollTop());
-	}).scroll();
+	// console.log('$s0Top'+':'+$s0Top);
+	// console.log('$s1Top'+':'+$s1Top);
+	// console.log('$s2Top'+':'+$s2Top);
+	// console.log('$s3Top'+':'+$s3Top);
+	// console.log('$s4Top'+':'+$s4Top);
+	// console.log('$s5Top'+':'+$s5Top);
+	// console.log('$s6Top'+':'+$s6Top);
+	// console.log('$menuTop'+':'+$menuTop);
 
 });
