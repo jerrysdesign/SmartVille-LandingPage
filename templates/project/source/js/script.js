@@ -104,15 +104,14 @@ $(function(){
 		if (winScrollTop < 508) {
 			$hpGroup.removeClass("transform");
 			$hpGroup.removeClass("gogo");
-			$(".advantages").removeClass("current");
+			// $(".advantages").removeClass("current");
 			$(".bx-viewport").css({'height':165});
 			$(".bxslider > li").css({'width':646,'height':165});
-
 		}
 		if (winScrollTop > 508) {
 			$hpGroup.addClass("transform");
 			$hpGroup.addClass("gogo");
-			$(".advantages").addClass("current");
+			// $(".advantages").addClass("current");
 			$(".bx-viewport").css({'height':265});
 			$(".bxslider > li").css({'width':313,'height':265});
 		}
@@ -261,13 +260,16 @@ $(function(){
 	$section.waypoint(function(){
 		var datasection = $(this).attr('data-section'),
 			$topLinksDatasection = $('.navigation-top li[data-section="' + datasection + '"]'),
-			$rightLinksDatasection = $('.navigation-right li[data-section="' + datasection + '"]');
+			$rightLinksDatasection = $('.navigation-right li[data-section="' + datasection + '"]'),
+			$sectionDatasection = $('.section[data-section="' + datasection + '"]');
 
 		// scrool 增減樣式
 		$Links.removeClass('active');
-
+		$section.removeClass('current');
 		$topLinksDatasection.addClass('active');
 		$rightLinksDatasection.addClass('active');
+		$sectionDatasection.addClass('current');
+
 	});
 
 	$win.scroll(function(){

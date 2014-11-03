@@ -711,10 +711,9 @@ section {
 	}
 	.adv-01, .adv-02, .adv-03, .adv-04 {
 	}
-	&.current {
+	.current & {
 		@include span-columns(12,12);
 		margin-left: inherit;
-		@include transition(all .3s);
 		.right-side {
 			@include span-columns(4 omega,12);
 			@include post(1,12);
@@ -1251,7 +1250,9 @@ section {
   position: fixed;
   top: 0;
 }
-
+.current {
+	@include transition(all .3s);
+}
 // override bxslider
 .bx-pager {
 	text-align: center;
