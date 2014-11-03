@@ -883,13 +883,44 @@ section {
 }
 
 .tag-tab-cont {
-	@include pre(1,12);
-	@include span-columns(10,12);
+	@include span-columns(9,12);
 	ul > li {
 		position: relative;
 	}
 }
+.scenetab {
+	position: relative;
+	@extend %navbar;
+	@include span-columns(3 omega,12);
+	z-index: 5;
+	@extend %nav-fullwidth;
 
+}
+.tag-tab {
+	position: relative;
+	@include clearfix;
+	li {
+		width: 100%;
+		& + li {
+			border-top: 1px solid lighten(#00ADEE,20%);
+		}
+	}
+	a {
+		color: #00ADEE;
+		background-color: rgba($black-5, .75);
+		padding: 15px 10px;
+		
+	}
+	li a:hover, li.active a {
+		@include is-show;
+		color: #fff;
+		background-color: #00ADEE;
+	}
+	.active a {
+		font-size: 1.25em;
+		border-bottom: none;
+	}
+}
 .tag-box {
 	position: absolute;
 	@include size(100%);
@@ -908,13 +939,11 @@ section {
 		margin-top: 5px;
 	}
 	.tooltip-content {
-		font-family: $fontTC;
 		position: absolute;
+		font-family: $fontTC;
 		background: $primary;
-		z-index: 9999;
-		width: 200px;
-		min-width: 4em;
-		display: inline-block;
+		min-width: 220px;
+		@extend %is-show-inline;
 		bottom: 50%;
 		margin-bottom: -4em;
 		margin-left: -50px;
@@ -924,9 +953,9 @@ section {
 		color: #fff;
 		opacity: 0;
 		cursor: default;
+		z-index: 1;
 		// @include transition(none);
 		h4 {
-			font-size: 18px;
 			font-weight: bold;
 			background-color: darken($primary, 10%);
 			margin: -15px -10px;
@@ -934,7 +963,6 @@ section {
 			@include border-radius(4px 4px 0 0);
 		}
 		ul {
-			font-size: 14px;
 			text-align: left;
 			padding-top: 10px;
 		}
@@ -1097,35 +1125,7 @@ section {
 }
 // Section 7
 
-.scenetab {
-	@extend %navbar;
-	margin-top: 10px;
-	@include pre(2,12);
-	@include span-columns(8,12);
-	z-index: 5;
-	position: relative;
-	// @extend %nav-fullwidth;
-	// @extend %center-block;
-	li {
-		// @include span-columns(2,8);
-		width: 25%;
-		&:last-child { @include nth-omega(last);}
-	}
-	a {
-		color: #00ADEE;
-		padding: 15px 10px;
-		border-bottom: 7px solid lighten(#00ADEE,20%);
-	}
-	li a:hover, li.active a {
-		@include is-show;
-		color: #fff;
-		background-color: #00ADEE;
-	}
-	.active a {
-		font-size: 1.25em;
-		border-bottom: none;
-	}
-}
+
 
 // footer
 %logo {
