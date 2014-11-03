@@ -298,7 +298,6 @@ $(function(){
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
 		// console.log("goal"+"="+ goal);
-<<<<<<< HEAD
 
 		// if ($win.scrollTop() < goal){
 		// 	var goalPx = goal + 50;
@@ -353,15 +352,6 @@ $(function(){
 		}
 		if (datasection==6){
 			offSetKey2();
-=======
-		if ($win.scrollTop() < goal){
-			var goalPx = goal + 50;
-			// console.log("goalPxif"+"="+ goalPx);
-		}
-		else{
-			var goalPx = goal - 50;
-			// console.log("goalPxelse"+"="+ goalPx);
->>>>>>> CP_/_V1
 		}
 	}
 
