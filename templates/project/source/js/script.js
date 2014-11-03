@@ -104,14 +104,14 @@ $(function(){
 		if (winScrollTop < 508) {
 			$hpGroup.removeClass("transform");
 			$hpGroup.removeClass("gogo");
-			// $(".advantages").removeClass("current");
+			$(".advantages").removeClass("current");
 			$(".bx-viewport").css({'height':165});
 			$(".bxslider > li").css({'width':646,'height':165});
 		}
 		if (winScrollTop > 508) {
 			$hpGroup.addClass("transform");
 			$hpGroup.addClass("gogo");
-			// $(".advantages").addClass("current");
+			$(".advantages").addClass("current");
 			$(".bx-viewport").css({'height':265});
 			$(".bxslider > li").css({'width':313,'height':265});
 		}
@@ -231,7 +231,6 @@ $(function(){
 
 	// Scroll up bar
 	$menu.scrollupbar();
-	$menu.css({'position':'fixed'});
 	// 滾動視差
 	$.stellar({
 		horizontalScrolling: false,
@@ -270,6 +269,7 @@ $(function(){
 		$rightLinksDatasection.addClass('active');
 		$sectionDatasection.addClass('current');
 
+		console.log('datasection'+':'+datasection);
 	});
 
 	$win.scroll(function(){
@@ -281,18 +281,62 @@ $(function(){
 
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
-		console.log("goal"+"="+ goal);
-		if ($win.scrollTop() < goal){
-			var goalPx = goal + 50;
-			console.log("goalPxif"+"="+ goalPx);
+		// console.log("goal"+"="+ goal);
+
+		// if ($win.scrollTop() < goal){
+		// 	var goalPx = goal + 50;
+		// 	console.log("goalPxif"+"="+ goalPx);
+		// }
+		// else{
+		// 	var goalPx = goal - 50;
+		// 	console.log("goalPxelse"+"="+ goalPx);
+		// }
+
+		function offSetKey1(){
+			if ($win.scrollTop() < goal){
+				var goalPx = goal + 50;
+				console.log("goalPxif"+"="+ goalPx);
+			}
+			else{
+				var goalPx = goal - 50;
+				console.log("goalPxelse"+"="+ goalPx);
+			}
+			htmlbody.stop().animate({
+				scrollTop: goalPx
+			}, 1500, 'easeInOutQuint');
 		}
-		else{
-			var goalPx = goal - 50;
-			console.log("goalPxelse"+"="+ goalPx);
+		function offSetKey2(){
+			if ($win.scrollTop() < goal){
+				var goalPx = goal + 204;
+				console.log("goalPxif"+"="+ goalPx);
+			}
+			else{
+				var goalPx = goal +104 ;
+				console.log("goalPxelse"+"="+ goalPx);
+			}
+			htmlbody.stop().animate({
+				scrollTop: goalPx
+			}, 1500, 'easeInOutQuint');
 		}
-		htmlbody.stop().animate({
-			scrollTop: goalPx
-		}, 1500, 'easeInOutQuint');
+
+		if (datasection==0){
+			offSetKey1();
+		}
+		if (datasection==1){
+			offSetKey1();
+		}
+		if (datasection==2){
+			offSetKey1();
+		}
+		if (datasection==3){
+			offSetKey2();
+		}
+		if (datasection==5){
+			offSetKey1();
+		}
+		if (datasection==6){
+			offSetKey2();
+		}
 	}
 
 	// Logo
