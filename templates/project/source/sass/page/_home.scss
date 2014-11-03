@@ -973,73 +973,73 @@ section {
 	&.living-room {
 		.tag-01 {
 			top: 200px;
-			left: 120px;
+			left: 30px;
 			@include animation(tag11 1s infinite);
 		}
 		.tag-02 {
-			top: 200px;
-			left: 330px;
+			top: 220px;
+			left: 230px;
 			@include animation(tag12 1s infinite);
 		}
 		.tag-03 {
 			top: 350px;
-			left: 250px;
+			left: 150px;
 			@include animation(tag13 1s infinite);
 		}
 	}
 	&.kitchen {
 		.tag-01 {
-			top: 50px;
-			left: 400px;
+			top: 10px;
+			left: 220px;
 			@include animation(tag21 1s infinite);
 		}
 		.tag-02 {
-			top: 20px;
-			left: 500px;
+			top: 0px;
+			left: 320px;
 			@include animation(tag22 1s infinite);
 		}
 		.tag-03 {
-			top: 150px;
-			left: 350px;
+			top: 20px;
+			left: 155px;
 			@include animation(tag23 1s infinite);
 		}
 		.tag-04 {
-			top: 150px;
-			left: 600px;
+			top: 100px;
+			left: 440px;
 			@include animation(tag24 1s infinite);
 		}
 	}
 	&.bed-room {
 		.tag-01 {
 			top: 150px;
-			right: 100px;
+			right: 280px;
 			@include animation(tag31 1s infinite);
 		}
 		.tag-02 {
-			top: 200px;
-			right: 220px;
+			top: 220px;
+			right: 360px;
 			@include animation(tag32 1s infinite);
 		}
 		.tag-03 {
-			top: 250px;
-			right: 310px;
+			top: 200px;
+			right: 440px;
 			@include animation(tag33 1s infinite);
 		}
 		.tag-04 {
 			top: 280px;
-			right: 100px;
+			right: 340px;
 			@include animation(tag34 1s infinite);
 		}
 	}
 	&.balcony {
 		.tag-01 {
 			top: 420px;
-			right: 250px;
+			right: 450px;
 			@include animation(tag41 1s infinite);
 		}
 		.tag-02 {
 			top: 400px;
-			right: 520px;
+			right: 620px;
 			@include animation(tag42 1s infinite);
 		}
 	}
@@ -1053,69 +1053,69 @@ section {
 }
 
 @include keyframes(tag11) {
-	0% { top: 200px;@include opacity(90); }
-	75% { top: 210px;@include opacity(100); } 
-	100% { top: 200px;@include opacity(90); }
+	0% { top: 200px;}
+	75% { top: 205px;} 
+	100% { top: 200px;}
 }
 @include keyframes(tag12) {
-	0% { top: 200px;@include opacity(90); }
-	75% { top: 210px;@include opacity(100); } 
-	100% { top: 200px;@include opacity(90); }
+	0% { top: 180px;}
+	75% { top: 185px;} 
+	100% { top: 180px;}
 }
 @include keyframes(tag13) {
-	0% { top: 350px;@include opacity(90); }
-	75% { top: 360px;@include opacity(100); } 
-	100% { top: 350px;@include opacity(90); }
+	0% { top: 280px;}
+	75% { top: 285px;} 
+	100% { top: 280px;}
 }
 @include keyframes(tag21) {
-	0% { top: 50px;@include opacity(90); }
-	75% { top: 60px;@include opacity(100); } 
-	100% { top: 50px;@include opacity(90); }
+	0% { top: 10px;}
+	75% { top: 15px;} 
+	100% { top: 10px;}
 }
 @include keyframes(tag22) {
-	0% { top: 20px;@include opacity(90); }
-	75% { top: 30px;@include opacity(100); } 
-	100% { top: 20px;@include opacity(90); }
+	0% { top: 0px;}
+	75% { top: 5px;} 
+	100% { top: 0px;}
 }
 @include keyframes(tag23) {
-	0% { top: 150px;@include opacity(90); }
-	75% { top: 160px;@include opacity(100); } 
-	100% { top: 150px;@include opacity(90); }
+	0% { top: 65px;}
+	75% { top: 70px;} 
+	100% { top: 65px;}
 }
 @include keyframes(tag24) {
-	0% { top: 150px;@include opacity(90); }
-	75% { top: 160px;@include opacity(100); } 
-	100% { top: 150px;@include opacity(90); }
+	0% { top: 40px;}
+	75% { top: 45px;} 
+	100% { top: 40px;}
 }
 @include keyframes(tag31) {
-	0% { top: 150px;@include opacity(90); }
-	75% { top: 160px;@include opacity(100); } 
-	100% { top: 150px;@include opacity(90); }
+	0% { top: 150px;}
+	75% { top: 155px;} 
+	100% { top: 150px;}
 }
 @include keyframes(tag32) {
-	0% { top: 200px;@include opacity(90); }
-	75% { top: 210px;@include opacity(100); } 
-	100% { top: 200px;@include opacity(90); }
+	0% { top: 100px;}
+	75% { top: 105px;} 
+	100% { top: 100px;}
 }
 @include keyframes(tag33) {
-	0% { top: 250px;@include opacity(90); }
-	75% { top: 260px;@include opacity(100); } 
-	100% { top: 250px;@include opacity(90); }
+	0% { top: 200px;}
+	75% { top: 205px;} 
+	100% { top: 200px;}
 }
 @include keyframes(tag34) {
-	0% { top: 280px;@include opacity(90); }
-	75% { top: 290px;@include opacity(100); } 
-	100% { top: 280px;@include opacity(90); }
+	0% { top: 280px;}
+	75% { top: 285px;} 
+	100% { top: 280px;}
 }
 @include keyframes(tag41) {
-	0% { top: 420px;@include opacity(90); }
-	75% { top: 430px;@include opacity(100); } 
-	100% { top: 420px;@include opacity(90); }
+	0% { top: 370px;}
+	75% { top: 375px;} 
+	100% { top: 370px;}
 }
 @include keyframes(tag42) {
-	0% { top: 400px;@include opacity(90); }
-	75% { top: 410px;@include opacity(100); } 
-	100% { top: 400px;@include opacity(90); }
+	0% { top: 320px;}
+	75% { top: 325px;} 
+	100% { top: 320px;}
 }
 
 .video {
