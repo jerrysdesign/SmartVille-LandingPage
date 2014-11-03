@@ -676,6 +676,12 @@ section {
 .s2-svf-1 {
 	fill: $primary;
 }
+%advantages-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: $primary;
+	@extend %is-show-inline;
+}
 // Section 2-2
 .advantages {
 	@include pre(2,12);
@@ -685,16 +691,19 @@ section {
 		// @include post(1,12);
 	}
 	h3 {
-		font-size: 1.5em;
-		color: $primary;
-		font-weight: bold;
-		@extend %cp;
+		@extend %advantages-title;
 	}
 	h4 {
+		@extend %advantages-title;
+	}
+	h5 {
 		font-size: 1.2em;
-		color: $primary;
-		margin-bottom: .5em;
-		@extend %cp;
+		padding: 3px 10px;
+		background-color: $primary;
+		color: #fff;
+		@extend %is-show-inline;
+		@include border-radius(2px);
+		margin-bottom: .6em;
 	}
 	li {
 		font-size: 1em;
