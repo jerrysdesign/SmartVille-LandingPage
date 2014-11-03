@@ -230,7 +230,12 @@ $(function(){
 	
 	// prev & next
 	$('body').on('click','.bx-controls-direction a',function(){
-		$('.bx-pager-item .active').click();
+		var _idx = $('.bx-pager-item .active').parent().index();
+		$('.bx-pager-item a').eq(_idx).click();
+		setTimeout(function()
+		{
+			$('#mian-slider > li').eq(_idx).show().siblings().hide();
+		}, 400);
 	});
 
 	// tag-tabs
