@@ -6,10 +6,10 @@
  * Written while drinking Belgian ales and listening to jazz
  *
  * Released under the MIT license - http://opensource.org/licenses/MIT
+ * CPFIX
  */
 
 ;(function($){
-
 	var plugin = {};
 
 	var defaults = {
@@ -628,8 +628,10 @@
 			}else{
 				slider.pagerEl = $(slider.settings.pagerCustom);
 			}
+
 			// assign the pager click binding
 			slider.pagerEl.on('click', 'a', clickPagerBind);
+			// $('#slide-btn li').eq(3).click();
 		}
 
 		/**
@@ -768,6 +770,7 @@
 				if(pagerIndex != slider.active.index) el.goToSlide(pagerIndex);
 				e.preventDefault();
 			}
+
 		}
 
 		/**
@@ -790,6 +793,9 @@
 			slider.pagerEl.find('a').removeClass('active');
 			// apply the active class for all pagers
 			slider.pagerEl.each(function(i, el) { $(el).find('a').eq(slideIndex).addClass('active'); });
+
+			// CPFIX--1103
+			$('#slide-btn li').removeClass('active').eq(slideIndex).addClass('active');
 		}
 
 		/**
