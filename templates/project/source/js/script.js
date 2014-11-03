@@ -327,6 +327,8 @@ $(function(){
 	$('.icn-tag').css({'z-index':1});
 	$icnTag.hover(function() {
 		$(this).css({'z-index':9999});
+	},function(){
+		$(this).css({'z-index':1});
 	});
 	
 
