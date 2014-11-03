@@ -710,6 +710,15 @@ section {
 		margin-bottom: .25em;
 	}
 	.adv-01, .adv-02, .adv-03, .adv-04 {
+		ul, li {
+			// @include unordered;
+		}
+		li {
+			padding-left: 2em;
+			background-image: url(#{$imagesPath}/check.svg);
+			background-repeat: no-repeat;
+			background-position: 5px 5px;
+		}
 	}
 	&.current {
 		@include span-columns(12,12);
@@ -1286,11 +1295,20 @@ section {
 		left: auto;
 		right: 100%;
 		margin-right: 10px;
+		background: url(#{$imagesPath}/controls.png) no-repeat 0 0;
+		&:hover {
+			background: url(#{$imagesPath}/controls.png) no-repeat 0 -32px;
+		}
 	}
 	.bx-next {
 		right: aauto;
 		left: 100%;
 		margin-left: 10px;
+		background: url(#{$imagesPath}/controls.png) no-repeat -32px 0;
+		&:hover {
+			background: url(#{$imagesPath}/controls.png) no-repeat -32px -32px;
+		}
+
 	}
 }
 .bx-pager {
