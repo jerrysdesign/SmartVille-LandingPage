@@ -243,7 +243,14 @@ html.no-js lang="zh-TW"
 				
 		#section-7.section.bg-color.bg-white data-section="6"
 			.container.animated.wow.fadeIn data-wow-delay=".5s"
-				ul.tag-tab-cont
+				.scenetab style="z-index:1"
+					nav.tag-tab
+						ul
+							li.active: a href="javascript:;" Living Room
+							li: a href="javascript:;" Kitchen
+							li: a href="javascript:;" Bed Room
+							li: a href="javascript:;" Balcony
+				ul.tag-tab-cont style="z-index:2"
 					li
 						img src="img/house3d-01-2.png"
 						.tag-box.living-room
@@ -257,14 +264,14 @@ html.no-js lang="zh-TW"
 							.tag-02.icn-tag.tooltip.tooltip-west
 								image.icon src="img/icon-se.svg"
 								span.tooltip-content.clearfix
-									h4 Door / Windows Sensors
+									h4 Door Sensors
 									ul
 										li 居家安防管控
 										li 提出警訊
 							.tag-03.icn-tag.tooltip.tooltip-west
 								image.icon src="img/icon-se.svg"
 								span.tooltip-content.clearfix
-									h4 Door / Windows Sensors
+									h4 Windows Sensors
 									ul
 										li 居家安防管控
 
@@ -348,14 +355,6 @@ html.no-js lang="zh-TW"
 										li 居家安防管控
 										li 提出警訊
 
-				.scenetab
-					nav.tag-tab
-						ul
-							li.active: a href="javascript:;" Living Room
-							li: a href="javascript:;" Kitchen
-							li: a href="javascript:;" Bed Room
-							li: a href="javascript:;" Balcony
-
 		/! FOOTER
 		#footer.section.bg-image data-section="8"
 			.container
@@ -381,6 +380,8 @@ html.no-js lang="zh-TW"
 						li
 							i.icon-mail
 							a href="maillto:smartville@tw.shuttle.com" smartville@tw.shuttle.com
+						li style="font-size:.8em;"
+							| © 2014 shuttle Inc.
 		/script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" 
 		/| <script>window.jQuery || document.write('<script src="/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 		script src="vendor/jquery-1.9.1.min.js"

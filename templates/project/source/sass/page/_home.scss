@@ -134,7 +134,7 @@ body {
 		-webkit-transform-origin: 50% 50% 0;
 		position: absolute;
 		width: 464px;
-		top: 1050px;
+		top: 1070px;
 		margin-left: -464px;
 		.pad {
 			left: 0;
@@ -351,7 +351,7 @@ section {
 		content: '';
 		@include is-show;
 		@extend %center-block;
-		@include size(40px 4px);
+		@include size(100px 4px);
 		border-radius: 2px;
 		background: #67CCCC;
 	}
@@ -362,7 +362,7 @@ section {
 .section-description {
 	font-size: 1.5em;
 	line-height: 1.6;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 	.bg-image & {
 		color: #fff;
 	}
@@ -884,7 +884,7 @@ section {
 
 .tag-tab-cont {
 	@include span-columns(9,12);
-	ul > li {
+	li {
 		position: relative;
 	}
 }
@@ -1013,34 +1013,34 @@ section {
 	&.bed-room {
 		.tag-01 {
 			top: 150px;
-			right: 280px;
+			right: 30px;
 			@include animation(tag31 1s infinite);
 		}
 		.tag-02 {
 			top: 220px;
-			right: 360px;
+			right: 120px;
 			@include animation(tag32 1s infinite);
 		}
 		.tag-03 {
 			top: 200px;
-			right: 440px;
+			right: 200px;
 			@include animation(tag33 1s infinite);
 		}
 		.tag-04 {
 			top: 280px;
-			right: 340px;
+			right: 90px;
 			@include animation(tag34 1s infinite);
 		}
 	}
 	&.balcony {
 		.tag-01 {
 			top: 420px;
-			right: 450px;
+			right: 210px;
 			@include animation(tag41 1s infinite);
 		}
 		.tag-02 {
 			top: 400px;
-			right: 620px;
+			right: 380px;
 			@include animation(tag42 1s infinite);
 		}
 	}
@@ -1089,14 +1089,14 @@ section {
 	100% { top: 40px;}
 }
 @include keyframes(tag31) {
-	0% { top: 150px;}
-	75% { top: 155px;} 
-	100% { top: 150px;}
+	0% { top: 175px;}
+	75% { top: 180px;} 
+	100% { top: 175px;}
 }
 @include keyframes(tag32) {
-	0% { top: 100px;}
-	75% { top: 105px;} 
-	100% { top: 100px;}
+	0% { top: 110px;}
+	75% { top: 115px;} 
+	100% { top: 110px;}
 }
 @include keyframes(tag33) {
 	0% { top: 200px;}
@@ -1158,6 +1158,7 @@ section {
 		@extend %is-show;
 		text-align: center;
 		vertical-align: bottom;
+		margin-bottom: .25em;
 	}
 	.logo-shuttle--w {
 		display: inline-block;
