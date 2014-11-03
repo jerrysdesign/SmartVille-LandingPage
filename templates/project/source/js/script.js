@@ -319,6 +319,14 @@ $(function(){
 	// 	}
 	// });
 	
+	
+	// 修正蓋圖
+	var $icnTag = $('.icn-tag');
+	$('.icn-tag').css({'z-index':1});
+	$icnTag.hover(function() {
+		$(this).css({'z-index':9999});
+	});
+	
 
 	//
 	$('.player .video-wrapper').css('background','#D8D8D8');
