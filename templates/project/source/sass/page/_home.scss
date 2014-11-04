@@ -892,10 +892,31 @@ section {
 	}
 }
 
-.svg_absolute {
-
+.tab_wrap  {
+	@include span-columns(9,12);
+	position: relative;
+	background: url(#{$imagesPath}/house3d-bg.png);
+	//
+	height: 456px;
 	li {
 		position: relative;
+	}
+	.aaa {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 700px;
+		height: 456px;
+		z-index: 99;
+		display: none;
+	}
+	.bbb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 700px;
+		height: 456px;
+		z-index: 999;
 	}
 }
 .scenetab {
@@ -938,25 +959,6 @@ section {
 	.bx-pager-item a {
 		margin: 0 5px;
 	}
-}
-.tag-tab-cont {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.xxx_absolute{
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.tab_wrap {
-	position: relative;
-
-}
-.svg_wrap {
-	z-index: 5;
-	@extend .xxx_absolute;
-	
 }
 
 
