@@ -1342,3 +1342,16 @@ section {
 
 	}
 }
+
+#situation_svg {
+	.mask {
+		display: none;
+		opacity: 0.6;
+	}
+	& .cur {
+		display: block;
+	}
+	.link {
+		opacity: 0;
+	}
+}

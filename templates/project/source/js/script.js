@@ -243,6 +243,20 @@ $(function(){
 		tag_tab($(this));
 	});
 	$('.tag-tab-cont').children().not(':eq(0)').hide();
+
+	// situation_svg
+	function situation_svg(){
+		var _wrap = $('#situation_svg'),
+			_mask = _wrap.find('.mask');
+
+		$('.link').mouseenter(function(){
+			var _this = $(this),
+				_idx  = _this.index();
+			$('#bedroom-link_1_').animate({'opacity':.3});
+			console.log(_idx)
+		});
+	}
+	situation_svg();
 });
 
 
@@ -290,7 +304,7 @@ $(function(){
 		$rightLinksDatasection.addClass('active');
 		$sectionDatasection.addClass('current');
 
-		console.log('datasection'+':'+datasection);
+		// console.log('datasection'+':'+datasection);
 	});
 
 	$win.scroll(function(){
@@ -316,11 +330,11 @@ $(function(){
 		function offSetKey1(){
 			if ($win.scrollTop() < goal){
 				var goalPx = goal + 50;
-				console.log("goalPxif"+"="+ goalPx);
+				// console.log("goalPxif"+"="+ goalPx);
 			}
 			else{
 				var goalPx = goal - 50;
-				console.log("goalPxelse"+"="+ goalPx);
+				// console.log("goalPxelse"+"="+ goalPx);
 			}
 			htmlbody.stop().animate({
 				scrollTop: goalPx
@@ -329,11 +343,11 @@ $(function(){
 		function offSetKey2(){
 			if ($win.scrollTop() < goal){
 				var goalPx = goal + 204;
-				console.log("goalPxif"+"="+ goalPx);
+				// console.log("goalPxif"+"="+ goalPx);
 			}
 			else{
 				var goalPx = goal +104 ;
-				console.log("goalPxelse"+"="+ goalPx);
+				// console.log("goalPxelse"+"="+ goalPx);
 			}
 			htmlbody.stop().animate({
 				scrollTop: goalPx
