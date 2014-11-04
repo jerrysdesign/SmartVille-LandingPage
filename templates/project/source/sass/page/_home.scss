@@ -85,8 +85,8 @@ body {
 
 .screen-bg {
 	position: absolute;
-	top: 21px;
-	left: 125px;
+	top: 20px;
+	left: 120px;
 	@include size(384px 240px);
 	z-index: 0;
 	overflow: hidden;
