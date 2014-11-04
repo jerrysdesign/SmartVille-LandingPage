@@ -125,8 +125,8 @@ body {
 	position: fixed;
 	top: 320px;
 	left: 50%;
-	margin-left: -315px;
-	@include size(630px 282px);
+	margin-left: -311px;
+	@include size(622px 282px);
 	z-index: index($z-index,pad);
 	overflow: hidden;
 	&.transform {
@@ -166,7 +166,7 @@ body {
 }
 %hand {
 	@extend %sub-element;
-	background-image: url(#{$imagesPath}/hand.png);
+	background-image: url(#{$imagesPath}/hand-v2.png);
 	background-repeat: no-repeat;
 	@include size(108px 280px);
 	top: 80px;
@@ -191,7 +191,7 @@ body {
 	background-image: url(#{$imagesPath}/pad.png);
 	@include size(464px 280px);
 	top: 0;
-	left: 83px;
+	left: 79px;
 	z-index: 88;
 }
 
@@ -513,7 +513,8 @@ section {
 	background-position: left top;
 }
 .slide-2__bg{
-	background-image: url(#{$imagesPath}/thief.png);
+	background-image: url(#{$imagesPath}/point-finger.png);
+	// background-image: url(#{$imagesPath}/thief.png);
 	@extend %no-repeat;
 }
 .slide-3__bg{
