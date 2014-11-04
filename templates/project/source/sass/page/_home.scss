@@ -892,8 +892,8 @@ section {
 	}
 }
 
-.tag-tab-cont {
-	@include span-columns(9,12);
+.svg_absolute {
+
 	li {
 		position: relative;
 	}
@@ -932,6 +932,34 @@ section {
 		border-bottom: none;
 	}
 }
+
+
+.bx-pager {
+	.bx-pager-item a {
+		margin: 0 5px;
+	}
+}
+.tag-tab-cont {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.xxx_absolute{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.tab_wrap {
+	position: relative;
+
+}
+.svg_wrap {
+	z-index: 5;
+	@extend .xxx_absolute;
+	
+}
+
+
 .tag-box {
 	position: absolute;
 	@include size(100%);
@@ -1310,10 +1338,5 @@ section {
 			background: url(#{$imagesPath}/controls.png) no-repeat -32px -32px;
 		}
 
-	}
-}
-.bx-pager {
-	.bx-pager-item a {
-		margin: 0 5px;
 	}
 }
