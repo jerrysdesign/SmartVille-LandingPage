@@ -1,7 +1,7 @@
 /*	----------------------------------------
 *	Global
 *	----------------------------------------
-*/	
+*/
 	var $win = $(window),
 		$section = $('.section'),
 		$menu = $('#menu_top'),
@@ -222,7 +222,7 @@ $(function(){
 		setTimeout(function()
 		{
 			$('#mian-slider > li').eq(_idx).show().siblings().hide();
-		}, 400);		
+		}, 400);
 	});
 	
 	// Prev & Next
@@ -257,8 +257,11 @@ $(function(){
 	var ww = $win.width();
 	if(ww > 480){
 		wow = new WOW({
+			boxClass: 'wow',
 			animateClass: 'animated',
-			offset: 0
+			offset: 0,
+			mobile: true,
+			live: true
 		});
 		wow.init();
 	}
@@ -314,7 +317,7 @@ $(function(){
 				// console.log("goalPxif"+"="+ goalPx);
 			}
 			else{
-				var goalPx = goal +104 ;
+				var goalPx = goal + 104 ;
 				// console.log("goalPxelse"+"="+ goalPx);
 			}
 			htmlbody.stop().animate({
@@ -373,125 +376,9 @@ $(function(){
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
-*/	
+*/
 	//	Get Section Offset
-	// $section.each(function(){
-	// 	console.log($section.eq(_a).offset());
-	// 	_a++;
-	// });
-
-//snap svg
-$(document).ready(function(){
-
-	var sh	= Snap.select("#smarthouse"),
-
-		// camera = sh.select("#icon-camera"),
-		// lighting = sh.select("#icon-lighting"),
-		// wearher = sh.select("#icon-wearher"),
-		// lock = sh.select("#icon-lock"),
-		// computer = sh.select("#icon-computer"),
-		// temperature = sh.select("#icon-temperature"),
-
-		shimg = sh.select("#smimg"),
-		wifi= sh.select("#wifi"),
-		zwave= sh.select("#zwave"),
-
-		timer;
-
-
-	// function open() {
-	// 	camera.addClass("xxx");
-	// 	clearTimeout(timer);
-	// 	// head.animate({ 
-	// 	// 	transform: "r" + [0, pivots[0]]
-	// 	// }, 700, mina.elastic);
-		
-	// 	// jaw.animate({
-	// 	// 	transform: "r" + [0, pivots[1]]
-	// 	// }, 700, mina.elastic);
-
-	// 	// symbol.animate({
-	// 	// 	transform: "t0,0r0"
-	// 	// }, 500, mina.elastic);
-	// 	camera.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 0.5
-	// 		}, 200, mina.easeout);
-		
-	// 	lighting.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 1
-	// 		}, 200, mina.easeout);
-
-	// 	wearher.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 0.5
-	// 		}, 200, mina.easeout);
-
-	// 	lock.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 1
-	// 		}, 200, mina.easeout);
-
-	// 	computer.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 0.5
-	// 		}, 200, mina.easeout);
-
-	// 	temperature.animate({ 
-	// 		transform: "t0,0",
-	// 			opacity: 1
-	// 		}, 200, mina.easeout);
-	// }
-	
-	var icons = ['icon-1', 'icon-2', 'icon-3', 'icon-4', 'icon-5', 'icon-6'];
-
-	iconMove();
-
-	function iconMove(){
-		for (var i=0; i<icons.length; i++){
-			var iconId = icons[i];
-			var icon = sh.select('#'+iconId);
-			var cx = icon.getBBox().cx; // Get 初始x座標
-			var cy = icon.getBBox().cy; // Get 初始y座標
-			
-			// animateIcon(icon, cx, cy);
-		}
-	}
-
-	function animateIcon(icon, cx, cy){
-		// icon.attr({ transform: 't0 -200'}); // Reset the icon's position to behind the cloud
-		// var timing = getRandomArbitrary(2000,10000); // Random transition time between times we specify
-		// var deg = getRandomArbitrary(-360,360); // Random rotation (allows it to go either direction)
-		// Animate the icon and do a new animation for it when it's done (repeat this function)
-		// icon.stop().animate({ transform: 't0 200 r'+deg+' '+cx+' '+cy}, timing, function(){ animateIcon(icon, cx, cy);});
-	}
-
-	function getRandomArbitrary(min, max) {
-		return Math.random() * (max - min) + min;
-	}
-
-	// x: x coordinate of the left top point of the box,
-	// y: y coordinate of the left top point of the box,
-	// x2: x coordinate of the right bottom point of the box,
-	// y2: y coordinate of the right bottom point of the box,
-	// wisth: width of the box,
-	// height: height of the box
-
-	var deg = getRandomArbitrary(-360,360);
-	sh.select("#icon-1").animate({ transform: "t357.5,130", opacity: 1}, 5000, mina.easeout).addClass("done");
-	sh.select("#icon-4").animate({ transform: "t-357.5,130", opacity: 1 }, 5000, mina.easeout).addClass("done");
-	sh.select("#icon-2").animate({ transform: "t357.5,0", opacity: 1 }, 5000, mina.easeout).addClass("done");
-	sh.select("#icon-5").animate({ transform: "t-357.5,0", opacity: 1 }, 5000, mina.easeout).addClass("done");
-	sh.select("#icon-3").animate({ transform: "t357.5,-130", opacity: 1 }, 5000, mina.easeout).addClass("done");
-	sh.select("#icon-6").animate({ transform: "t-357.5,-130", opacity: 1 }, 5000, mina.easeout).addClass("done");
-	shimg.attr({
-		"style": "opacity: 0.5"
-	});
-	wifi.attr({
-		"style": "opacity: 0.5"
-	});
-	zwave.attr({
-		"style": "opacity: 0.5"
-	});
-});
+	//	$section.each(function(){
+	//	console.log($section.eq(_a).offset());
+	//	_a++;
+	//	});

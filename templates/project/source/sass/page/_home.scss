@@ -150,8 +150,20 @@ body {
 	}
 }
 @include keyframes(GOSECTION2) {
-	0% {-webkit-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);}
-	100% {-webkit-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);}
+	0% {
+		-webkit-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);
+		-moz-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);
+		-ms-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);
+		-o-transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);
+		transform:  perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0);
+	}
+	100% {
+		-webkit-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);
+		-moz-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);
+		-ms-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);
+		-o-transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);
+		transform:  perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0);
+	}
 }
 // @include keyframes(BACKSECTION0) {
 // 	0% {-webkit-transform:  perspective(1000) rotate3d(0,1,0, 0deg) translate3d(0,0,0);}
@@ -792,85 +804,176 @@ section {
 	}
 }
 
+.icon-64 {
+	@include size(64px);
+	position: absolute;
+	z-index: 2;
+}
+.icon-96 {
+	@include size(96px);
+	position: absolute;
+	margin-left: -48px;
+	left: 50%;
+	top: 80px;
+	z-index: 7;
+}
+.icon-96-wrapper {
+	@extend .icon-96;
+	margin-top: -80px;
+}
 .wireless-home {
 	@include pre(1,12);
 	@include span-columns(10,12);
-	ul {
-		position: relative;
-		height: 520px;
-	}
-	li {
-		position: absolute;
-	}
-	.texh-h4 {
-		font-weight: bold;
-		font-size: 1.25em;
-	}
-	.icon-01 {
-		@extend %center-block;
-		position: relative;
-		width: 131px;
-	}
-	.icon-02 {
-		@extend %center-block;
-		position: relative;
-		width: 321px;
-	}
-	.icon-03 {
-		position: absolute;
-		left: 150px;
-		bottom: 180px;
-	}
-	.icon-04 {
-		position: absolute;
-		left: 150px;
-		bottom: 0;
-		+ .text-h4 {
-			position: absolute;
-			bottom: 145px;
-			left: 130px;
-		}
-	}
-	.icon-05 {
-		position: absolute;
-		right: 150px;
-		bottom: 180px;
-	}
-	.icon-06 {
-		position: absolute;
-		right: 150px;
-		bottom: 30px;
-		+ .text-h4 {
-			position: absolute;
-			bottom: 145px;
-			right: 150px;
-		}
-	}
-}
-.top, .bottom {
 	position: relative;
+	min-height: 438px;
 }
-.top {
-	margin-bottom: 2em;
-}
-.leftside,.rightside {
+
+.icon-001 {
 	position: absolute;
-	top: -50px;
-	// position: relative;
-	height: 340px;
-	width: 30%;
-	overflow: hidden;
-}
-.leftside {
+	top: 0;
 	left: 0;
-	// top: 0;
-	// @include fl;
+	.current & {
+		@include animation(icon1 3s linear infinite);
+	}
 }
-.rightside {
+.icon-002 {
+	position: absolute;
+	top: 130px;
+	left: 0;
+	.current & {
+		@include animation(icon2 3s linear infinite);
+	}
+}
+.icon-003 {
+	position: absolute;
+	top: 260px;
+	left: 0;
+	.current & {
+		@include animation(icon3 3s linear infinite);
+	}
+}
+.icon-004 {
+	position: absolute;
+	top: 0;
 	right: 0;
-	// top: 0;
-	// @include fr;
+	.current & {
+		@include animation(icon4 3s linear infinite);
+	}
 }
+.icon-005 {
+	position: absolute;
+	top: 130px;
+	right: 0;
+	.current & {
+		@include animation(icon5 3s linear infinite);
+	}
+}
+.icon-006 {
+	position: absolute;
+	top: 260px;
+	right: 0;
+	.current & {
+		@include animation(icon6 3s linear infinite);
+	}
+}
+.icon-wifi {
+	// @extend %icon-96;
+	@include size(96px);
+	position: absolute;
+	margin-left: -48px;
+	left: 50%;
+	top: 80px;
+	z-index: 8;
+	opacity: 1;
+		.current & {
+		@include animation(fadeInOut 10s infinite);
+	}
+}
+.icon-zwave {
+	// @extend %icon-96;
+	@include size(96px);
+	position: absolute;
+	margin-left: -48px;
+	left: 50%;
+	top: 80px;
+	z-index: 9;
+	opacity: 1;
+	.current & {
+		@include animation(fadeOutIn 10s infinite);
+	}
+}
+.ihouse {
+	position: absolute;
+	left: 50%;
+	margin-left: -210px;
+	bottom: 120px;
+	z-index: 5;
+}
+.hend-and-ipad {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -145px;
+	z-index: 7;
+}
+
+$centerX: 375px;
+$centerY: 130px;
+@mixin left-center {
+	top: $centerY;
+	left: $centerX;
+}
+@mixin right-center {
+	top: $centerY;
+	right: $centerX;
+}
+
+@include keyframes(icon1) {
+	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+	85% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon2) {
+	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+	85% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon3) {
+	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+	85% { top: 260px; left: 0;opacity: .75;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon4) {
+	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+	85% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon5) {
+	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+	85% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon6) {
+	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+	85% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(fadeInOut) {
+	0% { opacity: 0;top:80px;}
+	25% { opacity: 1;top:80px;}
+	50% { opacity: 0;top:80px;}
+	75% { opacity: 1;top:80px;}
+	100% { opacity: 0;top:80px;}
+}
+@include keyframes(fadeOutIn) {
+	0% { opacity: 1;top:80px;}
+	25% { opacity: 0;top:80px;}
+	50% { opacity: 1;top:80px;}
+	75% { opacity: 0;top:80px;}
+	100% { opacity: 1;top:80px;}
+}
+
+
 // Section 6
 .vedio-wrp {
 	@include pre(2,12);
