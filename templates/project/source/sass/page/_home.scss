@@ -17,7 +17,7 @@ body {
 	background-color: $colorSunFlower;
 	border: 4px solid $colorCarrot;
 	color: $colorWetAsphalt;
-z-index: 9999;
+	z-index: 9999;
 	a { font-weight: bolder; text-decoration: underline; color: #fff;}
 }
 
@@ -1154,12 +1154,6 @@ section {
 	0% { top: 320px;}
 	75% { top: 325px;} 
 	100% { top: 320px;}
-}
-
-.video {
-	@extend %center-block;
-	width: 80%;
-	z-index: 1;
 }
 // Section 7
 
