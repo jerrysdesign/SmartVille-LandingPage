@@ -905,7 +905,7 @@ section {
 		width: 700px;
 		height: 456px;
 		z-index: 99;
-		display: none;
+		// display: none;
 	}
 	.bbb {
 		position: absolute;
@@ -915,6 +915,18 @@ section {
 		height: 456px;
 		z-index: 999;
 	}
+	#situation_svg {
+		position: absolute;
+		top: 0;
+		left: 0;		
+		.mask {
+			display: none;
+			opacity: 0.6;
+		}
+		& .cur {
+			display: block;
+		}
+	}	
 }
 .scenetab {
 	position: relative;
@@ -1331,18 +1343,5 @@ section {
 			background: url(#{$imagesPath}/controls.png) no-repeat -32px -32px;
 		}
 
-	}
-}
-
-#situation_svg {
-	.mask {
-		display: none;
-		opacity: 0.6;
-	}
-	& .cur {
-		display: block;
-	}
-	.link {
-		opacity: 0;
 	}
 }
