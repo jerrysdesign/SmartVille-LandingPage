@@ -17,7 +17,7 @@ body {
 	background-color: $colorSunFlower;
 	border: 4px solid $colorCarrot;
 	color: $colorWetAsphalt;
-	z-index: 9999;
+z-index: 9999;
 	a { font-weight: bolder; text-decoration: underline; color: #fff;}
 }
 
@@ -36,9 +36,8 @@ body {
 .logo-slogan {
 	text-align: center;
 	font-size: .8em;
-	letter-spacing: 1em;
+	letter-spacing: .5em; //因為safari會有破版
 	color: $black-50;
-
 	font-size-adjust: none;
 	-webkit-text-size-adjust: none;
 }
@@ -53,16 +52,14 @@ body {
 // MENU right
 #menu_right {
 	position:fixed;
-	top:300px;
-	left:45%;
-	margin-left:580px;
-	z-index:2000;
+	top: 300px;
+	right: 20px;
+	z-index: 99999;
 	border-radius: 30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background: rgba(0,0,0,0.10);
-	-moz-box-shadow:    0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30);
-	box-shadow:         0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30);
+	@include box-shadow(0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30));
 }
 .navigation-right {
 	li {
