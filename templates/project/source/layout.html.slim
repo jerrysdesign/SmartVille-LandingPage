@@ -179,65 +179,14 @@ html.no-js lang="zh-TW"
 						br
 						| 控制中心（Control Center）1台、Z-Wave Gateway1台、電源切換開關2個、門/窗感應器2個、網路攝影機1台、煙霧偵測器1台
 		
-		// section3 // 標準產品盒
+		// section4 // 無線家庭 無限便利
 		#section-4.section.bg-color.bg-white data-section="4"
 			.container.animated.wow.fadeIn data-wow-delay=".3s"
 				h3.section-title 無線家庭 無限便利 
 				h5.section-description 因為無線，我們提供更多無限想像，雲端服務與無線遙控，創造家庭更多無限的可能
 				.wireless-home
-					/ .top
-					/ 	.icon-01.wow.fadeInDown
-					/ 		img src="img/tuchphone.svg"
-					/ 		h4.text-h4 Devices
-					/ .bottom
-					/ 	.icon-02.wow.fadeInDown data-wow-delay=".5s"
-					/ 		img src="img/ihome.svg"
-					/ 		h4.text-h4 Control Center
-					/ 	h4 
-					/ 	.leftside
-					/ 		.icon-03.wow.bounceInRight data-wow-offset="100" data-wow-delay="2s"
-					/ 			img src="img/lightbulb.svg"
-					/ 		.icon-04.wow.bounceInRight data-wow-offset="-100" data-wow-delay="1s"
-					/ 			img src="img/cooler.svg"
-					/ 		h4.text-h4.wow.bounceInRight data-wow-offset="100" data-wow-delay="0.5s" Electric Appliances
-					/ 	.rightside
-					/ 		.icon-05.wow.bounceInLeft data-wow-offset="100" data-wow-delay="2.5s"
-					/ 			img src="img/cctv.svg"
-					/ 		.icon-06.wow.bounceInLeft data-wow-offset="-100" data-wow-delay="1.5s"
-					/ 			img src="img/audio.svg"
-					/ 		h4.text-h4.wow.bounceInLeft data-wow-offset="100" data-wow-delay="0.75s" Electric Appliances
-					/ .top
-					/ 	.icon-11.wow.fadeInDown
-					/ 		img src="img/wifi.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-12.wow.fadeInDown
-					/ 		img src="img/zwave.svg"
-					/ 		h4.text-h4 Devices
-					/ .center
-					/ 	.icon-13.wow.fadeInDown
-					/ 		img src="img/temperature.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-14.wow.fadeInDown
-					/ 		img src="img/computer.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-15.wow.fadeInDown
-					/ 		img src="img/lock.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-16.wow.fadeInDown
-					/ 		img src="img/wearher.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-17.wow.fadeInDown
-					/ 		img src="img/lighting.svg"
-					/ 		h4.text-h4 Devices
-					/ 	.icon-18.wow.fadeInDown
-					/ 		img src="img/house.svg"
-					/ 		h4.text-h4 Devices
-					/ .bottom
-					/ 	.icon-02.wow.fadeInDown data-wow-delay=".5s"
-					/ 		img src="img/heandpad.svg"
-					/ 		h4.text-h4 Control Center
-						
-					img src="assets/smarthource2.png"
+					= render "partials/smarthouse-svg.html.erb"
+		
 		#section-5.section.bg-color.bg-gray data-section="5"
 			.container.animated.wow.fadeIn data-wow-delay=".3s"
 				h3.section-title 使用說明
