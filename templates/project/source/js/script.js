@@ -249,7 +249,12 @@ $(function(){
 
 	// pages
 	$('body').on('click','.bx-pager-item a',function(){
-		banner1_area($(this).parent().index());
+		var _idx = $(this).parent().index();
+		banner1_area(_idx);
+		setTimeout(function()
+		{
+			$('#mian-slider > li').eq(_idx).show().siblings().hide();
+		}, 400);		
 	});
 	
 	// prev & next
