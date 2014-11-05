@@ -228,6 +228,7 @@ function situation_svg(){
 
 $(function(){
 	// menu-area
+	$('.screen-bg > div:eq(0)').css('z-index', 4);
 	$('#slide-btn li').click(function(){
 		var _this = $(this),
 			_active  = 'active',
