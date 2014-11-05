@@ -251,6 +251,7 @@ $(function(){
 	$('body').on('click','.bx-pager-item a',function(){
 		var _idx = $(this).parent().index();
 		banner1_area(_idx);
+		$('#slide-btn li').eq(_idx).click();
 		setTimeout(function()
 		{
 			$('#mian-slider > li').eq(_idx).show().siblings().hide();
