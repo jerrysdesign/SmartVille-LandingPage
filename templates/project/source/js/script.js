@@ -337,6 +337,9 @@ $(function(){
 		if (datasection == 3){
 			offSetKey2();
 		}
+		if (datasection == 4){
+			offSetKey1();
+		}
 		if (datasection == 5){
 			offSetKey1();
 		}
