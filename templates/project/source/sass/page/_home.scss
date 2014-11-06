@@ -522,8 +522,8 @@ section {
 	background-position: left top;
 }
 .slide-2__bg{
-	background-image: url(#{$imagesPath}/point-finger.png);
-	// background-image: url(#{$imagesPath}/thief.png);
+	// background-image: url(#{$imagesPath}/point-finger.png);
+	background-image: url(#{$imagesPath}/thief.png);
 	@extend %no-repeat;
 }
 .slide-3__bg{
@@ -531,7 +531,8 @@ section {
 	@extend %no-repeat;
 }
 .slide-4__bg{
-	background-image: url(#{$imagesPath}/robot.png);
+	//background-image: url(#{$imagesPath}/robot.png);
+	background-image: url(#{$imagesPath}/woman-muscled.png);
 	@extend %no-repeat;
 }
 .text-a,.text-b,.text-c,.text-d {
@@ -1073,7 +1074,20 @@ $centerY: 130px;
 	}
 }
 
-
+$tagH: 5px; //上移距離
+$tag11a: 190px;
+$tag12a: 170px;
+$tag13a: 270px;
+$tag21a: 10px;
+$tag22a: 0px;
+$tag23a: 45px;
+$tag24a: 40px;
+$tag31a: 165px;
+$tag32a: 100px;
+$tag33a: 190px;
+$tag34a: 270px;
+$tag41a: 300px;
+$tag42a: 310px;
 .tag-box {
 	position: absolute;
 	@include size(100%);
@@ -1186,12 +1200,12 @@ $centerY: 130px;
 	}
 	&.balcony {
 		.tag-01 {
-			top: 420px;
+			top: $tag41a;
 			right: 210px;
 			@include animation(tag41 1s infinite);
 		}
 		.tag-02 {
-			top: 400px;
+			top: $tag42a;
 			right: 380px;
 			@include animation(tag42 1s infinite);
 		}
@@ -1205,70 +1219,83 @@ $centerY: 130px;
 	z-index: 999;
 }
 
+$tag11b: $tag11a+$tagH;
+$tag12b: $tag12a+$tagH;
+$tag13b: $tag13a+$tagH;
+$tag21b: $tag21a+$tagH;
+$tag22b: $tag22a+$tagH;
+$tag23b: $tag23a+$tagH;
+$tag24b: $tag24a+$tagH;
+$tag31b: $tag31a+$tagH;
+$tag32b: $tag32a+$tagH;
+$tag33b: $tag33a+$tagH;
+$tag34b: $tag34a+$tagH;
+$tag41b: $tag41a+$tagH;
+$tag42b: $tag42a+$tagH;
 @include keyframes(tag11) {
-	0% { top: 200px;}
-	75% { top: 205px;} 
-	100% { top: 200px;}
+	0% { top: $tag11a;}
+	75% { top: $tag11b;} 
+	100% { top: $tag11a;}
 }
 @include keyframes(tag12) {
-	0% { top: 180px;}
-	75% { top: 185px;} 
-	100% { top: 180px;}
+	0% { top: $tag12a;}
+	75% { top: $tag12b;} 
+	100% { top: $tag12a;}
 }
 @include keyframes(tag13) {
-	0% { top: 280px;}
-	75% { top: 285px;} 
-	100% { top: 280px;}
+	0% { top: $tag13a;}
+	75% { top: $tag13b;} 
+	100% { top: $tag13a;}
 }
 @include keyframes(tag21) {
-	0% { top: 10px;}
-	75% { top: 15px;} 
-	100% { top: 10px;}
+	0% { top: $tag21a;}
+	75% { top: $tag21b;} 
+	100% { top: $tag21a;}
 }
 @include keyframes(tag22) {
-	0% { top: 0px;}
-	75% { top: 5px;} 
-	100% { top: 0px;}
+	0% { top: $tag22a;}
+	75% { top: $tag22b;} 
+	100% { top: $tag22a;}
 }
 @include keyframes(tag23) {
-	0% { top: 65px;}
-	75% { top: 70px;} 
-	100% { top: 65px;}
+	0% { top: $tag23a;}
+	75% { top: $tag23b;} 
+	100% { top: $tag23a;}
 }
 @include keyframes(tag24) {
-	0% { top: 40px;}
-	75% { top: 45px;} 
-	100% { top: 40px;}
+	0% { top: $tag24a;}
+	75% { top: $tag24b;} 
+	100% { top: $tag24a;}
 }
 @include keyframes(tag31) {
-	0% { top: 175px;}
-	75% { top: 180px;} 
-	100% { top: 175px;}
+	0% { top: $tag31a;}
+	75% { top: $tag31b;} 
+	100% { top: $tag31a;}
 }
 @include keyframes(tag32) {
-	0% { top: 110px;}
-	75% { top: 115px;} 
-	100% { top: 110px;}
+	0% { top: $tag32a;}
+	75% { top: $tag32b;} 
+	100% { top: $tag32a;}
 }
 @include keyframes(tag33) {
-	0% { top: 200px;}
-	75% { top: 205px;} 
-	100% { top: 200px;}
+	0% { top: $tag33a;}
+	75% { top: $tag33b;} 
+	100% { top: $tag33a;}
 }
 @include keyframes(tag34) {
-	0% { top: 280px;}
-	75% { top: 285px;} 
-	100% { top: 280px;}
+	0% { top: $tag34a;}
+	75% { top: $tag34b;} 
+	100% { top: $tag34a;}
 }
 @include keyframes(tag41) {
-	0% { top: 370px;}
-	75% { top: 375px;} 
-	100% { top: 370px;}
+	0% { top: $tag41a;}
+	75% { top: $tag41b;} 
+	100% { top: $tag41a;}
 }
 @include keyframes(tag42) {
-	0% { top: 320px;}
-	75% { top: 325px;} 
-	100% { top: 320px;}
+	0% { top: $tag42a;}
+	75% { top: $tag42b;} 
+	100% { top: $tag42a;}
 }
 // Section 7
 
