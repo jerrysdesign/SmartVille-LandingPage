@@ -219,6 +219,8 @@ body {
 		@include size(114px 20px);
 		@include background-size(cover);
 		margin-top: 5px;
+		@extend %fr;
+		margin-left: 20px;
 	}
 }
 .color_bar {
