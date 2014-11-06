@@ -524,7 +524,7 @@ section {
 	background-position: left top;
 }
 .slide-2__bg{
-	// background-image: url(#{$imagesPath}/point-finger.png);
+	//background-image: url(#{$imagesPath}/point-finger.png);
 	background-image: url(#{$imagesPath}/thief.png);
 	@extend %no-repeat;
 }
@@ -533,8 +533,8 @@ section {
 	@extend %no-repeat;
 }
 .slide-4__bg{
-	//background-image: url(#{$imagesPath}/robot.png);
-	background-image: url(#{$imagesPath}/woman-muscled.png);
+	background-image: url(#{$imagesPath}/robot.png);
+	//background-image: url(#{$imagesPath}/woman-muscled.png);
 	@extend %no-repeat;
 }
 .text-a,.text-b,.text-c,.text-d {
@@ -836,7 +836,7 @@ section {
 	top: 0;
 	left: 0;
 	.current & {
-		@include animation(icon1 3s linear infinite);
+		@include animation(icon1 6s linear infinite);
 	}
 }
 .icon-002 {
@@ -844,7 +844,7 @@ section {
 	top: 130px;
 	left: 0;
 	.current & {
-		@include animation(icon2 3s linear infinite);
+		@include animation(icon2 6s linear infinite);
 	}
 }
 .icon-003 {
@@ -852,7 +852,7 @@ section {
 	top: 260px;
 	left: 0;
 	.current & {
-		@include animation(icon3 3s linear infinite);
+		@include animation(icon3 6s linear infinite);
 	}
 }
 .icon-004 {
@@ -860,7 +860,7 @@ section {
 	top: 0;
 	right: 0;
 	.current & {
-		@include animation(icon4 3s linear infinite);
+		@include animation(icon4 6s linear infinite);
 	}
 }
 .icon-005 {
@@ -868,7 +868,7 @@ section {
 	top: 130px;
 	right: 0;
 	.current & {
-		@include animation(icon5 3s linear infinite);
+		@include animation(icon5 6s linear infinite);
 	}
 }
 .icon-006 {
@@ -876,7 +876,7 @@ section {
 	top: 260px;
 	right: 0;
 	.current & {
-		@include animation(icon6 3s linear infinite);
+		@include animation(icon6 6s linear infinite);
 	}
 }
 .icon-wifi {
@@ -933,32 +933,38 @@ $centerY: 130px;
 
 @include keyframes(icon1) {
 	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-	85% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	35% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(icon2) {
 	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-	85% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	35% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(icon3) {
 	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-	85% { top: 260px; left: 0;opacity: .75;@include transform(rotate(0deg));}
+	35% { top: 260px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% { top: 260px; left: 0;opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(icon4) {
 	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-	85% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	35% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% {top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(icon5) {
 	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-	85% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	35% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(icon6) {
 	0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-	85% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	35% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+	95% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
 	100% { opacity: 0;@include transform (scale(1.5));}
 }
 @include keyframes(fadeInOut) {
