@@ -140,7 +140,7 @@ body {
 			left: 40px;
 		}
 		&.gogo {
-			
+			@include animation(GOSECTION2 .75s ease-out);
 			-webkit-animation: GOSECTION2 .75s ease-out;
 			// @include ;
 		}

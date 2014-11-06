@@ -34,6 +34,51 @@
 
 
 // ------------------------------------------------------------
+// Prefixer
+// ------------------------------------------------------------
+@mixin prefixer ($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			@if $prefix-for-webkit {
+				-webkit-#{$property}: $value;
+			}
+		}
+		@else if $prefix == moz {
+			@if $prefix-for-mozilla {
+				-moz-#{$property}: $value;
+			}
+		}
+		@else if $prefix == ms {
+			@if $prefix-for-microsoft {
+				-ms-#{$property}: $value;
+			}
+		}
+		@else if $prefix == o {
+			@if $prefix-for-opera {
+				-o-#{$property}: $value;
+			}
+		}
+		@else if $prefix == spec {
+			@if $prefix-for-spec {
+				#{$property}: $value;
+			}
+		}
+		@else  {
+			@warn "Unrecognized prefix: #{$prefix}";
+		}
+	}
+}
+
+@mixin disable-prefix-for-all() {
+	$prefix-for-webkit:    false;
+	$prefix-for-mozilla:   false;
+	$prefix-for-microsoft: false;
+	$prefix-for-opera:     false;
+	$prefix-for-spec:      false;
+}
+
+
+// ------------------------------------------------------------
 // Transitions
 // ------------------------------------------------------------
 
@@ -46,36 +91,85 @@
 // Keyframes
 // ------------------------------------------------------------
 
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
-  @-o-keyframes #{$animation-name} {
-		@content;
+@mixin keyframes($name) {
+	$original-prefix-for-webkit:    $prefix-for-webkit;
+	$original-prefix-for-mozilla:   $prefix-for-mozilla;
+	$original-prefix-for-microsoft: $prefix-for-microsoft;
+	$original-prefix-for-opera:     $prefix-for-opera;
+	$original-prefix-for-spec:      $prefix-for-spec;
+
+	@if $original-prefix-for-webkit {
+		@include disable-prefix-for-all();
+		$prefix-for-webkit: true;
+		@-webkit-keyframes #{$name} {
+			@content;
+		}
 	}
-  @keyframes #{$animation-name} {
-    @content;
-  }
+	@if $original-prefix-for-mozilla {
+		@include disable-prefix-for-all();
+		$prefix-for-mozilla: true;
+		@-moz-keyframes #{$name} {
+			@content;
+		}
+	}
+
+	$prefix-for-webkit:    $original-prefix-for-webkit;
+	$prefix-for-mozilla:   $original-prefix-for-mozilla;
+	$prefix-for-microsoft: $original-prefix-for-microsoft;
+	$prefix-for-opera:     $original-prefix-for-opera;
+	$prefix-for-spec:      $original-prefix-for-spec;
+
+	@if $original-prefix-for-spec {
+		@keyframes #{$name} {
+			@content;
+		}
+	}
 }
 
 // ------------------------------------------------------------
 // Animation
 // ------------------------------------------------------------
 
-@mixin animate-prefixer($property, $value...) {
-	-webkit-#{$property}: unquote($value);
-	-moz-#{$property}: unquote($value);
-	-ms-#{$property}: unquote($value);
-	-o-#{$property}: unquote($value);
-	#{$property}: unquote($value);
+// @mixin animate-prefixer($property, $value...) {
+// 	-webkit-#{$property}: unquote($value);
+// 	-moz-#{$property}: unquote($value);
+// 	-ms-#{$property}: unquote($value);
+// 	-o-#{$property}: unquote($value);
+// 	#{$property}: unquote($value);
+// }
+@mixin animation ($animations...) {
+	@include prefixer(animation, $animations, webkit moz spec);
 }
-
+// Individual Animation Properties
+@mixin animation-name ($names...) {
+	@include prefixer(animation-name, $names, webkit moz spec);
+}
+@mixin animation-duration ($times...) {
+	@include prefixer(animation-duration, $times, webkit moz spec);
+}
+@mixin animation-timing-function ($motions...) {
+// ease | linear | ease-in | ease-out | ease-in-out
+	@include prefixer(animation-timing-function, $motions, webkit moz spec);
+}
+@mixin animation-iteration-count ($values...) {
+// infinite | <number>
+	@include prefixer(animation-iteration-count, $values, webkit moz spec);
+}
+@mixin animation-direction ($directions...) {
+// normal | alternate
+	@include prefixer(animation-direction, $directions, webkit moz spec);
+}
+@mixin animation-play-state ($states...) {
+// running | paused
+	@include prefixer(animation-play-state, $states, webkit moz spec);
+}
+@mixin animation-delay ($times...) {
+	@include prefixer(animation-delay, $times, webkit moz spec);
+}
+@mixin animation-fill-mode ($modes...) {
+// none | forwards | backwards | both
+	@include prefixer(animation-fill-mode, $modes, webkit moz spec);
+}
 // ------------------------------------------------------------
 // Link hover styles
 // ------------------------------------------------------------
@@ -336,18 +430,18 @@
 }
 
 @mixin placeholder($color: $input-color-placeholder) {
-  :-moz-placeholder            { color: $color; } // Firefox 4-18
-  ::-moz-placeholder           { color: $color; } // Firefox 19+
-  :-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
-  ::-webkit-input-placeholder  { color: $color; padding: 2px; } // Safari and Chrome
+	:-moz-placeholder            { color: $color; } // Firefox 4-18
+	::-moz-placeholder           { color: $color; } // Firefox 19+
+	:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+	::-webkit-input-placeholder  { color: $color; padding: 2px; } // Safari and Chrome
 }
 
 // Retina
 @mixin image-retina-image($image) {
-  background-image: image-url($image);
+	background-image: image-url($image);
 
-  // If we have a retina image then add styles for it too
-  @if file_exists(retina_filename($image)) {
+	// If we have a retina image then add styles for it too
+	@if file_exists(retina_filename($image)) {
 	@media
 	only screen and (-webkit-min-device-pixel-ratio: 2),
 	only screen and (   -moz-min-device-pixel-ratio: 2),
@@ -356,10 +450,10 @@
 	only screen and (        min-device-pixel-ratio: 2),
 	only screen and (                min-resolution: 192dpi),
 	only screen and (                min-resolution: 2dppx) {
-	  @include background-size(image-width($image) auto);
-	  background-image: image-url(retina_filename($image));
+		@include background-size(image-width($image) auto);
+		background-image: image-url(retina_filename($image));
 	}
-  }
+	}
 }
 
 
