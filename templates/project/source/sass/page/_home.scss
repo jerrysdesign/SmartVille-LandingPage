@@ -99,7 +99,7 @@ body {
 	@extend %screen-00;
 	background: url(#{$imagesPath}/sv01.png);
 	background-size: cover;
-	@extend %is-show;
+	@extend %is-block;
 	top: 0;
 }
 .screen-02 {
@@ -328,7 +328,7 @@ section {
 		margin-top: .3em;
 		clear: both;
 		content: '';
-		@include is-show;
+		@include is-block;
 		@extend %center-block;
 		@include size(100px 4px);
 		border-radius: 2px;
@@ -549,7 +549,7 @@ section {
 .gos2 {
 	color: #fff;
 	background-color: $primary;
-	@extend %is-show;
+	@extend %is-inline-block;
 	padding: 5px 15px;
 	font-size: 1.25em;
 	@extend %cp;
@@ -578,6 +578,7 @@ section {
 	li {
 		position: relative;
 		a {
+
 			@extend %is-show;
 			outline: none;
 			@include transition(all .3s);
@@ -585,8 +586,11 @@ section {
 		}
 		.item-icon {
 			position: relative;
-			@include border-radius(100%);
+			overflow: hidden;
+			@extend %is-inline-block;
 			@include size(72px);
+			background-color: rgba(255, 255, 255, 0.25);
+			@include border-radius(100%);
 			@extend %center-block;
 			@extend %is-show;
 			border: 3px solid $black-20;
@@ -606,7 +610,29 @@ section {
 			margin-left: $icon-size/2*-1;
 			@include size($icon-size);
 			@include transition(all .3s);
-			@extend %ir;
+			svg {
+				position: absolute;
+				@extend %is-inline-block;
+				fill: $black-20;
+				top: 50%;
+				left: 50%;
+				opacity: 1;
+				$icon-size: 64px;
+				margin-left: $icon-size/2*-1;
+				margin-top: $icon-size/2*-1;
+				@include size($icon-size);
+				@include transition(all .3s);
+				@extend %ir;
+			}
+			span {
+				position: absolute;
+				text-align: center;
+				@extend %is-inline-block;
+				@extend %center-block;
+				width: 100%;
+				top: 110%;
+				left: 0;
+			}
 		}
 		&:hover, &.active {
 			a {
@@ -655,7 +681,7 @@ section {
 	font-size: 1.5em;
 	font-weight: bold;
 	color: $primary;
-	@extend %is-show-inline;
+	@extend %is-inline-block;
 }
 // Section 2-2
 .advantages {
@@ -676,7 +702,7 @@ section {
 		padding: 3px 10px;
 		background-color: $primary;
 		color: #fff;
-		@extend %is-show-inline;
+		@extend %is-inline-block;
 		@include border-radius(2px);
 		margin-bottom: .6em;
 	}
@@ -1027,7 +1053,7 @@ $centerY: 130px;
 		
 	}
 	li a:hover, li.active a {
-		@include is-show;
+		@include is-block;
 		color: #fff;
 		background-color: #00ADEE;
 	}
@@ -1080,7 +1106,7 @@ $tag42a: 310px;
 		font-family: $fontTC;
 		background: $primary;
 		min-width: 220px;
-		@extend %is-show-inline;
+		@extend %is-inline-block;
 		bottom: 50%;
 		margin-bottom: -4em;
 		margin-left: -50px;
@@ -1368,7 +1394,7 @@ $tag42b: $tag42a+$tagH;
 		@include size(16px);
 		background-color: #fff;
 		@include box-shadow(0 0 5px $black-15);
-		@extend %is-show;
+		@extend %is-inline-block;
 		&.active,&:hover {
 			background-color: #F9A33A;
 		}
@@ -1396,6 +1422,5 @@ $tag42b: $tag42a+$tagH;
 		&:hover {
 			background: url(#{$imagesPath}/controls.png) no-repeat -32px -32px;
 		}
-
 	}
 }

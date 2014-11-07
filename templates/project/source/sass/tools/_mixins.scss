@@ -563,15 +563,20 @@
 // ------------------------------------------------------------
 
 @mixin is-hidden {
-	display: none !important;
+	display: none;
 	visibility: hidden;
 }
 
 @mixin is-show {
 	display: block;
+	visibility: visible;
 }
 
-@mixin is-show-inline {
+@mixin is-block {
+	display: block;
+}
+
+@mixin is-inline-block {
 	display: inline;
 	display: inline-block;
 }
@@ -666,11 +671,11 @@
 	}
 }
 
-@mixin is-show-inle-block {
+@mixin is-show-block-inle-block {
 	vertical-align: middle;
 	> div, >li, dd, dt {
 		vertical-align: middle;
-		@include is-show-inline;
+		@include is-show-block-inline;
 	}
 }
 

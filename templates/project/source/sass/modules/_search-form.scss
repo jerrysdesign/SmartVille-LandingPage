@@ -6,7 +6,7 @@ $paginationLinkColor: #7a99d9;
 }
 .page {
 	@extend %pagination;
-	@include is-show-inline;
+	@include is-inline-block;
 	left: 0;
 	li {
 		height: 20px;
