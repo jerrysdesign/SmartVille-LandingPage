@@ -120,8 +120,12 @@
 	@include is-show;
 }
 
-.is-show-inline, %is-show-inline {
-	@include is-show-inline;
+.is-block, %is-block {
+	@include is-block;
+}
+
+.is-inline-block, %is-inline-block {
+	@include is-inline-block;
 }
 
 .is-table, %is-table {
@@ -221,13 +225,4 @@
 // Clear float hack
 .clearfix, %pie-clearfix {
 	@include pie-clearfix;
-}
-
-%line-block
-{
-	@include is-show-inline;
-}
-
-%is-show-inle-block {
-	@include is-show-inle-block;
 }

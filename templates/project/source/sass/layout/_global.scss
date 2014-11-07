@@ -24,7 +24,7 @@ body {
 %logo {
   @extend %ir;
   color: transparent !important;
-  @extend %is-show-block;
+  @extend %is-inline-block;
 }
 .smv-logo {
   @include size(206px 54px);

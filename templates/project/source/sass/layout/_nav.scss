@@ -7,8 +7,8 @@
 	@include is-hidden;
 }
 #menu_right {
-	@include at-breakpoint($ipad) {@include is-show-block;}
-	@include at-breakpoint($desktop) {@include is-show-block;}
+	@include at-breakpoint($ipad) {@include is-block;}
+	@include at-breakpoint($desktop) {@include is-block;}
 	position:fixed;
 	top: 300px;
 	right: 20px;
@@ -20,11 +20,11 @@
 	@include box-shadow(0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30));
 }
 .navigation-right {
-	@include at-breakpoint($ipad) {@include is-show-block;}
-	@include at-breakpoint($desktop) {@include is-show-block;}
+	@include at-breakpoint($ipad) {@include is-block;}
+	@include at-breakpoint($desktop) {@include is-block;}
 	li {
 		@extend %ir;
-		@extend %is-show-block;
+		@extend %is-inline-block;
 		@include size(52px 32px);
 		@extend %cp;
 		background: url(#{$imagesPath}/menu_right_circle.svg);
@@ -40,14 +40,14 @@
 }
 // Menu Top
 .navigation-top {
-	@include at-breakpoint($ipad) {@include is-show-block;}
-	@include at-breakpoint($desktop) {@include is-show-block;}
+	@include at-breakpoint($ipad) {@include is-block;}
+	@include at-breakpoint($desktop) {@include is-block;}
 	@extend %navbar;
 	@extend %navbar-right;
 	margin-top: 42px;
 	ul > li {
 		margin-left: 4px;
-		@extend %is-show-block;
+		@extend %is-inline-block;
 		padding: 0 15px;
 		color: $black-80;
 		font-size: 1.2em;
