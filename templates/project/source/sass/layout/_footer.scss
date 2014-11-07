@@ -48,3 +48,8 @@
 		clear: both;
 	}
 }
+@each $animal in add, phone, mail {
+	.icon-#{$animal} {
+		background-image: url(#{$imagesPath}/icon-#{$animal}.svg);
+	}
+}
