@@ -293,26 +293,10 @@ section {
 	position: relative;
 	background-attachment: fixed;
 	@include pie-clearfix;
+		padding: 100px 0px;
 	&.bg-color {
-		background-attachment: scroll;
-		padding: 50px 0px;
-		&:before {
-			@extend %curved;
-			top: -50px;
-		}
-		&:after {
-			@extend %curved;
-			bottom: -50px;
-		}
-		&:before, &:after {
-			z-index: 1;
-			@extend %bg-color;
-			@include transform (rotate(-2.5deg));
-		}
 	}
 	&.bg-image {
-		padding: 250px 0px;
-		background-size: cover;
 	}
 	.container {
 		position: relative;
@@ -321,32 +305,16 @@ section {
 }
 .bg-white {
 	background: #fff;
-	@include transform(translateZ(1px));
-	&:before, &:after {
-		background: #fff;
-	}
-	.container {
-
-	}
 }
 
 .bg-gray {
 	background: #EFF2F5;
-	margin-top: 50px;
-	&:before, &:after {
-		background: #EFF2F5;
-	}
-	.container {
-		padding: 50px 0;
-	}
 }
 .bg-image {
 	@extend %bg-gradient;
 }
 %bg-gradient {
 	background-image: -svg(linear-gradient(-134deg, #349899 0%, #4AAF99 44%, #4AAF99 44%, #4AAF99 44%, #4DB29A 50%, #50B59A 56%, #66CC9A 100%));
-	margin-top: -100px;
-	margin-bottom: -100px;
 	&:before, &:after {
 		background: #EFF2F5;
 	}
@@ -357,7 +325,6 @@ section {
 	position: relative;
 	&:after {
 		margin-top: .3em;
-		// margin-bottom: .25em;
 		clear: both;
 		content: '';
 		@include is-show;
@@ -397,12 +364,10 @@ section {
 // Main Slider Nav
 #section-1 {
 	z-index: index($z-index, section1);
-	// &:after {
-	//   @include transform (rotate(0));
-	// }
+	margin-top: -30px;
+	padding: 50px 0;
 	.container {
-		margin-top: -25px;
-		// margin-bottom: -50px;
+
 	}
 }
 
@@ -411,7 +376,6 @@ section {
 #section-2{
 	z-index: index($z-index, section2);
 	.container {
-		// padding-bottom: 200px;
 	}
 }
 
@@ -445,7 +409,7 @@ section {
 #section-7{
 	z-index: index($z-index, section7);
 	.container {
-		margin-top: -150px;
+		// margin-top: -150px;
 	}
 }
 // SECTION FOOTER
@@ -455,7 +419,7 @@ section {
 	&.bg-color {
 		@extend %bg-gradient;
 	}
-	padding-bottom: 150px;
+	// padding-bottom: 150px;
 }
 
 
