@@ -1,3 +1,66 @@
 /* =======================
-   Layout/Nav
-   ======================= */
+	 Layout/Nav
+	 ======================= */
+
+// Menu Right
+#menu_right {
+	@include is-hidden;
+}
+#menu_right {
+	@include at-breakpoint($ipad) {@include is-show-block;}
+	@include at-breakpoint($desktop) {@include is-show-block;}
+	position:fixed;
+	top: 300px;
+	right: 20px;
+	z-index: 99999;
+	border-radius: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: rgba(0,0,0,0.10);
+	@include box-shadow(0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30));
+}
+.navigation-right {
+	@include at-breakpoint($ipad) {@include is-show-block;}
+	@include at-breakpoint($desktop) {@include is-show-block;}
+	li {
+		@extend %ir;
+		@extend %is-show-block;
+		@include size(52px 32px);
+		@extend %cp;
+		background: url(#{$imagesPath}/menu_right_circle.svg);
+		&:hover {
+			@include transform (scale(1.2));
+		}
+		&.active {
+			background: url(#{$imagesPath}/menu_right_circle_selected.svg);
+		}
+	}
+}
+@include at-breakpoint($ipad) {
+}
+// Menu Top
+.navigation-top {
+	@include at-breakpoint($ipad) {@include is-show-block;}
+	@include at-breakpoint($desktop) {@include is-show-block;}
+	@extend %navbar;
+	@extend %navbar-right;
+	margin-top: 42px;
+	ul > li {
+		margin-left: 4px;
+		@extend %is-show-block;
+		padding: 0 15px;
+		color: $black-80;
+		font-size: 1.2em;
+		@include border-radius(15px);
+		@include transition (background 0.3s ease);
+		@extend %cp;
+		&:hover {
+			background-color: #e2e2e2;
+		}
+		&.active {
+			color: #fff;
+			background-color: $primary;
+			@include transition (background 0.3s ease);
+		}
+	}
+}

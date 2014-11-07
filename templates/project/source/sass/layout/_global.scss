@@ -1,0 +1,43 @@
+/* =======================
+   Layout/Global
+   ======================= */
+
+body {
+  // position: relative;
+  text-align: center; //RWD MOBILE FIRST
+  color: $black-60;
+  font-family: $baseFontFamily;
+}
+
+// Browse Happy
+.browsehappy {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  background-color: $colorSunFlower;
+  border: 4px solid $colorCarrot;
+  color: $colorWetAsphalt;
+  z-index: 9999;
+  a { font-weight: bolder; text-decoration: underline; color: #fff;}
+}
+
+%logo {
+  @extend %ir;
+  color: transparent !important;
+  @extend %is-show-block;
+}
+.smv-logo {
+  @include size(206px 54px);
+  background-image: url(#{$imagesPath}/smartville-logo.svg);
+  background-size: 206px auto;
+  @extend %no-repeat;
+  @extend %logo;
+}
+.logo-shuttle--w {background-image: url(#{$imagesPath}/logo-shuttle--w.svg);@extend %logo;}
+.logo-shuttle {background-image: url(#{$imagesPath}/logo-shuttle.svg);@extend %logo;}
+.logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);@extend %logo;}
+
+%cp {cursor: pointer;}
+%no-repeat {
+  background-repeat: no-repeat;
+}

@@ -1,11 +1,50 @@
 /* =======================
-   Layout/Footer
-   ======================= */
+	 Layout/Footer
+	 ======================= */
 
-.footer {
-
+// footer
+%logo {
+	@extend %ir;
+	@extend %is-show-block;
+}
+.logo-shuttle--w {
+	@extend %logo;
+	@include size(120px 21px);
+}
+.logo-smartville--w {
+	@extend %logo;
+	@include size(204px 53px);
 }
 .copyright {
-	@include span-columns(12, 12);
-	padding-top: 5px;
+	color: #fff;
+	a {
+		color: #fff;
+	}
+	i {
+		@include size(16px);
+		display: inline-block;
+		background-repeat:no-repeat;
+		background-position: center; 
+
+		margin-right: .5em;
+	}
+	li {
+		@extend %is-show-block;
+		text-align: center;
+		vertical-align: bottom;
+		margin-bottom: .25em;
+	}
+	.logo-shuttle--w {
+		display: inline-block;
+		@include size(120px 21px);
+	}
+	.logo-smartville--w {
+		display: inline-block;
+		@include size(204px 53px);
+	}
+	.logo-slogan {
+		color: #fff;
+		display: inline-block;
+		clear: both;
+	}
 }
