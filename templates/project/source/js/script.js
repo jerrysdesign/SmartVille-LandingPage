@@ -396,3 +396,4 @@ function layoutdebug(){
 	layoutdebug('*');
 	$('body').addClass("debug");
 }
+//console.log('cptest')
