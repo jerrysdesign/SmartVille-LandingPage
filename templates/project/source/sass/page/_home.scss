@@ -1194,52 +1194,6 @@ $tag42b: $tag42a+$tagH;
 	}
 }
 
-//test svg
-
-.iconic-lightbulb {
-	@extend %cp;
-	* {
-		-webkit-transition: .4s;
-		-moz-transition: .4s;
-		transition: .4s;
-	}
-	.icon-container {
-		fill: #fff;
-		stroke-width: 6;
-		stroke: #fff;
-		-webkit-transition: .3s;
-		-moz-transition: .3s;
-		transition: .3s;
-	}
-	&:hover .icon-container {
-		fill: #fff8db;
-		-webkit-transition: 2s;
-		transition: 2s;
-		-webkit-transition: 2s;
-	}
-	.iconic-lightbulb-light * {
-		stroke-width: 16;
-		stroke: #ddd;
-		fill: none;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-	&:hover .iconic-lightbulb-light * {
-		stroke: #fc0;
-		stroke-width: 32;
-	}
-	.iconic-lightbulb-base {
-		fill: #666;
-	}
-	.iconic-lightbulb-screws * {
-		fill: none;
-		stroke-width: 16;
-		stroke: #333;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-}
-
 .sticky {
   position: fixed;
   top: 0;
