@@ -155,11 +155,11 @@ $(function(){
 			$hpGroup.removeClass().addClass("hp-group");
 		}
 		// senction = 0
-		if ( winScrollTop <= 206 ) {
+		if ( winScrollTop <= 206-65 ) {
 			$('.hand--l, .hand--r').removeClass("hide");
 		}
 		// senction 0 to section 1
-		if ( winScrollTop > 207 ){
+		if ( winScrollTop > 207-65 ){
 			$('.hand--l, .hand--r').addClass("hide");
 		}
 		if (winScrollTop < 508) {
