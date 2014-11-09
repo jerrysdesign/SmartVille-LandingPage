@@ -375,6 +375,23 @@ $(function(){
 	});
 });
 
+// 瀏覽器視窗 663(扣掉瀏覽器工具列)時
+$(function(){
+	wh = $(window).height();
+	if (wh < 663) {
+		var sss1H;
+		function sliderHeight(){
+			$('#section-0').css({height:wh});
+			sss1H = $('#section-1').css({'padding-top':'25px','padding-bottom':'25px'});
+			sss1H = $('#section-1').outerHeight();
+			$('#section-1').css('margin-top',sss1H*-1);
+		}
+		sliderHeight();
+	};
+});
+$(window).bind('resize',function() {
+  sliderHeight();
+});
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
