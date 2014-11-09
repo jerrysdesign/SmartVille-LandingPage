@@ -271,6 +271,7 @@ body {
 
 section {
 	z-index: index($z-index, section);
+	@extend %clearfix;
 }
 
 
@@ -293,7 +294,7 @@ section {
 	position: relative;
 	background-attachment: fixed;
 	@include pie-clearfix;
-		padding: 100px 0px;
+		padding: 80px 0px;
 	&.bg-color {
 	}
 	&.bg-image {
@@ -320,7 +321,7 @@ section {
 	}
 }
 .section-title {
-	font-size: 3em;
+	font-size: 2.8em;
 	line-height: 1;
 	position: relative;
 	&:after {
@@ -364,10 +365,9 @@ section {
 // Main Slider Nav
 #section-1 {
 	z-index: index($z-index, section1);
-	margin-top: -30px;
+	margin-top: -80px;
 	padding: 50px 0;
 	.container {
-
 	}
 }
 
@@ -375,6 +375,7 @@ section {
 // 智慧家居解決方案
 #section-2{
 	z-index: index($z-index, section2);
+	padding-bottom: 100px;
 	.container {
 	}
 }
@@ -416,6 +417,7 @@ section {
 // FOOTER
 #footer {
 	z-index: index($z-index, footer);
+	padding: 80px 0 50px 0;
 	&.bg-color {
 		@extend %bg-gradient;
 	}
