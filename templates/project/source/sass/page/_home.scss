@@ -562,63 +562,59 @@ section {
 	position: relative;
 }
 #main-slider-nav {
-	@include pre(2,12);
-	@include span-columns(8,12);//HD
-	li {
-		position: relative;
-		@include span-columns(2,8);//HD
-		&:last-child { @include nth-omega(last);}
-		a {
-			overflow: hidden;
-			@extend %is-show;
-			@include size(72px);
-			background-color: rgba(255, 255, 255, 0.25);
-			@include border-radius(100%);
-			@extend %center-block;
-			outline: none;
-			border: 3px solid $black-20;
-			color: $black-20;
-			@include transition(all .3s);
-			svg {
-				position: absolute;
-				@extend %is-show;
-				fill: $black-20;
-				top: 50%;
-				left: 50%;
-				opacity: 1;
-				$icon-size: 64px;
-				margin-left: $icon-size/2*-1;
-				margin-top: $icon-size/2*-1;
-				@include size($icon-size);
-				@include transition(all .3s);
-				@extend %ir;
-			}
-			span {
-				position: absolute;
-				text-align: center;
-				@extend %is-show;
-				@extend %center-block;
-				width: 100%;
-				top: 110%;
-				left: 0;
-			}
+	@include at-breakpoint($ipad) {
+		@include span-columns(8,8);
+		li {
+			@include span-columns(2);
+			&:last-child { @include nth-omega(last);}
 		}
 	}
+	@include at-breakpoint($desktop) {
+		@include pre(2,12);
+		@include span-columns(8,12);
+	}
 	li {
+		position: relative;
+		a {
+			@extend %is-show;
+			outline: none;
+			@include transition(all .3s);
+			color: $black-20;
+		}
+		.item-icon {
+			position: relative;
+			@include border-radius(100%);
+			@include size(72px);
+			@extend %center-block;
+			@extend %is-show;
+			border: 3px solid $black-20;
+		}
+		.item-text {
+			text-align: center;
+			@extend %is-show;
+			@extend %center-block;
+		}
+		svg {
+			position: absolute;
+			@extend %is-show;
+			$icon-size: 64px;
+			fill: $black-20;
+			opacity: 1;
+			left: 50%;
+			margin-left: $icon-size/2*-1;
+			@include size($icon-size);
+			@include transition(all .3s);
+			@extend %ir;
+		}
 		&:hover, &.active {
 			a {
-				border: 3px solid $primary;
 				color: $primary;
-				svg {
-					fill: $primary;
-				}
 			}
-		}
-		.active {
-			a:hover {
-				svg {
-					fill: $primary;
-				}
+			.item-icon {
+				border: 3px solid $primary;
+			}
+			svg {
+				fill: $primary;
 			}
 		}
 	}
