@@ -30,9 +30,10 @@ $page-container: ".container";
 	}
 }
 
-.debug {
-	$grid-background-column-color: rgba(#97D561,.2);
-	.container {
+// 幫助排版的背景，可以拿掉 
+$grid-background-column-color: rgba(#97D561,.5);
+.container {
+	.debug & {
 		@include susy-grid-background;
 		@include at-breakpoint($ipad) {
 			@include susy-grid-background;
