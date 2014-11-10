@@ -749,44 +749,25 @@ section {
 .product {
 	@include pre(1,12);
 	@include span-columns(10,12);
+
 }
-.tooltip-item {
-	@include size(120px);
-	top: 50%;
-	margin: -60px 0 0 -60px;
-	position: absolute;
-	border-radius: 0;
-	border: none;
-	-webkit-animation: pulse 0.6s infinite alternate;
-	animation: pulse 0.6s infinite alternate;
-}
-.tooltip-content {
-	position: absolute;
-	background: $primary;
-	z-index: 9999;
-	width: auto;
-	min-width: 4em;
-	display: inline-block;
-	bottom: 50%;
-	margin-bottom: -4em;
-	margin-left: -40%;
-	padding: .5em 1em;
-	border-radius: 4px;
-	text-align: center;
-	color: #fff;
-	opacity: 0;
-	cursor: default;
-	pointer-events: none;
-	-webkit-font-smoothing: antialiased;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	&:after {
-		display: none;
-	}
+// .firance {
+// 	@include span-columns(4,10);
+
+// 	img {
+// 		@include fl;
+// 		margin-right: -20px;
+// 		margin-bottom: -50px;
+// 	}
+// }
+.package {
+	// @include span-columns(6 omega,10);
 }
 .ss {
 	font-size: .75em;
 	color: $white;
 	padding: 15px 20px;
+	margin-top: 10px;
 	// margin-bottom: -40px;
 	@include border-radius(5px);
 	border: 1px solid rgba($white,.5);
