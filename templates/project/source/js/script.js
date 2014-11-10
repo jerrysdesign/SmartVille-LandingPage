@@ -297,55 +297,15 @@ $(function(){
 	// GoToByScroll
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
-
-		function offSetKey1(){
-			if ($win.scrollTop() < goal){
-				var goalPx = goal + 50;
-				// console.log("goalPxif"+"="+ goalPx);
-			}
-			else{
-				var goalPx = goal - 50;
-				// console.log("goalPxelse"+"="+ goalPx);
-			}
-			htmlbody.stop().animate({
-				scrollTop: goalPx
-			}, 1500, 'easeInOutQuint');
+		if ($win.scrollTop() < goal){
+			var goalPx = goal + 50;
 		}
-		function offSetKey2(){
-			if ($win.scrollTop() < goal){
-				var goalPx = goal + 204;
-				// console.log("goalPxif"+"="+ goalPx);
-			}
-			else{
-				var goalPx = goal + 104 ;
-				// console.log("goalPxelse"+"="+ goalPx);
-			}
-			htmlbody.stop().animate({
-				scrollTop: goalPx
-			}, 1500, 'easeInOutQuint');
+		else{
+			var goalPx = goal - 50;
 		}
-
-		if (datasection == 0){
-			offSetKey1();
-		}
-		if (datasection == 1){
-			offSetKey1();
-		}
-		if (datasection == 2){
-			offSetKey1();
-		}
-		if (datasection == 3){
-			offSetKey2();
-		}
-		if (datasection == 4){
-			offSetKey1();
-		}
-		if (datasection == 5){
-			offSetKey1();
-		}
-		if (datasection == 6){
-			offSetKey2();
-		}
+		htmlbody.stop().animate({
+			scrollTop: goalPx
+		}, 1500, 'easeInOutQuint');
 	}
 
 	// Logo
