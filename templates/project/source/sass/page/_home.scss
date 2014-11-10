@@ -244,8 +244,8 @@ body {
 	// border-bottom: 5px solid $primary;
 }
 .navigation-top {
-	@include at-breakpoint($ipad) {@extend %is-show;}
-	@include at-breakpoint($desktop) {@extend %is-show;}
+	// @include at-breakpoint($ipad) {@extend %is-show;}
+	// @include at-breakpoint($desktop) {@extend %is-show;}
 	@extend %navbar;
 	@extend %navbar-right;
 	margin-top: 42px;
@@ -358,6 +358,7 @@ section {
 	height: 620px;
 	.container {
 		position: relative;
+		@include with-grid-settings(12,3.75em,1.25em,1.25em);
 	}
 }
 
@@ -368,6 +369,7 @@ section {
 	margin-top: -80px;
 	padding: 50px 0;
 	.container {
+
 	}
 }
 
@@ -576,21 +578,22 @@ section {
 	position: relative;
 }
 #main-slider-nav {
-	@include at-breakpoint($ipad) {
-		@include span-columns(8,8);
-		li {
-			@include span-columns(2);
-			&:last-child { @include nth-omega(last);}
-		}
-	}
-	@include at-breakpoint($desktop) {
-		@include pre(2,12);
-		@include span-columns(8,12);
-	}
+	// @include at-breakpoint($ipad) {
+	// 	@include span-columns(8,8);
+	// 	li {
+	// 		@include span-columns(2);
+	// 		&:last-child { @include nth-omega(last);}
+	// 	}
+	// }
+	// @include at-breakpoint($desktop) {
+	@include pre(2,12);
+	@include span-columns(8,12);
+	// }
 	li {
 		position: relative;
+		@include span-columns(2,8);
+		&:last-child { @include nth-omega(last);}
 		a {
-
 			@extend %is-show;
 			outline: none;
 			@include transition(all .3s);

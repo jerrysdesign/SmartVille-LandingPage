@@ -21,13 +21,13 @@
 @include border-box-sizing;
 
 // 基本設定
-$total-columns  : 5;
+$total-columns  : 12;
 $column-width   : 3.75em;
 $gutter-width   : 1.25em;
 $grid-padding   : $gutter-width;
 
 // add media
-$ipad           : 8;  // min-width 641px 寬度超過 641px 後的欄位數量
+$ipad           : 12;  // min-width 641px 寬度超過 641px 後的欄位數量
 $desktop        : 12; // min-width 941px 寬度超過 941px 後的欄位數量
 
 // More info here: http://susydocs.oddbird.net/en/latest/settings/
