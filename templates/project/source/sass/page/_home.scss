@@ -402,6 +402,7 @@ section {
 #section-6{
 	z-index: index($z-index, section6);
 	z-index: 0;
+	// padding-bottom: 40px;
 	.container {
 		//padding: 200px 0;
 	}
@@ -409,6 +410,7 @@ section {
 // 使用情境
 #section-7{
 	z-index: index($z-index, section7);
+	padding-top: 40px;
 	.container {
 		// margin-top: -150px;
 	}
