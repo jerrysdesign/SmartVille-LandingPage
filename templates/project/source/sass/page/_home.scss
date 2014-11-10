@@ -764,15 +764,15 @@ section {
 	// @include span-columns(6 omega,10);
 }
 .ss {
-	font-size: .75em;
+ 	font-size: .75em;
 	color: $black-60;
-	padding: 15px 20px;
+ 	padding: 15px 20px;
 	margin-top: 10px;	
-	// margin-bottom: -40px;
-	@include border-radius(5px);
+ 	// margin-bottom: -40px;
+ 	@include border-radius(5px);
 	border: 1px solid $black-20;
-	@extend %center-block;
-	width: 50%;
+ 	@extend %center-block;
+ 	width: 50%;
 }
 // Section 4  
 
