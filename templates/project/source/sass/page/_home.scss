@@ -692,6 +692,7 @@ section {
 	position: relative;
 	min-height: 438px;
 }
+
 @for $i from 1 through 6 {
   .icon-00#{$i} { position: absolute; }
 }
@@ -700,6 +701,15 @@ section {
 }
 %icon-right {
 	right: 0;
+}
+.dot {
+	position: absolute;
+	@include size(100%);
+	background: url(#{$imagesPath}/dot.png) no-repeat center 16px;
+	min-height: 438px;
+	.current & {
+		@include animation(dotshow 6s linear infinite);
+	}
 }
 .icon-001 {
 	top: 0;
@@ -792,7 +802,12 @@ $centerY: 130px;
 	top: $centerY;
 	right: $centerX;
 }
-
+@include keyframes(dotshow) {
+	0% { opacity: 0;}
+	35% { opacity: .5;}
+	95% { opacity: 1;}
+	100% { opacity: 0;}
+}
 @include keyframes(icon1) {
 	0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
 	35% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
