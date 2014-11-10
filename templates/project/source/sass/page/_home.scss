@@ -765,12 +765,12 @@ section {
 }
 .ss {
 	font-size: .75em;
-	color: $white;
+	color: $black-60;
 	padding: 15px 20px;
-	margin-top: 10px;
+	margin-top: 10px;	
 	// margin-bottom: -40px;
 	@include border-radius(5px);
-	border: 1px solid rgba($white,.5);
+	border: 1px solid $black-20;
 	@extend %center-block;
 	width: 50%;
 }
