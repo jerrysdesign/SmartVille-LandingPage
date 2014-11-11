@@ -236,6 +236,9 @@ $colorLinkHover	: $colorRed;
 $fieldsBottom	: 1.6em;
 
 // Z-index
+$layoutLevel-1: page, loder;
+$layoutLevel-2: page;
+
 $layout-1: section, footer, header, logo;
 $z-index: footer, section3, section4, section0, section2, header, slidermask, pad, section1, section7, section6, section5 ;
 $elements: fixed-bg, img-cover, header-bar, navi, modals, tooltip;
