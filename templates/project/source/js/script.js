@@ -375,6 +375,26 @@ $(function(){
 	});
 });
 
+$(function() {
+
+	var $body = $('body'),
+			$content = $('.content-marsk'),
+			// $openbtn = $('#open-button'),
+			// $closebtn = $('#close-button' ),
+			$toggleMenu = $('#open-button,#close-button');
+			// isOpen = false;
+
+	$toggleMenu.click(function() {
+		$body.toggleClass("show-menu");
+	});
+
+	$content.click(function() {
+		if ($body.hasClass('show-menu')) {
+			$body.toggleClass("show-menu");
+		}
+	});
+});
+
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
