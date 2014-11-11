@@ -234,15 +234,8 @@ html.no-js lang="zh-TW"
 							
 					#section-7.section.bg-color.bg-white data-section="6"
 						.container.animated.wow.fadeIn data-wow-delay=".3s"
-							.scenetab style="z-index:1"
-								nav.tag-tab
-									ul
-										li.active: a href="javascript:;" Living Room
-										li: a href="javascript:;" Kitchen
-										li: a href="javascript:;" Bed Room
-										li: a href="javascript:;" Balcony
-							.tab_wrap
-								.aaa
+							.tab-wrap
+								.tab-wrap-inner
 									=render "partials/scene-svg"
 									ul.tag-tab-cont style="z-index:2"
 										li
@@ -343,6 +336,13 @@ html.no-js lang="zh-TW"
 														ul
 															li 居家安防管控
 															li 提出警訊
+							.scenetab style="z-index:1"
+								nav.tag-tab
+									ul
+										li.active: a href="javascript:;" Living Room
+										li: a href="javascript:;" Kitchen
+										li: a href="javascript:;" Bed Room
+										li: a href="javascript:;" Balcony
 
 					/! FOOTER
 					#footer.section.bg-image data-section="8"

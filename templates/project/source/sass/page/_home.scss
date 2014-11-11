@@ -901,8 +901,13 @@ $centerY: 130px;
 	background: transparent;
 }
 
-.tab_wrap  {
-	@include span-columns(9,12);
+.tab-wrap  {
+	min-width: 700px;
+	margin-left: -36px;
+	@include at-breakpoint($desktop) {
+		@include span-columns(9,12);
+		margin-left: 0;
+	}
 	position: relative;
 	background: url(#{$imagesPath}/house3d-bg.png);
 	//
@@ -910,22 +915,13 @@ $centerY: 130px;
 	li {
 		position: relative;
 	}
-	.aaa {
+	.tab-wrap-inner {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 700px;
 		height: 456px;
 		z-index: 99;
-		// display: none;
-	}
-	.bbb {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 700px;
-		height: 456px;
-		z-index: 999;
 	}
 	#situation_svg {
 		position: absolute;
@@ -943,26 +939,39 @@ $centerY: 130px;
 .scenetab {
 	position: relative;
 	@extend %navbar;
-	@include span-columns(3 omega,12);
-	z-index: 5;
 	@extend %nav-fullwidth;
+	@include at-breakpoint($desktop) {
+		@include span-columns(3 omega,12);
+	}
+	z-index: 5;
 	.current & {
 	}
 }
+
 .tag-tab {
 	position: relative;
 	@include clearfix;
+	@include at-breakpoint($ipad) {
+	margin-top: 20px;
 	li {
-		width: 100%;
-		& + li {
-			border-top: 1px solid lighten(#00ADEE,20%);
+			width: 25%;
+			@include nth-omega(4n);
+		}
+	}
+	@include at-breakpoint($desktop) {
+		margin-top: 0;
+		li {
+			width: 100%;
+			& + li {
+				border-top: 1px solid lighten(#00ADEE,20%);
+			}
 		}
 	}
 	a {
 		color: #00ADEE;
 		background-color: rgba($black-5, .75);
 		padding: 15px 10px;
-		
+		@extend %cp;
 	}
 	li a:hover, li.active a {
 		@include is-block;
