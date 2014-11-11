@@ -861,21 +861,44 @@ $centerY: 130px;
 
 
 // Section 6
-.vedio-wrp {
-	@include pre(2,12);
-	@include span-columns(8,12);
-	// width: 764px;
-	// height: 438px;
-	// @include center-block;
-	border-radius: 20px;
+.vedio-wrapper {
 	border: 2px solid #D8D8D8;
 	padding: 10px;
+	@include clearfix;
+	@include border-radius(20px);
+	@include at-breakpoint($ipad) {
+		@include span-columns(8,8);
+	}
+	@include at-breakpoint($desktop) {
+		margin-left: -210px;
+		@include pre(2,12);
+		@include span-columns(8,12);
+	}
+}
+.vedio-inner {
+	border-radius: 10px;
+	float: none;
+	clear: both;
+	width: 100%;
+	position: relative;
+	padding-bottom: 53.25%;
+	padding-top: 25px;
+	height: 0;
+	overflow: hidden;
 	iframe {
-		border-radius: 15px;
+		position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 	}
-	.video-wrapper {
-		
-	}
+}
+// override viemo
+.video.cover, .video{
+	@include border-radius(15px !important);
+}
+.player .video-wrapper {
+	background: transparent;
 }
 
 .tab_wrap  {
