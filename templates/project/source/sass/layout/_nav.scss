@@ -5,6 +5,7 @@
 // Menu Right
 #menu_right {
 	@include is-hidden;
+	@include at-breakpoint($desktop) {@include is-show;}
 }
 #menu_right {
 	@include at-breakpoint($ipad) {@include is-block;}
@@ -22,9 +23,11 @@
 .navigation-right {
 	@include at-breakpoint($ipad) {@include is-block;}
 	@include at-breakpoint($desktop) {@include is-block;}
+	width: 52px;
 	li {
 		@extend %ir;
 		@extend %is-inline-block;
+		float: left;
 		@include size(52px 32px);
 		@extend %cp;
 		background: url(#{$imagesPath}/menu_right_circle.svg);

@@ -50,37 +50,69 @@
 }
 
 .hp-group {
-	position: fixed;
+	position: absolute;
 	top: 320px;
 	left: 50%;
 	margin-left: -311px;
 	@include size(622px 282px);
 	z-index: index($z-index,pad);
 	overflow: hidden;
+	@include at-breakpoint($desktop) {
+		position: fixed;
+	}
 	&.transform {
-		-webkit-transform-style: preserve-3d;
-		-webkit-transform-origin: 50% 50% 0;
-		position: absolute;
-		width: 464px;
-		top: 970px;
-		margin-left: -464px;
-		.pad {
-			left: 0;
-		}
-		.screen-bg {
-			left: 40px;
+		@include at-breakpoint($desktop) {
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform-origin: 50% 50% 0;
+			position: absolute;
+			width: 464px;
+			top: 970px;
+			margin-left: -464px;
+			.pad {
+				left: 0;
+			}
+			.screen-bg {
+				left: 40px;
+			}
 		}
 		&.gogo {
-			@include animation(GOSECTION2 .75s ease-out);
-			-webkit-animation: GOSECTION2 .75s ease-out;
-			// @include ;
+			@include at-breakpoint($ipad) {
+				@include animation(GoSection2-ipad .75s ease-out);
+			}
+			@include at-breakpoint($desktop) {
+				@include animation(GoSection2-desktop .75s ease-out);
+			}
 		}
-		// &.backback {
-		// 	-webkit-animation: BACKSECTION0 1s 1 ease-out;
-		// }
 	}
 }
-@include keyframes(GOSECTION2) {
+@include at-breakpoint($ipad) {
+	.bx-viewport {
+		height: 165px;
+	}
+	.bxslider > li {
+		width: 465px;
+		height: 165px
+	}
+}
+
+@include at-breakpoint($desktop) {
+	.bx-viewport {
+		height: 265px;
+	}
+	.bxslider > li {
+		width:313px;
+		height: 265px
+	}
+}
+@include keyframes(GoSection2-iapd) {
+	0% {
+		@include transform(perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0));
+	}
+	100% {
+		@include transform(perspective(1200) rotate3d(0,-1,0, 360deg) translate3d(0,0,0));
+	}
+}
+@include keyframes(GoSection2-desktop) {
 	0% {
 		@include transform(perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0));
 	}
@@ -126,9 +158,6 @@
 	left: 79px;
 	z-index: 88;
 }
-
-
-
 
 section {
 	z-index: index($z-index, section);
@@ -328,7 +357,6 @@ section {
 	
 	// 手機不吃
 	background-attachment: fixed;
-	
 	@include transition(none);
 	width: 100%;
 	height: 620px;
@@ -351,11 +379,25 @@ section {
 	background-image: url(#{$imagesPath}/window.png);
 	@extend %no-repeat;
 	background-position: left top;
+	@include at-breakpoint($ipad) {
+		background-attachment: inherit;
+		background-position: 30% 40%;
+	}
+	@include at-breakpoint($desktop) {
+		// background-attachment: fixed;
+	}
 }
 .slide-2__bg{
 	//background-image: url(#{$imagesPath}/point-finger.png);
 	background-image: url(#{$imagesPath}/thief.png);
 	@extend %no-repeat;
+	@include at-breakpoint($ipad) {
+		background-attachment: inherit;
+		background-position: 30% 40%;
+	}
+	@include at-breakpoint($desktop) {
+		background-attachment: fixed;
+	}
 }
 .slide-3__bg{
 	background-image: url(#{$imagesPath}/oldman.png);
@@ -363,21 +405,37 @@ section {
 }
 .slide-4__bg{
 	background-image: url(#{$imagesPath}/robot.png);
-	//background-image: url(#{$imagesPath}/woman-muscled.png);
 	@extend %no-repeat;
+	@include at-breakpoint($ipad) {
+		background-attachment: inherit;
+		background-position: 20% 40%;
+		-webkit-transform: scaleX(-1);
+		-moz-transform: scaleX(-1);
+		-ms-transform: scaleX(-1);
+		-o-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
+	@include at-breakpoint($desktop) {
+		-webkit-transform: scaleX(1);
+		-moz-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		-o-transform: scaleX(1);
+		transform: scaleX(1);
+	}
 }
 .text-a,.text-b,.text-c,.text-d {
 	position: relative;
 	@include at-breakpoint($ipad) {
 		width: 75%;
-		position: fixed;
+		position: absolute;
 		right: 0;
 		left: 0;
 		top: 120px;
 		@include center-block;
 	}
 	@include at-breakpoint($desktop) {
-		
+		background-attachment: fixed;
+		position: fixed;
 	}
 	.gos2 {
 		margin-top: 10px;
@@ -527,9 +585,6 @@ section {
 }
 // Section 2-2
 .advantages {
-
-	
-	
 	@include at-breakpoint($ipad) {
 		@include span-columns(8,8);
 	}
@@ -537,8 +592,7 @@ section {
 		@include pre(2,12);
 		@include span-columns(8,12);
 		.right-side {
-			// @include span-columns(4 omega,12);
-			// @include post(1,12);
+			@include span-columns(8,12);
 		}
 	}
 	h3 {
@@ -561,9 +615,6 @@ section {
 		margin-bottom: .25em;
 	}
 	.adv-01, .adv-02, .adv-03, .adv-04 {
-		ul, li {
-			// @include unordered;
-		}
 		li {
 			padding-left: 2em;
 			background-image: url(#{$imagesPath}/check.svg);
@@ -575,8 +626,13 @@ section {
 		@include span-columns(12,12);
 		margin-left: inherit;
 		.right-side {
-			@include span-columns(4 omega,12);
-			@include post(1,12);
+			@include at-breakpoint($ipad) {
+				@include span-columns(8,8);
+			}
+			@include at-breakpoint($desktop) {
+				@include span-columns(4 omega,12);
+				@include post(1,12);
+			}
 		}
 		li {
 			text-align: left;
@@ -673,17 +729,9 @@ section {
 .wireless-home {
 	@include at-breakpoint($phone) {
 		@include span-columns(5,5);
-		.ihouse {
-			@include size(315px 252px);
-		}
 	}
-
 	@include at-breakpoint($ipad) {
-		@include span-columns(6,8);
-		@include pre(1,8);
-		.ihouse {
-			margin-left: -210px;
-		}
+		@include span-columns(8,8);
 	}
 	@include at-breakpoint($desktop) {
 		@include pre(1,12);
@@ -694,7 +742,7 @@ section {
 }
 
 @for $i from 1 through 6 {
-  .icon-00#{$i} { position: absolute; }
+	.icon-00#{$i} { position: absolute; }
 }
 %icon-left {
 	left: 0;
@@ -780,10 +828,14 @@ section {
 .ihouse {
 	position: absolute;
 	left: 50%;
-	margin-left: -142px;
+	margin-left: -160px;
 	bottom: 120px;
 	z-index: 5;
-}
+	@include at-breakpoint($ipad) {
+		margin-left: -210px;
+	}
+} 
+
 .hend-and-ipad {
 	position: absolute;
 	bottom: 0;
@@ -1243,8 +1295,8 @@ $tag42b: $tag42a+$tagH;
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
+	position: fixed;
+	top: 0;
 }
 .current {
 	@include transition(all .3s);

@@ -167,15 +167,18 @@ $(function(){
 			$hpGroup.removeClass("transform");
 			$hpGroup.removeClass("gogo");
 			$(".advantages").removeClass("current");
-			$(".bx-viewport").css({'height':165});
-			$(".bxslider > li").css({'width':646,'height':165});
+			// $(".bx-viewport").css({'height':165});
+			// $(".bxslider > li").css({'width':646,'height':165});
 		}
 		if (winScrollTop > 508) {
+
 			$hpGroup.addClass("transform");
 			$hpGroup.addClass("gogo");
 			$(".advantages").addClass("current");
-			$(".bx-viewport").css({'height':265});
-			$(".bxslider > li").css({'width':313,'height':265});
+
+				// $(".bx-viewport").css({'height':265});
+				// $(".bxslider > li").css({'width':313,'height':265});
+			
 		}
 		if ($s2Top > topOfWindow) {
 			$previewBlock.delay(100).removeClass('show');
@@ -246,7 +249,7 @@ $(function(){
 	situation_svg();
 	
 	// Scroll up bar
-	$menu.scrollupbar();
+	// $menu.scrollupbar();
 
 	// Parallax Scrolling
 	$.stellar({
@@ -362,6 +365,10 @@ $(function() {
 	});
 });
 
+// if(ww<940) {
+// 	$('.advantages').append($hpGroup);
+// 	$('#hpGroup').append($hpGroup);
+// }
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
