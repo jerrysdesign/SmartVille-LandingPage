@@ -2,7 +2,13 @@
 // Tools
 // ======================
 
+// sass function
 @import "tools/functions";
+// sass mixins
 @import "tools/mixins";
+// sass variables
 @import "tools/variables";
+// sass website Setting variables
 @import "tools/site-settings";
+// susy base setting
+@import "tools/grid";

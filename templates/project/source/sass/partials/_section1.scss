@@ -1,0 +1,66 @@
+/* =======================
+   section1 // banner slide 的按鈕
+   ======================= */
+
+#main-slider-nav {
+  position: relative;
+}
+#main-slider-nav {
+  @include at-breakpoint($ipad) {
+    @include span-columns(8,8);
+    li {
+      @include span-columns(2);
+      &:last-child { @include nth-omega(last);}
+    }
+  }
+  @include at-breakpoint($desktop) {
+    @include pre(2,12);
+    @include span-columns(8,12);
+  }
+  li {
+    position: relative;
+    a {
+      @extend %is-block;
+      outline: none;
+      @include transition(all .3s);
+      color: $black-20;
+    }
+    .item-icon {
+      position: relative;
+      @include border-radius(100%);
+      @include size(72px);
+      @extend %center-block;
+      @extend %is-block;
+      border: 3px solid $black-20;
+    }
+    .item-text {
+      text-align: center;
+      @extend %is-block;
+      @extend %center-block;
+    }
+    svg {
+      position: absolute;
+      // @extend %is-block;
+      $icon-size: 64px;
+      fill: $black-20;
+      opacity: 1;
+      left: 50%;
+      margin-left: $icon-size/2*-1;
+      margin-top: (72-$icon-size)/2;
+      @include size($icon-size);
+      @include transition(all .3s);
+      @extend %ir;
+    }
+    &:hover, &.active {
+      a {
+        color: $primary;
+      }
+      .item-icon {
+        border: 3px solid $primary;
+      }
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+}

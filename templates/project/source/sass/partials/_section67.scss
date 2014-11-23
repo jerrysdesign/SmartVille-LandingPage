@@ -1,0 +1,322 @@
+/* =======================
+   section 6 & 7 // 情境與體驗
+   ======================= */
+
+// 場景圖
+.scene-tab-wrap  {
+  min-width: 700px;
+  margin-left: -36px;
+  @include at-breakpoint($desktop) {
+    @include span-columns(9,12);
+    margin-left: 0;
+  }
+  position: relative;
+  background: url(#{$imagesPath}/house3d-bg.png);
+  //
+  height: 456px;
+  li {
+    position: relative;
+  }
+  .scene-tab-wrap__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700px;
+    height: 456px;
+    z-index: 99;
+  }
+  #situation_svg {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    .mask {
+      display: none;
+      opacity: 0.6;
+    }
+    & .cur {
+      display: block;
+    }
+  } 
+}
+.scene-tab-nav {
+  position: relative;
+  @extend %navbar;
+  @extend %nav-fullwidth;
+  @include at-breakpoint($desktop) {
+    @include span-columns(3 omega,12);
+  }
+  z-index: 5;
+  .current & {
+  }
+}
+
+.scene-tab-nav__list {
+  position: relative;
+  @include clearfix;
+  @include at-breakpoint($ipad) {
+  margin-top: 20px;
+  li {
+      width: 25%;
+      @include nth-omega(4n);
+    }
+  }
+  @include at-breakpoint($desktop) {
+    margin-top: 0;
+    li {
+      width: 100%;
+      & + li {
+        border-top: 1px solid lighten(#00ADEE,20%);
+      }
+    }
+  }
+  a {
+    color: #00ADEE;
+    background-color: rgba($black-5, .75);
+    padding: 15px 10px;
+    @extend %cp;
+  }
+  li a:hover, li.active a {
+    @include is-block;
+    color: #fff;
+    background-color: #00ADEE;
+  }
+  .active a {
+    font-size: 1.25em;
+    border-bottom: none;
+  }
+}
+
+
+.bx-pager {
+  .bx-pager-item a {
+    margin: 0 5px;
+  }
+}
+
+$tagH: 5px; //上移距離
+$tag11a: 190px;
+$tag12a: 170px;
+$tag13a: 270px;
+$tag21a: 10px;
+$tag22a: 0px;
+$tag23a: 45px;
+$tag24a: 40px;
+$tag31a: 165px;
+$tag32a: 100px;
+$tag33a: 190px;
+$tag34a: 270px;
+$tag41a: 300px;
+$tag42a: 310px;
+.scene-item {
+  position: absolute;
+  @include size(100%);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  // background-color: rgba(0,0,0,.5); //debog
+  .tooltip {
+    // reset
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial;
+  }
+  .icon {
+    margin-top: 5px;
+  }
+  .tooltip-content {
+    position: absolute;
+    font-family: $fontTC;
+    background: $primary;
+    min-width: 220px;
+    @extend %is-inline-block;
+    bottom: 50%;
+    margin-bottom: -4em;
+    margin-left: -50px;
+    padding: 15px 10px;
+    @include border-radius(4px);
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    cursor: default;
+    z-index: 1;
+    @include pie-clearfix;
+    &:before, &:after {
+      display: none;
+    }
+    // @include transition(none);
+    h4 {
+      font-weight: bold;
+      background-color: darken($primary, 10%);
+      margin: -15px -10px;
+      margin-bottom: 0;
+      @include border-radius(4px 4px 0 0);
+    }
+    ul {
+      text-align: left;
+      padding-top: 10px;
+    }
+    // pointer-events: none;
+    // -webkit-font-smoothing: antialiased;
+    // -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    }
+  &.living-room {
+    .tag-01 {
+      top: 200px;
+      left: 30px;
+      @include animation(tag11 1s infinite);
+    }
+    .tag-02 {
+      top: 220px;
+      left: 230px;
+      @include animation(tag12 1s infinite);
+    }
+    .tag-03 {
+      top: 350px;
+      left: 150px;
+      @include animation(tag13 1s infinite);
+    }
+  }
+  &.kitchen {
+    .tag-01 {
+      top: 10px;
+      left: 220px;
+      @include animation(tag21 1s infinite);
+    }
+    .tag-02 {
+      top: 0px;
+      left: 320px;
+      @include animation(tag22 1s infinite);
+    }
+    .tag-03 {
+      top: 20px;
+      left: 155px;
+      @include animation(tag23 1s infinite);
+    }
+    .tag-04 {
+      top: 100px;
+      left: 440px;
+      @include animation(tag24 1s infinite);
+    }
+  }
+  &.bed-room {
+    .tag-01 {
+      top: 150px;
+      right: 30px;
+      @include animation(tag31 1s infinite);
+    }
+    .tag-02 {
+      top: 220px;
+      right: 120px;
+      @include animation(tag32 1s infinite);
+    }
+    .tag-03 {
+      top: 200px;
+      right: 200px;
+      @include animation(tag33 1s infinite);
+    }
+    .tag-04 {
+      top: 280px;
+      right: 90px;
+      @include animation(tag34 1s infinite);
+    }
+  }
+  &.balcony {
+    .tag-01 {
+      top: $tag41a;
+      right: 210px;
+      @include animation(tag41 1s infinite);
+    }
+    .tag-02 {
+      top: $tag42a;
+      right: 380px;
+      @include animation(tag42 1s infinite);
+    }
+  }
+
+}
+.icn-tag {
+  @include size(59px 81px);
+  position: absolute;
+  background-image: url(#{$imagesPath}/tag.svg);
+  z-index: 999;
+}
+
+$tag11b: $tag11a+$tagH;
+$tag12b: $tag12a+$tagH;
+$tag13b: $tag13a+$tagH;
+$tag21b: $tag21a+$tagH;
+$tag22b: $tag22a+$tagH;
+$tag23b: $tag23a+$tagH;
+$tag24b: $tag24a+$tagH;
+$tag31b: $tag31a+$tagH;
+$tag32b: $tag32a+$tagH;
+$tag33b: $tag33a+$tagH;
+$tag34b: $tag34a+$tagH;
+$tag41b: $tag41a+$tagH;
+$tag42b: $tag42a+$tagH;
+@include keyframes(tag11) {
+  0% { top: $tag11a;}
+  75% { top: $tag11b;} 
+  100% { top: $tag11a;}
+}
+@include keyframes(tag12) {
+  0% { top: $tag12a;}
+  75% { top: $tag12b;} 
+  100% { top: $tag12a;}
+}
+@include keyframes(tag13) {
+  0% { top: $tag13a;}
+  75% { top: $tag13b;} 
+  100% { top: $tag13a;}
+}
+@include keyframes(tag21) {
+  0% { top: $tag21a;}
+  75% { top: $tag21b;} 
+  100% { top: $tag21a;}
+}
+@include keyframes(tag22) {
+  0% { top: $tag22a;}
+  75% { top: $tag22b;} 
+  100% { top: $tag22a;}
+}
+@include keyframes(tag23) {
+  0% { top: $tag23a;}
+  75% { top: $tag23b;} 
+  100% { top: $tag23a;}
+}
+@include keyframes(tag24) {
+  0% { top: $tag24a;}
+  75% { top: $tag24b;} 
+  100% { top: $tag24a;}
+}
+@include keyframes(tag31) {
+  0% { top: $tag31a;}
+  75% { top: $tag31b;} 
+  100% { top: $tag31a;}
+}
+@include keyframes(tag32) {
+  0% { top: $tag32a;}
+  75% { top: $tag32b;} 
+  100% { top: $tag32a;}
+}
+@include keyframes(tag33) {
+  0% { top: $tag33a;}
+  75% { top: $tag33b;} 
+  100% { top: $tag33a;}
+}
+@include keyframes(tag34) {
+  0% { top: $tag34a;}
+  75% { top: $tag34b;} 
+  100% { top: $tag34a;}
+}
+@include keyframes(tag41) {
+  0% { top: $tag41a;}
+  75% { top: $tag41b;} 
+  100% { top: $tag41a;}
+}
+@include keyframes(tag42) {
+  0% { top: $tag42a;}
+  75% { top: $tag42b;} 
+  100% { top: $tag42a;}
+}

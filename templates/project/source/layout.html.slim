@@ -145,7 +145,7 @@ html.no-js lang="zh-TW"
 							.advantages
 								.right-side
 									ul.bxslider
-										li.adv-01
+										li.advantages-items 
 											h3 居家控制
 											h4 讓你的家電長智慧
 											h5 設定簡單，不須牽線
@@ -153,7 +153,7 @@ html.no-js lang="zh-TW"
 												li 	透過控制主機面板及智慧型手機、平板電腦操控設定，感應器、無線智慧插座等周邊設備。
 												li 	簡單安裝不須牽線或是繁複的步驟作設定，降低安裝技術的門檻。
 												li 	輕鬆簡單開始享受智慧家居帶來的便利生活。
-										li.adv-02
+										li.advantages-items 
 											h3 安防監控
 											h4  讓你的居家更安全
 											h5 遠端監控，警示提醒
@@ -161,7 +161,7 @@ html.no-js lang="zh-TW"
 												li 	搭配網路攝影機及門窗感應器可以進行住家室內及室外的錄影監控。
 												li 	使用者/家庭成員在外工作、出差、旅遊也可以透過智慧型手機、平板電腦了解住家狀況。
 												li 	如有門窗被破壞或是監控異常狀況，控制主機也會主動通知用戶，提供後續處理。
-										li.adv-03
+										li.advantages-items 
 											h3 健康照護
 											h4 讓你的身體更健康
 											h5 用藥提醒，醫護接軌
@@ -169,7 +169,7 @@ html.no-js lang="zh-TW"
 												li 	用戶可以使用 SMARTVILLE™ 搭配的居家醫療電子裝置，例如血壓計、血糖儀、體重機等，每日進行量測時。
 												li 	量測的資訊即能夠同部存入 SMARTVILLE™ 控制主機中，作為後續分析資料。
 												li 	用戶可以透過這些儲存的記錄了解本身的健康狀況，或是在進行醫療諮詢、診療用藥時提供給醫生做參考。
-										li.adv-04
+										li.advantages-items 
 											h3 生活助手
 											h4 讓你的生活更便利
 											h5 懶人採買，物料管控
@@ -185,22 +185,22 @@ html.no-js lang="zh-TW"
 							h5.section-description 因為無線，我們提供更多無限想像，雲端服務與無線遙控，創造家庭更多無限的可能
 							.wireless-home
 								.dot
-								.icon-001.icon-64
+								.icon-001
 									img src="img/temperature.svg"
-								.icon-002.icon-64
+								.icon-002
 									img src="img/computer.svg"
-								.icon-003.icon-64
+								.icon-003
 									img src="img/lock.svg"
-								.icon-004.icon-64
+								.icon-004
 									img src="img/wearher.svg"
-								.icon-005.icon-64
+								.icon-005
 									img src="img/lighting.svg"
-								.icon-006.icon-64
+								.icon-006
 									img src="img/camera.svg"
 								.icon-96-wrapper.animated.wow.bounceInDown data-wow-delay="2s"
-									.icon-wifi.icon-96
+									.icon-wifi
 										img src="img/wifi.svg"
-									.icon-zwave.icon-96
+									.icon-zwave
 										img src="img/zwave.svg"
 								.hend-and-ipad.animated.wow.bounceInUp data-wow-delay="1s" data-wow-duration="1.5s"
 									img src="img/hend_pad.png"
@@ -220,6 +220,7 @@ html.no-js lang="zh-TW"
 									br
 									| 控制中心（Control Center）1台、Z-Wave Gateway1台、電源切換開關2個、門/窗感應器2個、網路攝影機1台、煙霧偵測器1台
 
+					// section5 // 使用說明影片
 					#section-5.section.bg-color.bg-gray data-section="5"
 						.container.animated.wow.fadeIn data-wow-delay=".3s"
 							h3.section-title 使用說明
@@ -228,117 +229,122 @@ html.no-js lang="zh-TW"
 								.vedio-inner
 									iframe src="//player.vimeo.com/video/110850186?title=0&amp;byline=0&amp;portrait=0&amp;color=7fba24" width="596" height="316" frameborder="0"
 					
+					// section6 // 情境與體驗
 					#section-6.section.bg-image data-section="6"
 						#section-cont.container.animated.wow.fadeIn data-wow-delay=".5s"
 							h3.section-title 情境與體驗
-							/ h5.section-description 
-							
+					// section6 // 情境與體驗內容		
 					#section-7.section.bg-color.bg-white data-section="6"
 						.container.animated.wow.fadeIn data-wow-delay=".3s"
-							.tab-wrap
-								.tab-wrap-inner
+							.scene-tab-wrap
+								.scene-tab-wrap__inner
 									=render "partials/scene-svg"
-									ul.tag-tab-cont style="z-index:2"
+									ul.scene-cont style="z-index:2"
+										// living-room
 										li
-											.tag-box.living-room
+											.scene-item.living-room
 												.tag-01.icn-tag.tooltip.tooltip-west
 													image.icon src="img/icon-el.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Wall Switches
 														ul
 															li 智慧切換廚房情境燈控
 															li 智慧管控家電、例如: Smart TV、家庭劇院
 												.tag-02.icn-tag.tooltip.tooltip-west
 													image.icon src="img/icon-se.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Door Sensors
 														ul
 															li 居家安防管控
 															li 提出警訊
 												.tag-03.icn-tag.tooltip.tooltip-west
 													image.icon src="img/icon-se.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Windows Sensors
 														ul
 															li 居家安防管控
+										// kitchen
 										li
-											.tag-box.kitchen
+											.scene-item.kitchen
 												.tag-01.icn-tag.tooltip.tooltip-west
 													image.icon src="img/icon-al.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Smoke Detector
 														ul
 															li 進行廚房煙霧偵測
 															li 提出警訊
 												.tag-02.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-co.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 CO Detector
 														ul
 															li 進行廚房一氧化碳偵測
 															li 提出警訊
 												.tag-03.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-el.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Wall Switches
 														ul
 															li 智慧切換廚房情境燈控
 															li 智慧管控家電、例如: 電鍋、咖啡機
 												.tag-04.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-se.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Door / Windows Sensors
 														ul
 															li 居家安防管控
 															li 提出警訊
+										// bed-room
 										li
-											.tag-box.bed-room
+											.scene-item.bed-room
 												.tag-01.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-ip.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 IP / Cam
 														ul
 															li 居家安防管控
 															li 提出警訊
 												.tag-02.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-me.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 醫療量測設備
 														ul
 															li 量測記錄
 															li 過往結果比對/分析
 												.tag-03.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-el.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Wall Switches
 														ul
 															li 智慧切換房間情境燈控
 															li 智慧管控家電、例如: 電腦、組合音響
 												.tag-04.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-se.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Door / Windows Sensors
 														ul
 															li 居家安防管控
 															li 提出警訊
+										// balcony
 										li
-											.tag-box.balcony
+											.scene-item.balcony
 												.tag-01.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-ip.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 IP / Cam
 														ul
 															li 居家安防管控
 															li 提出警訊
 												.tag-02.icn-tag.animate.tooltip.tooltip-west
 													image.icon src="img/icon-se.svg"
-													span.tooltip-content.clearfix
+													.tooltip-content
 														h4 Door / Windows Sensors
 														ul
 															li 居家安防管控
 															li 提出警訊
-							.scenetab style="z-index:1"
-								nav.tag-tab
+							// scene nav
+							.scene-tab-nav style="z-index:1"
+								nav.scene-tab-nav__list
 									ul
 										li.active: a href="javascript:;" Living Room
 										li: a href="javascript:;" Kitchen

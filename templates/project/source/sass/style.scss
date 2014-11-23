@@ -14,21 +14,30 @@
 
 
 // 0
+// =======================
 // Req
+// =======================
 @import "compass";
-// @import "vendor/animation";
-// @import "vendor/glide/glide";
+
 // 1
+// =======================
 // Base styles
+// =======================
 @import "base";
 
 // 2
+// =======================
 // Module Styles
+// =======================
+// shutt framework
 @import "modules";
 
 // 3
-// Layout styles
+// =======================
+// Layout Styles
+// =======================
 @import "layouts";
+
 
 // JS-based classes
 // @import "states";
@@ -38,6 +47,9 @@
 // @import "vendor/glide/glide";
 // 轉換 vendor 的樣式為 SCSS（基本上只改附檔名），並在這裡導入。
 
-// Pages
+// 4 
+// =======================
+// Pages Style
+// =======================
 @import "partials/loader";
 @import "page/home";

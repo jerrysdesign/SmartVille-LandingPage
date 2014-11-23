@@ -2,40 +2,22 @@
 // ======================
 // Reset
 // =======================
-
-// 二選一
-// reset or normalize
 @import "base/reset";
-// @import "base/normalize";
-
 
 // 2
 // ======================
 // Tools
 // =======================
+@import "tools";
 
-@import "tools/functions";
-@import "tools/mixins";
-@import "tools/variables";
-
-
-// ======================
-// Tools
-// =======================
-@import "tools/site-settings";
-@import "tools/grid";
-
-
+// 3
 // ======================
 // Base Styles
 // =======================
-// @import "base/base";
 @import "base/typography";
-@import "base/form";
 
-
-// Fonts
-// @import "fonts/...";
-
-// helpers styles
+// 4
+// ======================
+// helpers Styles
+// =======================
 @import "tools/helpers";

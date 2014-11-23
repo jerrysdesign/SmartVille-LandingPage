@@ -96,7 +96,7 @@
 	//	03
 	function tag_tab(obj){
 		var _this = obj,
-			_cont = $('.tag-tab-cont').children(),
+			_cont = $('.scene-cont').children(),
 			_wrap = $('#situation_svg'),
 			_mask = _wrap.find('.mask'),
 			_idx  = obj.index();
@@ -110,8 +110,8 @@
 		var _wrap = $('#situation_svg'),
 			_mask = _wrap.find('.mask'),
 			_link = _wrap.find('.link'),
-			_tips = $('.tag-tab-cont').children('li'),
-			_tabs = $('.tag-tab').find('li'),
+			_tips = $('.scene-cont').children('li'),
+			_tabs = $('.scene-tab-nav__list').find('li'),
 			_atv  = 'active';
 
 		_link.mouseenter(function(){
@@ -239,11 +239,11 @@ $(function(){
 		}, 400);
 	});
 
-	// Tag-Tabs
-	$('.tag-tab li').mouseenter(function(){
+	//.scene-tab-nav__lists
+	$('.scene-tab-nav__list li').mouseenter(function(){
 		tag_tab($(this));
 	});
-	$('.tag-tab-cont').children().not(':eq(0)').hide();
+	$('.scene-cont').children().not(':eq(0)').hide();
 
 	// Situation_svg
 	situation_svg();

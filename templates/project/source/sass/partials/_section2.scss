@@ -1,0 +1,92 @@
+/* =======================
+   section2 // 智慧家居解決方案區塊
+   ======================= */
+%anicon0df1-2 {
+  left: 50%;
+  margin-left: -60px;
+}
+%anicon0df3-4 {
+  right: 50%;
+  margin-right: -60px;
+}
+.preview-block {
+  min-height: 360px;
+  position: relative;
+}
+@include keyframes(xxx) {
+  0% {
+    // @include box-shadow(0 0 5px rgba($primary, .5));
+    -webkit-filter: drop-shadow(0 0 5px rgba($primary, .5));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  }
+  100% {
+    // @include box-shadow(0 0 20px rgba($primary, 1));
+    -webkit-filter: drop-shadow(0 0 20px rgba($primary, 1));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  }
+}
+
+.s2-svf-1 {
+  fill: $primary;
+}
+%advantages-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: $primary;
+  @extend %is-inline-block;
+}
+.advantages {
+  @include at-breakpoint($ipad) {
+    @include span-columns(8,8);
+  }
+  @include at-breakpoint($desktop) {
+    @include pre(2,12);
+    @include span-columns(8,12);
+    .right-side {
+      @include span-columns(8,12);
+    }
+  }
+  h3 {
+    @extend %advantages-title;
+  }
+  h4 {
+    @extend %advantages-title;
+  }
+  h5 {
+    font-size: 1.2em;
+    padding: 3px 10px;
+    background-color: $primary;
+    color: #fff;
+    @extend %is-inline-block;
+    @include border-radius(2px);
+    margin-bottom: .6em;
+  }
+  li {
+    font-size: 1em;
+    margin-bottom: .25em;
+  }
+  .advantages-items {
+    li {
+      padding-left: 2em;
+      background-image: url(#{$imagesPath}/check.svg);
+      background-repeat: no-repeat;
+      background-position: 5px 5px;
+    }
+  }
+  &.current {
+    @include span-columns(12,12);
+    margin-left: inherit;
+    .right-side {
+      @include at-breakpoint($ipad) {
+        @include span-columns(8,8);
+      }
+      @include at-breakpoint($desktop) {
+        @include span-columns(4 omega,12);
+        @include post(1,12);
+      }
+    }
+    li {
+      text-align: left;
+    }
+  }
+}

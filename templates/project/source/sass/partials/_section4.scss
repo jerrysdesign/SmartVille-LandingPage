@@ -1,0 +1,215 @@
+/* =======================
+   section4 // 標準產品盒
+   ======================= */
+$wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-wifi, icon-zwave;
+%icon-64 {
+  @include size(64px);
+  position: absolute;
+  z-index: index($wireless-home,icon-64);
+}
+%icon-96 {
+  @include size(96px);
+  position: absolute;
+  margin-left: -48px;
+  left: 50%;
+  top: 80px;
+  z-index: index($wireless-home,icon-96);
+}
+.icon-96-wrapper {
+  @extend %icon-96;
+  z-index: index($wireless-home,icon-96-wrapper);
+  margin-top: -80px;
+}
+
+.wireless-home {
+  @include at-breakpoint($phone) {
+    @include span-columns(5,5);
+  }
+  @include at-breakpoint($ipad) {
+    @include span-columns(8,8);
+  }
+  @include at-breakpoint($desktop) {
+    @include pre(1,12);
+    @include span-columns(10,12);
+  }
+  position: relative;
+  min-height: 438px;
+}
+
+@for $i from 1 through 6 {
+  .icon-00#{$i} { position: absolute; }
+}
+%icon-left {
+  left: 0;
+}
+%icon-right {
+  right: 0;
+}
+.dot {
+  position: absolute;
+  @include size(100%);
+  background: url(#{$imagesPath}/dot.png) no-repeat center 16px;
+  min-height: 438px;
+  .current & {
+    @include animation(dotshow 6s linear infinite);
+  }
+}
+.icon-001 {
+  top: 0;
+  @extend %icon-left;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon1 6s linear infinite);
+  }
+}
+.icon-002 {
+  top: 130px;
+  @extend %icon-left;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon2 6s linear infinite);
+  }
+}
+.icon-003 {
+  top: 260px;
+  @extend %icon-left;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon3 6s linear infinite);
+  }
+}
+.icon-004 {
+  top: 0;
+  @extend %icon-right;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon4 6s linear infinite);
+  }
+}
+.icon-005 {
+  top: 130px;
+  @extend %icon-right;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon5 6s linear infinite);
+  }
+}
+.icon-006 {
+  top: 260px;
+  @extend %icon-right;
+  @extend %icon-64;
+  .current & {
+    @include animation(icon6 6s linear infinite);
+  }
+}
+.icon-wifi {
+  @include size(96px);
+  @extend %icon-96;
+  position: absolute;
+  margin-left: -48px;
+  left: 50%;
+  top: 80px;
+  z-index: index($wireless-home,icon-wifi);
+  opacity: 1;
+    .current & {
+    @include animation(fadeInOut 10s infinite);
+  }
+}
+.icon-zwave {
+  @include size(96px);
+  @extend %icon-96;
+  position: absolute;
+  margin-left: -48px;
+  left: 50%;
+  top: 80px;
+  z-index: index($wireless-home,icon-zwave);
+  opacity: 1;
+  .current & {
+    @include animation(fadeOutIn 10s infinite);
+  }
+}
+.ihouse {
+  position: absolute;
+  left: 50%;
+  margin-left: -160px;
+  bottom: 120px;
+  z-index: index($wireless-home,ihouse);
+  @include at-breakpoint($ipad) {
+    margin-left: -210px;
+  }
+} 
+
+.hend-and-ipad {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -145px;
+  z-index: index($wireless-home,hend-and-ipad);
+}
+
+$centerX: 375px;
+$centerY: 130px;
+@mixin left-center {
+  top: $centerY;
+  left: $centerX;
+}
+@mixin right-center {
+  top: $centerY;
+  right: $centerX;
+}
+@include keyframes(dotshow) {
+  0% { opacity: 0;}
+  35% { opacity: .5;}
+  95% { opacity: 1;}
+  100% { opacity: 0;}
+}
+@include keyframes(icon1) {
+  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+  35% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon2) {
+  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+  35% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon3) {
+  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+  35% { top: 260px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% { top: 260px; left: 0;opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon4) {
+  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+  35% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% {top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon5) {
+  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+  35% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(icon6) {
+  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+  35% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  95% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+  100% { opacity: 0;@include transform (scale(1.5));}
+}
+@include keyframes(fadeInOut) {
+  0% { opacity: 0;top:80px;}
+  25% { opacity: 1;top:80px;}
+  50% { opacity: 0;top:80px;}
+  75% { opacity: 1;top:80px;}
+  100% { opacity: 0;top:80px;}
+}
+@include keyframes(fadeOutIn) {
+  0% { opacity: 1;top:80px;}
+  25% { opacity: 0;top:80px;}
+  50% { opacity: 1;top:80px;}
+  75% { opacity: 0;top:80px;}
+  100% { opacity: 1;top:80px;}
+}
