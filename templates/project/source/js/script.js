@@ -303,12 +303,7 @@ $(function(){
 	// GoToByScroll
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
-		if ($win.scrollTop() < goal){
-			var goalPx = goal + 50;
-		}
-		else{
-			var goalPx = goal - 50;
-		}
+		var goalPx = goal - 50;
 		htmlbody.stop().animate({
 			scrollTop: goalPx
 		}, 1500, 'easeInOutQuint');
