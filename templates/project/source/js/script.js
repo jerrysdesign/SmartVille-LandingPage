@@ -29,6 +29,11 @@
 *	04 - Situation_svg
 *	----------------------------------------
 */
+	
+	//
+	function is_mobile(){
+		return /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+	}
 
 	//	00
 	function loading_progress(){
@@ -369,6 +374,18 @@ $(function() {
 // 	$('.advantages').append($hpGroup);
 // 	$('#hpGroup').append($hpGroup);
 // }
+
+$(function(){
+	if(is_mobile() == true){
+		$(function() {
+			var menuHeight = $menu.height();
+			$('#section-0,.banner').css({'height': winHeight-menuHeight +'px'});
+		}).resize();
+	}else{
+		//
+	}
+});
+
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
