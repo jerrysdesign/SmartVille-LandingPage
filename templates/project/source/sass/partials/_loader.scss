@@ -20,14 +20,14 @@
   width: 300px;
   margin-left: -150px;
   
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     left: 50%;
     top: 40%;
     width: 600px;
     height: 200px;
     margin-left: -300px;
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     left: 50%;
     top: 45%;
     width: 800px;

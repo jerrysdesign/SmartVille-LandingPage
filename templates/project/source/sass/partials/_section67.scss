@@ -6,7 +6,7 @@
 .scene-tab-wrap  {
   min-width: 700px;
   margin-left: -36px;
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     @include span-columns(9,12);
     margin-left: 0;
   }
@@ -42,7 +42,7 @@
   position: relative;
   @extend %navbar;
   @extend %nav-fullwidth;
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     @include span-columns(3 omega,12);
   }
   z-index: 5;
@@ -53,14 +53,14 @@
 .scene-tab-nav__list {
   position: relative;
   @include clearfix;
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
   margin-top: 20px;
   li {
       width: 25%;
       @include nth-omega(4n);
     }
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     margin-top: 0;
     li {
       width: 100%;

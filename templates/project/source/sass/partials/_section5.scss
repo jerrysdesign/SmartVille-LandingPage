@@ -6,10 +6,10 @@
   padding: 10px;
   @include clearfix;
   @include border-radius(20px);
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     @include span-columns(8,8);
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     margin-left: -210px;
     @include pre(2,12);
     @include span-columns(8,12);

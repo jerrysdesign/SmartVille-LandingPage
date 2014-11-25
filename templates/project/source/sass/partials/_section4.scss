@@ -22,13 +22,13 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
 }
 
 .wireless-home {
-  @include at-breakpoint($phone) {
-    @include span-columns(5,5);
-  }
-  @include at-breakpoint($ipad) {
+  // @include at-breakpoint($break-phone) {
+  //   @include span-columns(5,5);
+  // }
+  @include at-breakpoint($break-ipad) {
     @include span-columns(8,8);
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     @include pre(1,12);
     @include span-columns(10,12);
   }
@@ -134,7 +134,7 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
   margin-left: -160px;
   bottom: 120px;
   z-index: index($wireless-home,ihouse);
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     margin-left: -210px;
   }
 } 

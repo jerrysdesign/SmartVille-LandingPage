@@ -20,24 +20,59 @@
 @import "vendor/susy";
 @include border-box-sizing;
 
-// media
-$phone		:	5;
-$ipad			: 671px 8;  // min-width 641px 寬度超過 641px 後的欄位數量
-$desktop	: 941px 12; // min-width 941px 寬度超過 941px 後的欄位數量
 // 基本設定
-$total-columns			: $phone;
-$column-width				: 3.75em;
-$gutter-width				: 1.25em;
-$grid-padding				: $gutter-width;
-// $border-box-sizing	: true;
+$total-columns			: 5;
+$column-width				: 3.75em;        //60
+$gutter-width				: 1.25em;        //20
+$grid-padding				: $gutter-width; //20
+
+$phone		:	5;
+// $break-ipad			: 671px 8;  // min-width 641px 寬度超過 641px 後的欄位數量
+// $break-desktop	: 941px 12; // min-width 941px 寬度超過 941px 後的欄位數量
+$ipad     : 671px;  // min-width 641px 寬度超過 641px 後的欄位數量
+$desktop  : 941px; // min-width 941px 寬度超過 941px 後的欄位數量
+$small						: 320px;  // small phone
+$smart-p					: 480px;  // smartphone portrait
+$smart-l					: 640px;  // smartphone landscape
+$tablet-p					: 768px;  // tablet portrait
+$dektop-m					: 980px;  // desktop medium
+$tablet-l					: 1024px; // tablet landscape
+$break-desktop-l	: 1170px; // desktop large
+$break-desktop-w	: 1360px; // desktop wide
+
+// ---------------------------------------------------------------------------
+// convert to em's for better compatibility
+// ---------------------------------------------------------------------------
+@function toEm($px-size, $base-size: 16px) {
+	@return $px-size / $base-size * 1em;
+}
+
+// ---------------------------------------------------------------------------
+// alternative layout breakpoints
+// ---------------------------------------------------------------------------
+$break-ipad				: toEm($ipad) 8;
+$break-desktop		: toEm($desktop) 12;
+$break-small			: toEm($small);     //20em
+$break-smart-p		: toEm($smart-p);   //30em
+$break-smart-l		: toEm($smart-l);   //40em
+$break-tablet-p		: toEm($tablet-p);  //48em
+$break-dektop-m		: toEm($dektop-m);  //61.25em
+$break-tablet-l		: toEm($tablet-l);  //64em
+$break-desktop-l	: toEm($break-desktop-l); //73.125em
+$break-desktop-w	: toEm($break-desktop-w); //85em
 
 
-// add media
-// $ipad-columns     : 8;
-// $ipad-break       : 671px;
-// $ipad: $ipad-break $ipad-columns;
-// $desktop-columns  : 12;
-// $desktop-break    : 980px;
-// $desktop: $desktop-break $desktop-columns;
+// MObile
+// Sony Xpreia z / z1 , 360x640 ratio 3
+// Apple iPhone 3GS , 320x480 ratio 1
+// Apple iPhone 4 / 4s , 320x480 ratio 1.5
+// Apple iPhone 5 / 5s , 320x568 ratio 2
+// Apple iPhone 6 , 375x664 ratio 2
+// Apple iPhone 6+, 414x736 ratio 3
+
+// Tablet
+// Apple iPad 1 / 2 / Mini , 768x1024 ratio 1
+// Apple iPad 3 / 4 , 768x1024 ratio 2
+
 
 // >> TO /layout/.. seeting

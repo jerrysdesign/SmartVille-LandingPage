@@ -5,11 +5,10 @@
 // Menu Right
 #menu_right {
 	@include is-hidden;
-	@include at-breakpoint($desktop) {@include is-show;}
+	@include at-breakpoint($break-desktop) {@include is-show;}
 }
 #menu_right {
-	@include at-breakpoint($ipad) {@include is-block;}
-	@include at-breakpoint($desktop) {@include is-block;}
+	@include at-breakpoint($break-ipad) {@include is-block;}
 	position:fixed;
 	top: 300px;
 	right: 20px;
@@ -21,8 +20,7 @@
 	@include box-shadow(0px 1px 0px 0px rgba(255,255,255,0.50), inset 0px 1px 3px 0px rgba(0,0,0,0.30));
 }
 .navigation-right {
-	@include at-breakpoint($ipad) {@include is-block;}
-	@include at-breakpoint($desktop) {@include is-block;}
+	@include at-breakpoint($break-ipad) {@include is-block;}
 	width: 52px;
 	li {
 		@extend %ir;
@@ -43,10 +41,7 @@
 // Menu Top
 .navigation-top {
 	@include is-hidden;
-	@include at-breakpoint($ipad) {
-		@include is-hidden;
-	}
-	@include at-breakpoint($desktop) {
+	@include at-breakpoint($break-desktop) {
 		@include is-show;
 	}
 	@extend %navbar;
@@ -98,16 +93,19 @@
 	&:hover {
 		opacity: 0.6;
 	}
+	@include at-breakpoint($break-ipad) {
+		margin: 1em;
+	}
 }
 .logo-shuttle {
 	@include is-hidden;
 }
-@include at-breakpoint($ipad) {
+@include at-breakpoint($break-ipad) {
 	#menu_top .logo-shuttle {
 		@include is-hidden;
 	}
 }
-@include at-breakpoint($desktop) {
+@include at-breakpoint($break-desktop) {
 	.logo-shuttle, .menu-button {
 		@include is-hidden;
 	}

@@ -35,10 +35,10 @@
   }
 }
 .product {
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     @include span-columns(8,8);
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     @include pre(1,12);
     @include span-columns(10,12);
   }
@@ -47,11 +47,11 @@
   @include span-columns(3,5);
   @include pre(1,5);
 
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     @include span-columns(6,8);
     @include pre(1,8);
   }
-  @include at-breakpoint($desktop) {
+  @include at-breakpoint($break-desktop) {
     @include pre(1,12);
     @include span-columns(10,12);
   }

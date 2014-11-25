@@ -4,27 +4,22 @@
 $page-container: ".container";
 
 #{$page-container} {
-	@include container($total-columns, $ipad, $desktop);
+	@include container($total-columns, $break-ipad, $break-desktop);
 	@include pie-clearfix;
-}
-
-// 設定大容器
-#{$page-container} {
-	
 }
 
 // 做版面
 // 一般版（mobile first）
 
 // iPad 版本
-@include at-breakpoint($ipad) {
+@include at-breakpoint($break-ipad) {
 	.list-c {
 		// @include span-columns(8);
 	}
 }
 
 // Desktop 版本
-@include at-breakpoint($desktop) {
+@include at-breakpoint($break-desktop) {
 	.list-c {
 		// @include span-columns(5);
 	}
@@ -35,10 +30,10 @@ $grid-background-column-color: rgba(#97D561,.5);
 .container {
 	.debug & {
 		@include susy-grid-background;
-		@include at-breakpoint($ipad) {
+		@include at-breakpoint($break-ipad) {
 			@include susy-grid-background;
 		}
-		@include at-breakpoint($desktop) {
+		@include at-breakpoint($break-desktop) {
 			@include susy-grid-background;
 		}
 	}

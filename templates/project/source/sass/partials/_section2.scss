@@ -36,13 +36,14 @@
   @extend %is-inline-block;
 }
 .advantages {
-  @include at-breakpoint($ipad) {
+  @include at-breakpoint($break-ipad) {
     @include span-columns(8,8);
   }
-  @include at-breakpoint($desktop) {
-    @include pre(2,12);
-    @include span-columns(8,12);
+  @include at-breakpoint($break-desktop) {
+    // @include pre(2,12);
+    // @include span-columns(8,12);
     .right-side {
+      @include pre(2,12);
       @include span-columns(8,12);
     }
   }
@@ -77,10 +78,10 @@
     @include span-columns(12,12);
     margin-left: inherit;
     .right-side {
-      @include at-breakpoint($ipad) {
+      @include at-breakpoint($break-ipad) {
         @include span-columns(8,8);
       }
-      @include at-breakpoint($desktop) {
+      @include at-breakpoint($break-desktop) {
         @include span-columns(4 omega,12);
         @include post(1,12);
       }
