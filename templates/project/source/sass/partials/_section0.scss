@@ -47,34 +47,34 @@
 // 平板screen shoot
 .screen-bg {
 .screen-01 {
-  @extend %screen-00;
-  background: url(#{$imagesPath}/sv01.png);
-  background-size: cover;
-  @extend %is-inline-block;
-  top: 0;
+	@extend %screen-00;
+	background: url(#{$imagesPath}/sv01.png);
+	background-size: cover;
+	@extend %is-inline-block;
+	top: 0;
 }
 .screen-02 {
-  @extend %screen-00;
-  background: url(#{$imagesPath}/sv02.png);
-  background-size: cover;
+	@extend %screen-00;
+	background: url(#{$imagesPath}/sv02.png);
+	background-size: cover;
 }
 .screen-03 {
-  @extend %screen-00;
-  background: url(#{$imagesPath}/sv03.png);
-  background-size: cover;
+	@extend %screen-00;
+	background: url(#{$imagesPath}/sv03.png);
+	background-size: cover;
 }
 .screen-04 {
-  @extend %screen-00;
-  background: url(#{$imagesPath}/sv04.png);
-  background-size: cover;
+	@extend %screen-00;
+	background: url(#{$imagesPath}/sv04.png);
+	background-size: cover;
 }
-  .bx-viewport {
-    height: 165px;
-  }
-  .bxslider > li {
-    width: 465px;
-    height: 165px
-  }
+	.bx-viewport {
+		height: 165px;
+	}
+	.bxslider > li {
+		width: 465px;
+		height: 165px
+	}
 	position: absolute;
 	top: 20px;
 	left: 120px;
@@ -82,6 +82,7 @@
 	z-index: 0;
 	overflow: hidden;
 	background: rgba(white,.5);
+}
 @include at-breakpoint($break-ipad) {
 	.bx-viewport {
 		height: 165px;

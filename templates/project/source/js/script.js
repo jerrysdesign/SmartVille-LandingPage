@@ -192,7 +192,9 @@ $(function(){
 		if ( winScrollTop < 500 ) {
 			$('.text-a,.text-b,.text-c,.text-d').fadeIn(0);
 			// #menu_top - background opacity
-			$menu.css('background-color', 'rgba(255,255,255,' + .25 + ')');
+			if( winWidth > 768 ){
+				$menu.css('background-color', 'rgba(255,255,255,' + .25 + ')');
+			}
 		}
 		if ( winScrollTop > 500 ){
 			$('.text-a,.text-b,.text-c,.text-d').fadeOut(0);
