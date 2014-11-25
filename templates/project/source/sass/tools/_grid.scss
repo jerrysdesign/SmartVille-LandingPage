@@ -21,16 +21,16 @@
 @include border-box-sizing;
 
 // 基本設定
-$total-columns			: 5;
-$column-width				: 3.75em;        //60
-$gutter-width				: 1.25em;        //20
-$grid-padding				: $gutter-width; //20
+$total-columns    : 4;
+$column-width     : 3.75em;        //60
+$gutter-width	    : 1.25em;        //20
+$grid-padding     : $gutter-width; //20
 
-$phone		:	5;
+$phone            :	4;
 // $break-ipad			: 671px 8;  // min-width 641px 寬度超過 641px 後的欄位數量
 // $break-desktop	: 941px 12; // min-width 941px 寬度超過 941px 後的欄位數量
-$ipad     : 671px;  // min-width 641px 寬度超過 641px 後的欄位數量
-$desktop  : 941px; // min-width 941px 寬度超過 941px 後的欄位數量
+$ipad             : 671px;  // min-width 641px 寬度超過 641px 後的欄位數量
+$desktop          : 941px; // min-width 941px 寬度超過 941px 後的欄位數量
 $small						: 320px;  // small phone
 $smart-p					: 480px;  // smartphone portrait
 $smart-l					: 640px;  // smartphone landscape
