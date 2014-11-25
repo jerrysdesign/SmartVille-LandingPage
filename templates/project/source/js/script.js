@@ -396,7 +396,7 @@ $(function(){
 		var opts = $.extend({}, defaults, options);
 		return this.each(function(){
 			var _this = $(this), 
-					_Height = _this.outerHeight(true);
+				_Height = _this.outerHeight(true);
 			_this.css({'top': '50%', 'margin-top': (_Height/2)*-1});
 			
 		});
