@@ -10,14 +10,15 @@
 		$hpGroup		= $('.hp-group'),
 		$pad			= $('.pad'),
 		$previewBlock	= $('.preview-block'),
-		$banner		 	= $('.banner'),
-		$mianSlider 	= $('#mian-slider'),
+		$banner			= $('.banner'),
+		$mianSlider		= $('#mian-slider'),
+		$menuRight		= $('#menu_right'),
 		winWidth		= $win.width(),
 		winHeight		= $win.height(),
 		winScrollTop	= $win.scrollTop(),
 		loading_timer	= 0,
-		loading_count 	= 0,
-		_a 				= 0;
+		loading_count	= 0,
+		_a				= 0;
 
 /*	----------------------------------------
 *	Function
@@ -376,16 +377,23 @@ $(function() {
 // }
 
 $(function(){
+	// 行動裝置時
 	if(is_mobile() == true){
-		$(function() {
+		// banner 等於裝置高
+		$(function(){
 			var menuHeight = $menu.height();
 			$('#section-0,.banner').css({'height': winHeight-menuHeight +'px'});
 		}).resize();
 	}else{
 		//
 	}
-});
 
+$(function(){
+	});
+	// 右選單垂直置中
+	$menuRightHeight = $menuRight.outerHeight();
+	$menuRight.css({'top': '50%', 'margin-top': $menuRightHeight/2*-1});
+});
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
