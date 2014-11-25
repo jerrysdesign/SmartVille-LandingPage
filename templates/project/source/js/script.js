@@ -387,9 +387,8 @@ $(function(){
 	}else{
 		//
 	}
-
+});
 $(function(){
-	});
 	// 右選單垂直置中
 	$menuRightHeight = $menuRight.outerHeight();
 	$menuRight.css({'top': '50%', 'margin-top': $menuRightHeight/2*-1});
