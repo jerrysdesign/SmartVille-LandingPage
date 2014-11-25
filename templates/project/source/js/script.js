@@ -2,19 +2,22 @@
 *	Global
 *	----------------------------------------
 */
-	var $win = $(window),
-		$body = $('body'),
-		$section = $('.section'),
-		$menu = $('#menu_top'),
-		$menuTop = $menu.offset().top,
-		$hpGroup = $('.hp-group'),
-		$pad = $('.pad'),
-		$previewBlock = $('.preview-block'),
-		winWidth = $win.width(),
-		winScrollTop = $win.scrollTop(),
-		loading_timer ,
-		loading_count = 0,
-		_a = 0;
+	var $win			= $(window),
+		$body			= $('body'),
+		$section		= $('.section'),
+		$menu			= $('#menu_top'),
+		$menuTop		= $menu.offset().top,
+		$hpGroup		= $('.hp-group'),
+		$pad			= $('.pad'),
+		$previewBlock	= $('.preview-block'),
+		$banner		 	= $('.banner'),
+		$mianSlider 	= $('#mian-slider'),
+		winWidth		= $win.width(),
+		winHeight		= $win.height(),
+		winScrollTop	= $win.scrollTop(),
+		loading_timer	= 0,
+		loading_count 	= 0,
+		_a 				= 0;
 
 /*	----------------------------------------
 *	Function
@@ -258,8 +261,8 @@ $(function(){
 	});
 
 	// WOW Scrolling - effect
-	var ww = $win.width();
-	if(ww > 480){
+	
+	if(winWidth > 480){
 		wow = new WOW({
 			boxClass: 'wow',
 			animateClass: 'animated',
@@ -360,7 +363,7 @@ $(function() {
 	});
 });
 
-// if(ww<940) {
+// if(winWidth<940) {
 // 	$('.advantages').append($hpGroup);
 // 	$('#hpGroup').append($hpGroup);
 // }
