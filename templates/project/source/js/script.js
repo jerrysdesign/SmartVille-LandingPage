@@ -387,16 +387,7 @@ $(function(){
 	}else{
 		//
 	}
-});
-// function verticalMiddle(){
-// 	// 右選單垂直置中
-// 	var _this		= $(this),
-// 		_thisHeight = _this.outerHeight();
-// 	_this.css({'top': '50%', 'margin-top': (_thisHeight/2)*-1});
-// 	// $menuRightHeight = $menuRight.outerHeight();
-// 	// $menuRight.css({'top': '50%', 'margin-top': $menuRightHeight/2*-1});
-// }
-
+})
 ;(function($){
 	// 右選單垂直置中
 	$.fn.verticalaligncenter = function(options){
