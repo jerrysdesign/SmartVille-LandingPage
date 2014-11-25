@@ -388,11 +388,34 @@ $(function(){
 		//
 	}
 });
-$(function(){
+// function verticalMiddle(){
+// 	// 右選單垂直置中
+// 	var _this		= $(this),
+// 		_thisHeight = _this.outerHeight();
+// 	_this.css({'top': '50%', 'margin-top': (_thisHeight/2)*-1});
+// 	// $menuRightHeight = $menuRight.outerHeight();
+// 	// $menuRight.css({'top': '50%', 'margin-top': $menuRightHeight/2*-1});
+// }
+
+;(function($){
 	// 右選單垂直置中
-	$menuRightHeight = $menuRight.outerHeight();
-	$menuRight.css({'top': '50%', 'margin-top': $menuRightHeight/2*-1});
+	$.fn.verticalaligncenter = function(options){
+		var defaults = {
+		};
+		var opts = $.extend({}, defaults, options);
+		return this.each(function(){
+			var _this = $(this), 
+					_Height = _this.outerHeight(true);
+			_this.css({'top': '50%', 'margin-top': (_Height/2)*-1});
+			
+		});
+	};
+})(jQuery);
+
+$(function(){
+	$menuRight.verticalaligncenter();
 });
+
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
