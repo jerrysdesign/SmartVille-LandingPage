@@ -1,55 +1,51 @@
 /* =======================
-   Section 0
-   ======================= */
+	 Section 0
+	 ======================= */
 
 // 兩手拿平板
 .hp-group {
-  position: absolute;
-  top: 320px;
-  left: 50%;
-  margin-left: -311px;
-  @include size(622px 282px);
-  z-index: index($z-index,pad);
-  overflow: hidden;
-    position: fixed;
-  }
-  &.transform {
-      -webkit-transform-style: preserve-3d;
-      -webkit-transform-origin: 50% 50% 0;
-      position: absolute;
-      width: 464px;
-      top: 970px;
-      margin-left: -464px;
-      .pad {
-        left: 0;
-      }
-      .screen-bg {
-        left: 40px;
-      }
-    }
-    &.gogo {
-        @include animation(GoSection2-ipad .75s ease-out);
-      }
-        @include animation(GoSection2-desktop .75s ease-out);
-      }
-    }
-  }
+	@include is-hidden;
+	position: absolute;
+	top: 320px;
+	left: 50%;
+	margin-left: -311px;
+	@include size(622px 282px);
+	z-index: index($z-index,pad);
+	overflow: hidden;
 	@include at-breakpoint($break-ipad) {
+		@include is-show;
+	};
 	@include at-breakpoint($break-desktop) {
+		position: fixed;
+	}
+	&.transform {
 		@include at-breakpoint($break-desktop) {
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform-origin: 50% 50% 0;
+			position: absolute;
+			width: 464px;
+			top: 970px;
+			margin-left: -464px;
+			.pad {
+				left: 0;
+			}
+			.screen-bg {
+				left: 40px;
+			}
+		}
+		&.gogo {
 			@include at-breakpoint($break-ipad) {
+				@include animation(GoSection2-ipad .75s ease-out);
+			}
 			@include at-breakpoint($break-desktop) {
+				@include animation(GoSection2-desktop .75s ease-out);
+			}
+		}
+	}
 }
 
 // 平板screen shoot
 .screen-bg {
-  position: absolute;
-  top: 20px;
-  left: 120px;
-  @include size(384px 240px);
-  z-index: 0;
-  overflow: hidden;
-}
 .screen-01 {
   @extend %screen-00;
   background: url(#{$imagesPath}/sv01.png);
@@ -79,7 +75,21 @@
     width: 465px;
     height: 165px
   }
+	position: absolute;
+	top: 20px;
+	left: 120px;
+	@include size(384px 240px);
+	z-index: 0;
+	overflow: hidden;
+	background: rgba(white,.5);
 @include at-breakpoint($break-ipad) {
+	.bx-viewport {
+		height: 165px;
+	}
+	.bxslider > li {
+		width: 465px;
+		height: 165px
+	}
 }
 
 @include at-breakpoint($break-desktop) {
@@ -111,70 +121,69 @@
 }
 
 %sub-element {
-  position: absolute;
-  background-size: contain;
+	position: absolute;
+	background-size: contain;
 }
 %hand {
-  @extend %sub-element;
-  background-image: url(#{$imagesPath}/hand-v2.png);
-  background-repeat: no-repeat;
-  @include size(108px 280px);
-  top: 80px;
-  z-index: 99;
+	@extend %sub-element;
+	background-image: url(#{$imagesPath}/hand-v2.png);
+	background-repeat: no-repeat;
+	@include size(108px 280px);
+	top: 80px;
+	z-index: 99;
 }
 .hand--l {
-  @extend %hand;
-  background-position: right;
-  left: 0;
+	@extend %hand;
+	background-position: right;
+	left: 0;
 }
 .hand--r {
-  @extend %hand;
-  @include transform (rotateY(-180deg));
-  background-position: left;
-  right: 0;
+	@extend %hand;
+	@include transform (rotateY(-180deg));
+	background-position: left;
+	right: 0;
 }
 .hide {
-  display: none;
+	display: none;
 }
 .pad {
-  @extend %sub-element;
-  background-image: url(#{$imagesPath}/pad.png);
-  @include size(464px 280px);
-  top: 0;
-  left: 79px;
-  z-index: 88;
+	@extend %sub-element;
+	background-image: url(#{$imagesPath}/pad.png);
+	@include size(464px 280px);
+	top: 0;
+	left: 79px;
+	z-index: 88;
 }
 
 .slide-mask-wrapper {
-  @include size(100% 0);
-  position: absolute;
-  top:0;
-  z-index: index($z-index, slidermask);
-  overflow: hidden;
+	@include size(100% 0);
+	position: absolute;
+	top:0;
+	z-index: index($z-index, slidermask);
+	overflow: hidden;
 }
 .slide-change-layer {
-  width:100%;
-  height:620px;
-  position: absolute;
-  top:-620px;
-  background-color:#82c250;
-  background-image: url(#{$imagesPath}/logocover-2.png);
-  background-position: 50%;
-  @extend %no-repeat;
+	width:100%;
+	height:620px;
+	position: absolute;
+	top:-620px;
+	background-color:#82c250;
+	background-image: url(#{$imagesPath}/logocover-2.png);
+	background-position: 50%;
+	@extend %no-repeat;
 }
 @include keyframes(slidemask) {
-  0% { top: -620px;}
-  100% { top: 620px;}
+	0% { top: -620px;}
+	100% { top: 620px;}
 }
 .banner {
-  height: 620px;
-  z-index: index($z-index, section0);
-
-  //
-  position: absolute;
-  width: 100%;
-  height: 620px;
-  top: 0px;
+	$height: 620px;
+	z-index: index($z-index, section0);
+	//
+	position: absolute;
+	width: 100%;
+	height: $height;
+	top: 0px;
 }
 .slide-1__bg, .slide-2__bg, .slide-1-2__bg, .slide-1-3__bg, .slide-3__bg, .slide-4__bg {
 	position: absolute;
@@ -189,16 +198,18 @@
 	z-index: 0;
 }
 .slide-2, .slide-3, .slide-4{
-  display:none;
+	display:none;
 }
 .slide-1__bg {
-  background-image: url(#{$imagesPath}/people.png);
-  @extend %no-repeat;
+	background-image: url(#{$imagesPath}/people.png);
+	@extend %no-repeat;
+	background-position: 50% 40%;
 }
 .slide-1-2__bg {
-  background-image: url(#{$imagesPath}/light.png);
-  @extend %no-repeat;
-  background-position: right top;
+	background-image: url(#{$imagesPath}/light.png);
+	@extend %no-repeat;
+	background-position: right top;
+	display:none;
 }
 .slide-1-3__bg {
 	@include is-hidden;
@@ -225,8 +236,8 @@
 	}
 }
 .slide-3__bg{
-  background-image: url(#{$imagesPath}/oldman.png);
-  @extend %no-repeat;
+	background-image: url(#{$imagesPath}/oldman.png);
+	@extend %no-repeat;
 }
 .slide-4__bg{
 	background-image: url(#{$imagesPath}/robot.png);
@@ -269,42 +280,41 @@
 }
 
 %slogan {
-  color: #fff;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+	color: #fff;
+	text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
 }
 .slide__title {
-  font-size: 4em;
-  font-weight: bold;
-  line-height: 1.25;
-  @extend %slogan;
+	font-size: 4em;
+	font-weight: bold;
+	line-height: 1.25;
+	@extend %slogan;
 }
 .slide__slogan {
-  font-size: 1.5em;
-  @extend %slogan;
-  letter-spacing: .2em;
+	font-size: 1.5em;
+	@extend %slogan;
+	letter-spacing: .2em;
 }
 #mian-slider {
-  position: absolute;
-  top: 0;
-  @include size(100% 620px);
-  overflow: hidden;
-  background-color: $bannerBg;;
-  @include clearfix;
-  li {
-    position: absolute;
-    width: 100%;
-    height: 620px;
-  }
+	position: absolute;
+	top: 0;
+	@include size(100%);
+	overflow: hidden;
+	background-color: $bannerBg;;
+	@include clearfix;
+	li {
+		position: absolute;
+		@include size(100%);
+	}
 }
 .gos2 {
-  color: #fff;
-  background-color: $primary;
-  @extend %is-inline-block;
-  padding: 5px 15px;
-  font-size: 1.25em;
-  @extend %cp;
-  width: 15%;
-  width: 6em;
-  @extend %center-block;
-  @include border-radius(15px);
+	color: #fff;
+	background-color: $primary;
+	@extend %is-inline-block;
+	padding: 5px 15px;
+	font-size: 1.25em;
+	@extend %cp;
+	width: 15%;
+	width: 6em;
+	@extend %center-block;
+	@include border-radius(15px);
 }

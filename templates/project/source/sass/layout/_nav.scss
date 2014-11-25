@@ -69,7 +69,7 @@
 .menu-button {
 	position: absolute;
 	z-index: 1000;
-	margin: 1em;
+	margin: .5em;
 	right: 0;
 	padding: 0;
 	width: 2.5em;
@@ -194,6 +194,7 @@
 
 .menu-wrap {
 	position: fixed;
+	top: 0;
 	right: 0;
 	z-index: 1002;
 	@include size(300px 100%);

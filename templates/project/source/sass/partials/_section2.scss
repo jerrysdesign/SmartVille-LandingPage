@@ -84,10 +84,10 @@
       @include at-breakpoint($break-desktop) {
         @include span-columns(4 omega,12);
         @include post(1,12);
+        li {
+          text-align: left;
+        }
       }
-    }
-    li {
-      text-align: left;
     }
   }
 }

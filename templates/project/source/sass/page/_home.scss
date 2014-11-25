@@ -1,12 +1,7 @@
 /* =======================
 	 Page/Home
 	 ======================= */
-%screen-00 {
-	position: absolute;
-	@include size(100%);
-	top: 0;
-	left: 0;
-}
+
 section {
 	z-index: index($z-index, section);
 	@extend %clearfix;
@@ -101,7 +96,11 @@ section {
 	// .header
 	position: relative;
 	z-index: index($z-index, header);
-	height: 620px;
+	height: 100%;
+	margin-top: 74px;
+	@include at-breakpoint($break-ipad) {
+		margin-top: 0;
+	};
 	.container {
 		position: relative;
 	}
@@ -111,7 +110,9 @@ section {
 // Main Slider Nav
 #section-1 {
 	z-index: index($z-index, section1);
-	margin-top: -80px;
+	@include at-breakpoint($break-ipad) {
+		margin-top: -80px;
+	}
 	padding: 50px 0;
 	.container {
 	}
