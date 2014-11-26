@@ -20,7 +20,22 @@ html.no-js lang="zh-TW"
 		/[if lt IE 9]
 			script src="//html5shim.googlecode.com/svn/trunk/html5.js"
 		script src="vendor/modernizr-2.7.2.min.js" 
+		css:
+			.mq-debug {
+				position: fixed;
+				top: 4px;
+				left: 4px;
+				z-index: 10000;
+				padding: 6px;
+				border-radius: 3px;
+				background-color: rgba(0,0,0,.9);
+				font-weight: 700;
+				font-size: 11px;
+				color: rgb(255,255,255);
+			}
+		
 	body
+		.debugger
 		/[if lt IE 9]
 			p.browsehappy
 				| 您使用的瀏覽器
@@ -401,4 +416,11 @@ html.no-js lang="zh-TW"
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-56572864-1');ga('send','pageview');
+      ga('create','UA-56572864-1');ga('send','pageview');    script src="/js/jquery.mediaquery.debugger.js"
+    javascript:
+			$(function(){
+				$(".debugger").mqDebug();
+				$(window).resize(function(){
+					$(".debugger").mqDebug();
+				});
+			});

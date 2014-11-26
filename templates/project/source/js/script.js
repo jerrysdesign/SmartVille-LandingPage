@@ -416,15 +416,4 @@ $(function(){
 	//	console.log($section.eq(_a).offset());
 	//	_a++;
 	//	});
-function layoutdebug(){
-	var layoutdebug = function(a){
-	[].forEach.call(
-		document.querySelectorAll(a),
-		function(b){
-			b.style.outline = "1px solid #" +
-			(~~(Math.random()*(1<<24)))
-			.toString(16)})
-	}
-	layoutdebug('*');
-	$('body').addClass("debug");
-}
+
