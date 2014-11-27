@@ -158,6 +158,25 @@ $(function(){
 			}
 		}
 		$('#loading_box').fadeOut(1000);
+	(function($){
+		$.fn.fullsize = function(options){
+			// var $win		= $(window),
+			// 	winWidth	= $win.width(),
+			// 	winHeight	= $win.Height();
+			var defaults = {};
+			var opts = $.extend({}, defaults, options);
+			return this.each(function(){
+				var _this = $(this),
+					$selectHeight = options.height();
+					_Height = winHeight;
+				_this.css({
+					'width'	: '100%',
+					'height': _Height
+				});
+				_this.css({'width': '100%', 'height': _Height - $selectHeight});
+			});
+		};
+	})(jQuery);
 	});
 
 	// Loading 
