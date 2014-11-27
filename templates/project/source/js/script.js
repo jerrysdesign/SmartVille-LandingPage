@@ -133,6 +133,21 @@
 	}
 
 $(function(){
+	// 05
+	// 垂直置中
+	(function($){
+		$.fn.verticalaligncenter = function(options){
+			var defaults = {
+			};
+			var opts = $.extend({}, defaults, options);
+			return this.each(function(){
+				var _this = $(this), 
+					_Height = _this.outerHeight(true);
+				_this.css({'top': '50%', 'margin-top': (_Height/2)*-1});
+				
+			});
+		};
+	})(jQuery);
 
 	// Close loading / Open Translation-effect
 	$win.load(function(){
