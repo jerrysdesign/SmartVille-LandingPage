@@ -39,6 +39,10 @@
   } 
 }
 .scene-tab-nav {
+  @include is-hidden;
+  @include at-breakpoint($break-ipad) {
+    @include is-show;
+  }
   position: relative;
   @extend %navbar;
   @extend %nav-fullwidth;
@@ -47,6 +51,11 @@
   }
   z-index: 5;
   .current & {
+    // @include is-show;
+    // position: fixed;
+    // width: 100%;
+    // z-index: 999999;
+    // bottom: 0;
   }
 }
 

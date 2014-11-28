@@ -22,19 +22,28 @@
 .navigation-right {
 	@include at-breakpoint($break-ipad) {@include is-block;}
 	width: 52px;
-	li {
-		@extend %ir;
-		@extend %is-inline-block;
-		float: left;
+	.navigation-item {
 		@include size(52px 32px);
-		@extend %cp;
-		background: url(#{$imagesPath}/menu_right_circle.svg);
-		&:hover {
-			@include transform (scale(1.2));
-		}
-		&.active {
-			background: url(#{$imagesPath}/menu_right_circle_selected.svg);
-		}
+		@include fl;
+	}
+}
+.navigation-item {
+	@extend %ir;
+	@extend %is-inline-block;
+	@include size(16px);
+	margin: 8px;
+	@extend %cp;
+	@include border-radius(100%);
+	background-color: white;
+	@include box-shadow(0 0 5px rgba(black,.15));
+	// background: url(#{$imagesPath}/menu_right_circle.svg);
+	&:hover {
+		@include transform (scale(1.2));
+		background-color: #F9A33A;
+	}
+	&.active {
+		// background: url(#{$imagesPath}/menu_right_circle_selected.svg);
+		background-color: #F9A33A;
 	}
 }
 
@@ -71,12 +80,13 @@
 	z-index: 1000;
 	margin: .5em;
 	right: 0;
+	top: 8px;
 	padding: 0;
 	width: 2.5em;
 	height: 2.25em;
 	border: none;
 	text-indent: 2.5em;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	color: transparent;
 	// background: transparent;
 	@extend %cp;
@@ -112,15 +122,6 @@
 	#menu_top .logo-shuttle {
 		@include is-show;
 	}
-}
-// html, body, .page, .content-wrap {
-// 	overflow: hidden;
-// 	width: 100%;
-// 	height: 100%;
-// }
-
-.page {
-
 }
 
 .menu-wrap li {
@@ -193,6 +194,9 @@
 // Menu
 
 .menu-wrap {
+	@include at-breakpoint(20em) {
+		@include size(270px 100%);
+	}
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -205,6 +209,15 @@
 	@include transition(transform 0.4s);
 	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	li {
+		border-bottom: 1px solid darken($primary, 10%);
+		& + li {
+			border-top: 1px solid lighten($primary, 12%);
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 
 .menu-side {
@@ -214,34 +227,39 @@
 .icon-list {
 	height: 100%;
 	@include transform(translate3d(0, 100%, 0));
+	@include transition(transform 0s 0.4s);
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	li {
 		display: block;
-		padding: 0.8em;
-		@include transform(translate3d(0, 500px, 0));
+		padding: 0.5em;
+		@include at-breakpoint($break-ipad) {
+			padding: 0.8em;
+		}
 		@include transition(transform 0s 0.4s);
-		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		// -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		// transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 		margin-left: 10px;
 		font-weight: 700;
+		&:nth-child(1) {
+			@include transform(translate3d(0, 1000px, 0));
+		}
 		&:nth-child(2) {
 			@include transform(translate3d(0, 1000px, 0));
 		}
 		&:nth-child(3) {
-			@include transform(translate3d(0, 1500px, 0));
+			@include transform(translate3d(0, 1000px, 0));
 		}
 		&:nth-child(4) {
-			@include transform(translate3d(0, 2000px, 0));
+			@include transform(translate3d(0, 1000px, 0));
 		}
 		&:nth-child(5) {
-			@include transform(translate3d(0, 2500px, 0));
+			@include transform(translate3d(0, 1000px, 0));
 		}
 		&:nth-child(6) {
-			@include transform(translate3d(0, 3000px, 0));
+			@include transform(translate3d(0, 1000px, 0));
 		}
 	}
-	@include transition(transform 0s 0.4s);
-	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 /* Shown menu */

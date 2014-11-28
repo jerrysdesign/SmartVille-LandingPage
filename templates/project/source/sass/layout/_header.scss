@@ -21,9 +21,12 @@
 	}
 }
 #menu_top {
-	// .container {
-	// 	@include bleed(1);
-	// }
+	#{$page-container} {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
 	.smv-logo {
 	  @include size(170px 45px);
 	  background-size: 170px auto;

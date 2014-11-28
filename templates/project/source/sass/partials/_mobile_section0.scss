@@ -1,0 +1,58 @@
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  @include size(100%);
+}
+.swipe-wrap {
+  overflow: hidden;
+  @include size(100%);
+  position: relative;
+  > div {
+    float:left;
+    @include size(100%);
+    position: relative;
+  }
+}
+
+.position-nav {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  li {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .2);
+    cursor: pointer;
+    @include size(32px);
+    &.on {
+      background-color: #fff;
+    }
+  }
+}
+nav.slider-pagination {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.prev, .next {
+  color: rgba(255, 255, 255, .5);
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 60px;
+  position: absolute;
+  z-index: 100;
+  font-size: 24px;
+  top: 50%;
+  margin: -50px 0 0;
+  padding: 10px 0;
+}
+.prev {
+  right: 100%;
+  margin-right: -24px;
+}
+.next {
+  left: 100%;
+  margin-left: -24px;
+}

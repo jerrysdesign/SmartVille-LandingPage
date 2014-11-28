@@ -10,7 +10,7 @@
 		$hpGroup		= $('.hp-group'),
 		$pad			= $('.pad'),
 		$previewBlock	= $('.preview-block'),
-		$banner			= $('.banner'),
+		$banner			= $('.banner--tablet'),
 		$mianSlider		= $('#mian-slider'),
 		$menuRight		= $('#menu_right'),
 		winWidth		= $win.width(),
@@ -31,7 +31,7 @@
 *	----------------------------------------
 */
 	
-	//
+	// 判斷瀏覽裝置為行動裝置
 	function is_mobile(){
 		return /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 	}
@@ -132,7 +132,6 @@
 		});
 	}
 
-$(function(){
 	// 05
 	// 垂直置中
 	(function($){
@@ -149,15 +148,6 @@ $(function(){
 		};
 	})(jQuery);
 
-	// Close loading / Open Translation-effect
-	$win.load(function(){
-		clearInterval(loading_timer);
-		if(loading_count<100){
-			for(var i=loading_count;i<=100;i++){
-				$("#loading_progress").html("Please wait..  "+i + "%");
-			}
-		}
-		$('#loading_box').fadeOut(1000);
 	(function($){
 		$.fn.fullsize = function(options){
 			// var $win		= $(window),
@@ -177,15 +167,19 @@ $(function(){
 			});
 		};
 	})(jQuery);
-	});
 
-	// Loading 
-	loading_timer = setInterval(loading_progress, 5);
+	
+	
+
+$(function(){
+
+	
 
 	// BxSlider API Setting
 	var slider = $('.bxslider').bxSlider({
-		mode: 'fade',
-		captions: true
+		captions: true,
+		adaptiveHeight: true,
+		mode: 'fade'
 	});
 
 	// Window Scroll
@@ -230,14 +224,14 @@ $(function(){
 			$previewBlock.delay(500).addClass('show');
 		}
 		if ( winScrollTop < 500 ) {
-			$('.text-a,.text-b,.text-c,.text-d').fadeIn(0);
+			$('.slide__content').fadeIn(0);
 			// #menu_top - background opacity
 			if( winWidth > 768 ){
 				$menu.css('background-color', 'rgba(255,255,255,' + .25 + ')');
 			}
 		}
 		if ( winScrollTop > 500 ){
-			$('.text-a,.text-b,.text-c,.text-d').fadeOut(0);
+			$('.slide__content').fadeOut(0);
 			// #menu_top - background opacity
 			$menu.css('background-color', 'rgba(255,255,255,' + 1 + ')');
 		}
@@ -386,24 +380,7 @@ $(function(){
 	});
 });
 
-$(function() {
 
-	var $content = $('.content-marsk'),
-		// $openbtn = $('#open-button'),
-		// $closebtn = $('#close-button' ),
-		$toggleMenu = $('#open-button,#close-button');
-		// isOpen = false;
-
-	$toggleMenu.click(function() {
-		$body.toggleClass("show-menu");
-	});
-
-	$content.click(function() {
-		if ($body.hasClass('show-menu')) {
-			$body.toggleClass("show-menu");
-		}
-	});
-});
 
 // if(winWidth<940) {
 // 	$('.advantages').append($hpGroup);
@@ -411,35 +388,86 @@ $(function() {
 // }
 
 $(function(){
+	// ==========================================
+	// 不分裝置一律做
+	// ==========================================
+
+	// Close loading / Open Translation-effect
+	$win.load(function(){
+		clearInterval(loading_timer);
+		if(loading_count<100){
+			for(var i=loading_count;i<=100;i++){
+				$("#loading_progress").html("Please wait..  "+i + "%");
+			}
+		}
+		$('#loading_box').fadeOut(1000);
+	});
+
+	// Loading 
+	loading_timer = setInterval(loading_progress, 5);
+
+
+	$(function() {
+		var $content = $('.content-marsk'),
+			$toggleMenu = $('#open-button,#close-button');
+
+		$toggleMenu.click(function() {
+			$body.toggleClass("show-menu");
+		});
+
+		$content.click(function() {
+			if ($body.hasClass('show-menu')) {
+				$body.toggleClass("show-menu");
+			}
+		});
+	});
+
+
 	// 行動裝置時
 	if(is_mobile() == true){
+
 		// banner 等於裝置高
 		$(function(){
 			var menuHeight = $menu.height();
-			$('#section-0,.banner').css({'height': winHeight-menuHeight +'px'});
+			$('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
 		}).resize();
-	}else{
-		//
+
+		// 手機 Banner Carousel
+		$(function(){
+			$(".banner--isphone").owlCarousel({
+				navigation : true, // Show next and prev buttons
+				slideSpeed : 1200,
+				paginationSpeed : 10,
+				singleItem:true,
+				items: 1,
+				loop:true,
+				animateOut: 'fadeOut',
+				autoplay:true,
+				autoplayTimeout: 3000,
+				autoHeight: false,
+				autoHeightClass: 'owl-height'
+			});
+		});
+
+		// 手機 Banner fix
+		$(function(){
+			$('.slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg').fullsize($('#menu_top'));
+			$('.slide-item').fullsize($('#menu_top'));
+		});
+
+	}
+
+
+	if (is_mobile = false) {
+
+		$(function(){
+			// 右選單垂直置中
+			$menuRight.verticalaligncenter();
+		});
 	}
 })
-;(function($){
-	// 右選單垂直置中
-	$.fn.verticalaligncenter = function(options){
-		var defaults = {
-		};
-		var opts = $.extend({}, defaults, options);
-		return this.each(function(){
-			var _this = $(this), 
-				_Height = _this.outerHeight(true);
-			_this.css({'top': '50%', 'margin-top': (_Height/2)*-1});
-			
-		});
-	};
-})(jQuery);
 
-$(function(){
-	$menuRight.verticalaligncenter();
-});
+$('.slide-item').fullsize();
 
 /*	----------------------------------------
 *	Console

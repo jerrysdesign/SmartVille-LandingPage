@@ -32,11 +32,10 @@ section {
 .section {
 	position: relative;
 	background-attachment: fixed;
+	padding: 2.5em 0;
 	@include pie-clearfix;
+	@include at-breakpoint($break-ipad) {
 		padding: 80px 0px;
-	&.bg-color {
-	}
-	&.bg-image {
 	}
 	.container {
 		position: relative;
@@ -60,8 +59,13 @@ section {
 	}
 }
 .section-title {
-	font-size: 2.8em;
+	font-size: 2.2em;
 	line-height: 1;
+	letter-spacing: -.1em;
+	margin-bottom: .4em;
+	@include at-breakpoint($break-ipad) {
+		font-size: 2.8em;
+	}
 	position: relative;
 	&:after {
 		margin-top: .3em;
@@ -78,9 +82,14 @@ section {
 	}
 }
 .section-description {
-	font-size: 1.5em;
-	line-height: 1.6;
-	margin-bottom: 40px;
+		font-size: 1.1em;
+		line-height: 1.5;
+		margin-bottom: 2em;
+	@include at-breakpoint($break-ipad) {
+		font-size: 1.5em;
+		line-height: 1.6;
+		margin-bottom: 40px;
+	}
 	.bg-image & {
 		color: #fff;
 	}
@@ -98,7 +107,9 @@ section {
 	z-index: index($z-index, header);
 	height: 100%;
 	margin-top: 74px;
+	padding: 0;
 	@include at-breakpoint($break-ipad) {
+		padding: 80px 0;
 		margin-top: 0;
 	};
 	.container {
@@ -109,8 +120,10 @@ section {
 // SECTCTION  1
 // Main Slider Nav
 #section-1 {
+	@include is-hidden;
 	z-index: index($z-index, section1);
 	@include at-breakpoint($break-ipad) {
+		@include is-show;
 		margin-top: -80px;
 	}
 	padding: 50px 0;
@@ -159,7 +172,10 @@ section {
 	z-index: index($z-index, section7);
 	padding-top: 40px;
 	.container {
-		// margin-top: -150px;
+		overflow: overlay;
+	}
+	@include at-breakpoint($break-ipad) {
+		overflow: inherit;
 	}
 }
 // SECTION FOOTER
@@ -219,14 +235,15 @@ section {
 .bx-wrapper, .bx-pager {
 	margin-bottom: 0;
 	.bx-pager.bx-default-pager a {
-		@include border-radius(8px);
-		@include size(16px);
-		background-color: #fff;
-		@include box-shadow(0 0 5px $black-15);
-		@extend %is-inline-block;
-		&.active,&:hover {
-			background-color: #F9A33A;
-		}
+		// @include border-radius(8px);
+		// @include size(16px);
+		// background-color: #fff;
+		// @include box-shadow(0 0 5px $black-15);
+		// @extend %is-inline-block;
+		// &.active,&:hover {
+		// 	background-color: #F9A33A;
+		// }
+		@extend .navigation-item;
 	}
 	.bx-viewport {
 		border: none;
@@ -254,6 +271,34 @@ section {
 	}
 }
 
+
+// =======================
+// override Owl Carousel
+// =======================
+.owl-controls {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	// exp
+	height: 64px;
+	@include pie-clearfix;
+}
+.owl-dots {
+	@include pie-clearfix;
+	margin: 0 auto;
+	text-align: center;
+}
+.owl-dot {
+	@extend .navigation-item;
+	// @include size(20px);
+	// @include border-radius(100%);
+	// background-color: white;
+	// display: inline-block;
+	// margin: 5px 8px;
+	// &.active {
+	// 	background-color: $primary;
+	// }
+}
 // =======================
 // debugger
 // =======================

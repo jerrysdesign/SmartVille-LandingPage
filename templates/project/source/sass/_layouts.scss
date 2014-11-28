@@ -2,19 +2,10 @@
 // Layouts styles
 // ======================
 $page-container: ".container";
+
 #{$page-container} {
+	@include container($total-columns, $break-ipad, $break-desktop);
 	@include pie-clearfix;
-}
-@include at-breakpoint($phone) {
-	#{$page-container} {
-		padding-left: 1.25em;
-		padding-right: 1.25em;
-		margin-left: -1.25em;
-		margin-right: -1.25em;
-	}
-}
-#{$page-container} {
-	@include container($break-ipad, $break-desktop);
 }
 // 做版面
 // 一般版（mobile first）

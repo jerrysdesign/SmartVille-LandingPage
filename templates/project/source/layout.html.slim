@@ -15,6 +15,7 @@ html.no-js lang="zh-TW"
 		link href="vendor/animation/animate.min.css" rel="stylesheet" type="text/css"
 		link href="vendor/TooltipStylesInspiration/css/tooltip-curved.css" rel="stylesheet" type="text/css"
 		link href="vendor/bxslider/jquery.bxslider.css" rel="stylesheet"
+		link href="vendor/owl-carousel/assets/owl.carousel.css" rel="stylesheet"
 		link href="css/style.css" rel="stylesheet" type="text/css"
 		/! Le HTML5 shim, for IE6-8 support of HTML5 elements
 		/[if lt IE 9]
@@ -33,7 +34,6 @@ html.no-js lang="zh-TW"
 				font-size: 11px;
 				color: rgb(255,255,255);
 			}
-		
 	body
 		.debugger
 		/[if lt IE 9]
@@ -44,6 +44,7 @@ html.no-js lang="zh-TW"
 				a href="http://browsehappy.com/" 請更新您的瀏覽器
 				| ，以維持正常瀏覽與體驗。
 		// 預載
+
 		#loading_box
 			#loading_text
 				.logo-smartville--w
@@ -90,14 +91,14 @@ html.no-js lang="zh-TW"
 					#menu_right
 						nav.navigation-right role="navigation" 
 							ul
-								li style="height: 36px" data-section="0" data-title="home" 
+								li.navigation-item style="height: 36px" data-section="0" data-title="home" 
 									img#menu_home src="img/menu_right_home.svg" style="cursor:pointer"
-								li data-section="2" 服務
-								li data-section="3" 便利
-								li data-section="4" 產品
-								li data-section="5" 使用
-								li data-section="6" 情境
-					
+								li.navigation-item data-section="2" 服務
+								li.navigation-item data-section="3" 便利
+								li.navigation-item data-section="4" 產品
+								li.navigation-item data-section="5" 使用
+								li.navigation-item data-section="6" 情境
+
 					// 手拿平板
 					#hp-group
 						.hp-group
@@ -118,34 +119,61 @@ html.no-js lang="zh-TW"
 							.slide-change-layer
 						
 						// banner
-						.banner
-							ul#mian-slider
-								li.slide-1
-									.slide-1-3__bg data-stellar-background-ratio='1'
-									.slide-1__bg data-stellar-background-ratio='0.15'
-									.slide-1-2__bg data-stellar-background-ratio='0.15'
-									.text-a
-										h3.slide__slogan 設定簡單，不須牽線
-										h2.slide__title 讓你的家電長智慧
-										.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
-								li.slide-2
-									.slide-2__bg data-stellar-background-ratio='0.15'
-									.text-b
-										h3.slide__slogan 遠端監控，警示提醒
-										h2.slide__title 讓你的居家更安全
-										.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
-								li.slide-3
-									.slide-3__bg data-stellar-background-ratio='-0.15'
-									.text-c
-										h3.slide__slogan 用藥提醒，醫護接軌
-										h2.slide__title 讓你的身體更健康
-										.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
-								li.slide-4
-									.slide-4__bg data-stellar-background-ratio='0.3'
-									.text-d
-										h3.slide__slogan 懶人採買，物料管控
-										h2.slide__title 讓你的生活更便利
-										.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
+						.banner--isphone
+							.slide-item
+								.slide-1__bg
+								.slide__content
+									h3.slide__slogan 設定簡單，不須牽線
+									h2.slide__title 讓你的家電長智慧
+								/ img src='img/people-v'
+							.slide-item
+								.slide-2__bg
+								.slide__content
+									h3.slide__slogan 遠端監控，警示提醒
+									h2.slide__title 讓你的居家更安全
+								/ img src='img/thief--v.png'
+							.slide-item
+								.slide-3__bg
+								.slide__content
+									h3.slide__slogan 用藥提醒，醫護接軌
+									h2.slide__title 讓你的身體更健康
+								/ img src='img/oldman-v.png'
+							.slide-item
+								.slide-4__bg
+								.slide__content
+									h3.slide__slogan 懶人採買，物料管控
+									h2.slide__title 讓你的生活更便利
+								/ img src='img/robot-v.png'
+
+						// banner
+						/ .banner--istablet
+						/ 	ul#mian-slider
+						/ 		li.slide-item.slide-1
+						/ 			.slide-1-3__bg data-stellar-background-ratio='1'
+						/ 			.slide-1__bg data-stellar-background-ratio='0.15'
+						/ 			.slide-1-2__bg data-stellar-background-ratio='0.15'
+						/ 			.slide__content
+						/ 				h3.slide__slogan 設定簡單，不須牽線
+						/ 				h2.slide__title 讓你的家電長智慧
+						/ 				.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
+						/ 		li.slide-item.slide-2
+						/ 			.slide-2__bg data-stellar-background-ratio='0.15'
+						/ 			.slide__content
+						/ 				h3.slide__slogan 遠端監控，警示提醒
+						/ 				h2.slide__title 讓你的居家更安全
+						/ 				.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
+						/ 		li.slide-item.slide-3
+						/ 			.slide-3__bg data-stellar-background-ratio='-0.15'
+						/ 			.slide__content
+						/ 				h3.slide__slogan 用藥提醒，醫護接軌
+						/ 				h2.slide__title 讓你的身體更健康
+						/ 				.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
+						/ 		li.slide-item.slide-4
+						/ 			.slide-4__bg data-stellar-background-ratio='0.3'
+						/ 			.slide__content
+						/ 				h3.slide__slogan 懶人採買，物料管控
+						/ 				h2.slide__title 讓你的生活更便利
+						/ 				.gos2.wow.bounceInUp.animated data-wow-delay="0.2s" data-section="2" 了解更多
 
 					// section1 // banner slide 的按鈕
 					#section-1.section.bg-color.bg-white data-section="1"
@@ -215,8 +243,8 @@ html.no-js lang="zh-TW"
 								.icon-96-wrapper.animated.wow.bounceInDown data-wow-delay="2s"
 									.icon-wifi
 										img src="img/wifi.svg"
-									.icon-zwave
-										img src="img/zwave.svg"
+									/ .icon-zwave
+									/ 	img src="img/zwave.svg"
 								.hend-and-ipad.animated.wow.bounceInUp data-wow-delay="1s" data-wow-duration="1.5s"
 									img src="img/hend_pad.png"
 								.ihouse.animated.wow.bounceInUp data-wow-delay=".1s" data-wow-duration="1.5s"
@@ -406,6 +434,7 @@ html.no-js lang="zh-TW"
 		script src="vendor/scroll-up-bar/dist/scroll-up-bar.min.js"
 		script src="vendor/jquery-waypoints/waypoints.min.js"
 		script src="vendor/bxslider/jquery.bxslider.min.js"
+		script src="vendor/owl-carousel/owl.carousel.min.js"
 		script src="js/script.js"
 		= render "partials/layout_livereload"
 		/! Google Analytics: change UA-56572864-1 to be your site's ID.
@@ -416,7 +445,8 @@ html.no-js lang="zh-TW"
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-56572864-1');ga('send','pageview');    script src="/js/jquery.mediaquery.debugger.js"
+      ga('create','UA-56572864-1');ga('send','pageview');
+    script src="js/jquery.mediaquery.debugger.js"
     javascript:
 			$(function(){
 				$(".debugger").mqDebug();
