@@ -170,6 +170,7 @@ section {
 // 使用情境
 #section-7{
 	z-index: index($z-index, section7);
+	overflow: hidden;
 	padding-top: 40px;
 	.container {
 		overflow: overlay;

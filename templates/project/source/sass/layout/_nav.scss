@@ -261,7 +261,21 @@
 		}
 	}
 }
-
+.icon-move {
+	@include is-hidden;
+	.current &{
+		@include is-show;
+		position: fixed;
+		$size: 72;
+		@include size($size);
+		margin-left: $size/2*-1;
+		margin-top: $size/2*-1;
+		left: 50%;
+		top: 50%;
+		z-index: 99;
+		@include transition(all .3s);
+	}
+}
 /* Shown menu */
 
 .show-menu {

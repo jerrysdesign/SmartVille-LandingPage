@@ -469,6 +469,11 @@ $(function(){
 
 $('.slide-item').fullsize();
 
+//dom bug
+// $('.icon-move').css(zindex,999);
+// $('.icon-move').waypoint(function() {
+//   notify('25% from the top');
+// }, { offset: '25%' });
 /*	----------------------------------------
 *	Console
 *	----------------------------------------
