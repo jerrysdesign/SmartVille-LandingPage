@@ -267,6 +267,9 @@
 	@include is-hidden;
 	.current &{
 		@include is-show;
+		@include at-breakpoint($break-ipad) {
+			@include is-hidden;
+		}
 		position: fixed;
 		$size: 72;
 		@include size($size);
@@ -278,6 +281,7 @@
 		@include transition(all .3s);
 	}
 }
+
 /* Shown menu */
 
 .show-menu {

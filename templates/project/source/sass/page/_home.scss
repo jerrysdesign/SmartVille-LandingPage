@@ -174,9 +174,9 @@ section {
 	padding-top: 40px;
 	.container {
 		overflow: overlay;
-	}
-	@include at-breakpoint($break-ipad) {
-		overflow: inherit;
+		@include at-breakpoint($break-ipad) {
+			overflow: initial;
+		}
 	}
 }
 // SECTION FOOTER
