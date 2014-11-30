@@ -187,6 +187,7 @@ html.no-js lang="zh-TW"
 							h5.section-description 為您帶來智慧。安全。健康。便利的新體驗生活
 							.advantages
 								.right-side
+									a href="" id="reload-slider" style='desplay:none'
 									ul.bxslider
 										li.advantages-items 
 											h3 居家控制
@@ -441,19 +442,19 @@ html.no-js lang="zh-TW"
 		script src="js/script.js"
 		= render "partials/layout_livereload"
 		/! Google Analytics: change UA-56572864-1 to be your site's ID.
-    javascript:
-      window.jQuery || document.write('<\/script>')
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-56572864-1');ga('send','pageview');
-    script src="js/jquery.mediaquery.debugger.js"
-    javascript:
-			$(function(){
-				$(".debugger").mqDebug();
-				$(window).resize(function(){
-					$(".debugger").mqDebug();
-				});
-			});
+		javascript:
+			window.jQuery || document.write('<\/script>')
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-56572864-1');ga('send','pageview');
+		script src="js/jquery.mediaquery.debugger.js"
+		/ javascript:
+		/ 	$(function(){
+		/ 		$(".debugger").mqDebug();
+		/ 		$(window).resize(function(){
+		/ 			$(".debugger").mqDebug();
+		/ 		});
+		/ 	});

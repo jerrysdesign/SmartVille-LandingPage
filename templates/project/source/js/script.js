@@ -148,6 +148,8 @@
 		};
 	})(jQuery);
 
+	// 06
+	// 全畫面
 	(function($){
 		$.fn.fullsize = function(options){
 			// var $win		= $(window),
@@ -168,12 +170,8 @@
 		};
 	})(jQuery);
 
-	
-	
 
 $(function(){
-
-	
 
 	// BxSlider API Setting
 	var slider = $('.bxslider').bxSlider({
@@ -181,6 +179,14 @@ $(function(){
 		adaptiveHeight: true,
 		mode: 'fade'
 	});
+	// 重整 BxSlider
+		function reloadslider(){
+			slider.reloadSlider({
+				captions: true,
+				adaptiveHeight: true,
+				mode: 'fade'
+			});
+		}
 
 	// Window Scroll
 	$win.scroll(function() {
@@ -200,22 +206,17 @@ $(function(){
 		if ( winScrollTop > 207-65 ){
 			$('.hand--l, .hand--r').addClass("hide");
 		}
-		if (winScrollTop < 508) {
+		if (winScrollTop < 507) {
 			$hpGroup.removeClass("transform");
 			$hpGroup.removeClass("gogo");
 			$(".advantages").removeClass("current");
-			// $(".bx-viewport").css({'height':165});
-			// $(".bxslider > li").css({'width':646,'height':165});
+			reloadslider();
 		}
 		if (winScrollTop > 508) {
-
 			$hpGroup.addClass("transform");
 			$hpGroup.addClass("gogo");
 			$(".advantages").addClass("current");
-
-				// $(".bx-viewport").css({'height':265});
-				// $(".bxslider > li").css({'width':313,'height':265});
-			
+			reloadslider();
 		}
 		if ($s2Top > topOfWindow) {
 			$previewBlock.delay(100).removeClass('show');
@@ -297,7 +298,6 @@ $(function(){
 	});
 
 	// WOW Scrolling - effect
-	
 	if(winWidth > 480){
 		wow = new WOW({
 			boxClass: 'wow',
@@ -331,7 +331,7 @@ $(function(){
 		$rightLinksDatasection.addClass('active');
 		$sectionDatasection.addClass('current');
 		// console.log('datasection'+':'+datasection);
-	});
+	}, { offset: 104 });
 	$win.scroll(function(){
 		if ($win.scrollTop() == 0){
 			$Links.removeClass('active');
@@ -380,12 +380,6 @@ $(function(){
 	});
 });
 
-
-
-// if(winWidth<940) {
-// 	$('.advantages').append($hpGroup);
-// 	$('#hpGroup').append($hpGroup);
-// }
 
 $(function(){
 	// ==========================================
@@ -465,7 +459,7 @@ $(function(){
 			$menuRight.verticalaligncenter();
 		});
 	}
-})
+});
 
 $('.slide-item').fullsize();
 

@@ -272,6 +272,12 @@ section {
 	}
 }
 
+.advantages {
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		bottom: -40px;
+	}
+}
+
 
 // =======================
 // override Owl Carousel

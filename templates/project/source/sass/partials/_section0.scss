@@ -25,7 +25,7 @@
 			-webkit-transform-origin: 50% 50% 0;
 			position: absolute;
 			width: 464px;
-			top: 970px;
+			top: 980px;
 			margin-left: -464px;
 			.pad {
 				left: 0;
@@ -81,23 +81,23 @@
 		background: url(#{$imagesPath}/sv04.png);
 		background-size: cover;
 	}
-	.bx-viewport {
-		height: 165px;
-	}
-	.bxslider > li {
-		width: 465px;
-		height: 165px
-	}
+	// .bx-viewport {
+	// 	height: 165px;
+	// }
+	// .bxslider > li {
+	// 	width: 465px;
+	// 	height: 165px
+	// }
 }
-@include at-breakpoint($break-desktop) {
-	.bx-viewport {
-		height: 265px;
-	}
-	.bxslider > li {
-		width:313px;
-		height: 265px
-	}
-}
+// @include at-breakpoint($break-desktop) {
+// 	.bx-viewport {
+// 		height: 265px;
+// 	}
+// 	.bxslider > li {
+// 		width:313px;
+// 		height: 265px
+// 	}
+// }
 
 // 平板轉場至 section 2 動畫
 @include keyframes(GoSection2-iapd) {
