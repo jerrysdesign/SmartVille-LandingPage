@@ -32,13 +32,13 @@ $phone            :	4;
 $ipad             : 671px;  // min-width 641px 寬度超過 641px 後的欄位數量
 $desktop          : 941px; // min-width 941px 寬度超過 941px 後的欄位數量
 $small						: 320px;  // small phone
-$smart-p					: 480px;  // smartphone portrait
-$smart-l					: 640px;  // smartphone landscape
-$tablet-p					: 768px;  // tablet portrait
-$dektop-m					: 980px;  // desktop medium
-$tablet-l					: 1024px; // tablet landscape
-$break-desktop-l	: 1170px; // desktop large
-$break-desktop-w	: 1360px; // desktop wide
+// $smart-p					: 480px;  // smartphone portrait
+// $smart-l					: 640px;  // smartphone landscape
+// $tablet-p					: 768px;  // tablet portrait
+// $dektop-m					: 980px;  // desktop medium
+// $tablet-l					: 1024px; // tablet landscape
+// $break-desktop-l	: 1170px; // desktop large
+// $break-desktop-w	: 1360px; // desktop wide
 
 // ---------------------------------------------------------------------------
 // convert to em's for better compatibility
@@ -50,16 +50,16 @@ $break-desktop-w	: 1360px; // desktop wide
 // ---------------------------------------------------------------------------
 // alternative layout breakpoints
 // ---------------------------------------------------------------------------
-$break-ipad				: toEm($ipad) 8;
-$break-desktop		: toEm($desktop) 12;
-$break-small			: toEm($small);     //20em
-$break-smart-p		: toEm($smart-p);   //30em
-$break-smart-l		: toEm($smart-l);   //40em
-$break-tablet-p		: toEm($tablet-p);  //48em
-$break-dektop-m		: toEm($dektop-m);  //61.25em
-$break-tablet-l		: toEm($tablet-l);  //64em
-$break-desktop-l	: toEm($break-desktop-l); //73.125em
-$break-desktop-w	: toEm($break-desktop-w); //85em
+$break-small			: toEm($small) 4;
+$break-ipad       : toEm($ipad) 8;
+$break-desktop    : toEm($desktop) 12;
+// $break-smart-p		: toEm($smart-p);   //30em
+// $break-smart-l		: toEm($smart-l);   //40em
+// $break-tablet-p		: toEm($tablet-p);  //48em
+// $break-dektop-m		: toEm($dektop-m);  //61.25em
+// $break-tablet-l		: toEm($tablet-l);  //64em
+// $break-desktop-l	: toEm($break-desktop-l); //73.125em
+// $break-desktop-w	: toEm($break-desktop-w); //85em
 
 
 // MObile

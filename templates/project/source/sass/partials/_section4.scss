@@ -24,94 +24,91 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
   }
 }
 
-.wireless-home {
-  // @include at-breakpoint($break-phone) {
-  //   @include span-columns(5,5);
-  // }
-  @include at-breakpoint($break-ipad) {
-    @include span-columns(8,8);
-  }
-  @include at-breakpoint($break-desktop) {
-    @include pre(1,12);
-    @include span-columns(10,12);
-  }
-  position: relative;
-  min-height: 438px;
-}
-
-
-@include with-grid-settings(3,6em,1.5em,1em) {
-  .wireless-home {
-    [class^='icon-00'] {
-      @include span-columns(1,3);
-      @include nth-omega(3n);
-      margin-bottom: 1em;
-    }
-  }
-}
-@for $i from 1 through 6 {
-  .icon-00#{$i} {
-    position: relative;
-    @include size(72px);
-    // @include fl;
-  }
-}
 @mixin icon-left {
   left: 0;
 }
 @mixin icon-right {
   right: 0;
 }
-@include at-breakpoint($break-ipad) {
-  @for $i from 1 through 6 {
-    .icon-00#{$i} { position: absolute; }
-  }
-  .dot {
-    @include is-hidden;
-    position: absolute;
-    @include size(100%);
-    background: url(#{$imagesPath}/dot.png) no-repeat center 16px;
-    min-height: 438px;
-    @include is-show;
-    .current & {
-      @include animation(dotshow 6s linear infinite);
-    }
-  }
-  @for $i from 1 through 3 {
-    .icon-00#{$i} {
-      // @include icon-left;
-      @extend %icon-64;
-      .current & {
-        @include animation(icon#{$i} 6s linear infinite);
+.wireless-home {
+  position: relative;
+  min-height: 438px;
+
+  @include at-breakpoint($break-small) {
+    // mobile
+    @include with-grid-settings(3,6em,1.5em,1em) {
+      [class^='icon-00'] {
+        @include span-columns(1,3);
+        @include nth-omega(3n);
+        margin-bottom: 1em;
       }
     }
   }
-  @for $i from 4 through 6 {
-    .icon-00#{$i} {
-      // @include icon-right;
-      @extend %icon-64;
+  @include at-breakpoint($break-ipad) {
+    // >= pad
+    @include reset-columns;
+    @include span-columns(8,8);
+    [class^='icon-00'] {
+      @include reset-columns;
+      @include size(72px);
+      position: absolute;
+    }
+    // @for $i from 1 through 6 {
+    //   .icon-00#{$i} {
+    //     @include size(72px);
+    //     position: absolute;
+    //   }
+    // }
+    .dot {
+      @include is-hidden;
+      position: absolute;
+      @include size(100%);
+      background: url(#{$imagesPath}/dot.png) no-repeat center 16px;
+      min-height: 438px;
+      @include is-show;
       .current & {
-        @include animation(icon#{$i} 6s linear infinite);
+        @include animation(dotshow 6s linear infinite);
       }
     }
+    @for $i from 1 through 3 {
+      .icon-00#{$i} {
+        @extend %icon-64;
+        .current & {
+          @include animation(icon#{$i} 6s linear infinite);
+        }
+      }
+    }
+    @for $i from 4 through 6 {
+      .icon-00#{$i} {
+        @extend %icon-64;
+        .current & {
+          @include animation(icon#{$i} 6s linear infinite);
+        }
+      }
+    }
+    // 高度套用動畫
+    .icon-001 {
+      top: 0;
+    }
+    .icon-002 {
+      top: 130px;
+    }
+    .icon-003 {
+      top: 260px;
+    }
+    .icon-004 {
+      top: 0;
+    }
+    .icon-005 {
+      top: 130px;
+    }
+    .icon-006 {
+      top: 260px;
+    }
   }
-  .icon-001 {
-    top: 0;
-  }
-  .icon-002 {
-    top: 130px;
-  }
-  .icon-003 {
-    top: 260px;
-  }
-  .icon-004 {
-    top: 0;
-  }
-  .icon-005 {
-    top: 130px;
-  }
-  .icon-006 {
-    top: 260px;
+  @include at-breakpoint($break-desktop) {
+    @include pre(1,12);
+    @include span-columns(10,12);
   }
 }
 .icon-wifi {
@@ -120,7 +117,7 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
   position: absolute;
   margin-left: -48px;
   left: 50%;
-  // 以下討用動畫
+  // 以下套用動畫
   // bottom: 48px;
   // @include at-breakpoint($break-ipad) {
   //   top: 80px;
@@ -175,66 +172,68 @@ $centerY: 130px;
   top: $centerY;
   right: $centerX;
 }
-@include keyframes(dotshow) {
-  0% { opacity: 0;}
-  35% { opacity: .5;}
-  95% { opacity: 1;}
-  100% { opacity: 0;}
-}
-@include keyframes(icon1) {
-  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-  35% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(icon2) {
-  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-  35% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(icon3) {
-  0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
-  35% { top: 260px; left: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% { top: 260px; left: 0;opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(icon4) {
-  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-  35% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% {top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(icon5) {
-  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-  35% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(icon6) {
-  0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
-  35% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  95% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
-  100% { opacity: 0;@include transform (scale(1.5));}
-}
-@include keyframes(fadeInOut) {
-  0% { opacity: 0;top:80px;}
-  25% { opacity: 1;top:80px;}
-  50% { opacity: 0;top:80px;}
-  75% { opacity: 1;top:80px;}
-  100% { opacity: 0;top:80px;}
-}
-@include keyframes(fadeOutIn) {
-  0% { opacity: 1;top:80px;}
-  25% { opacity: 0;top:80px;}
-  50% { opacity: 1;top:80px;}
-  75% { opacity: 0;top:80px;}
-  100% { opacity: 1;top:80px;}
-}
-@include keyframes(fadeInOut) {
-  0% { opacity: 0.5;top:80px;}
-  25% { opacity: 1;top:80px;}
-  50% { opacity: 0.5;top:80px;}
-  75% { opacity: 1;top:80px;}
-  100% { opacity: 0.5;top:80px;}
+@include at-breakpoint($break-ipad) {
+  @include keyframes(dotshow) {
+    0% { opacity: 0;}
+    35% { opacity: .5;}
+    95% { opacity: 1;}
+    100% { opacity: 0;}
+  }
+  @include keyframes(icon1) {
+    0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+    35% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% { top: 0; left: 0; opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(icon2) {
+    0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+    35% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% { top: 130px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(icon3) {
+    0% { opacity: 0; @include left-center; @include transform(rotate(-720deg));}
+    35% { top: 260px; left: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% { top: 260px; left: 0;opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(icon4) {
+    0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+    35% { top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% {top: 0; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(icon5) {
+    0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+    35% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% { top: 130px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(icon6) {
+    0% { opacity: 0; @include right-center; @include transform(rotate(-720deg));}
+    35% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    95% { top: 260px; right: 0; opacity: .9;@include transform(rotate(0deg));}
+    100% { opacity: 0;@include transform (scale(1.5));}
+  }
+  @include keyframes(fadeInOut) {
+    0% { opacity: 0;top:80px;}
+    25% { opacity: 1;top:80px;}
+    50% { opacity: 0;top:80px;}
+    75% { opacity: 1;top:80px;}
+    100% { opacity: 0;top:80px;}
+  }
+  @include keyframes(fadeOutIn) {
+    0% { opacity: 1;top:80px;}
+    25% { opacity: 0;top:80px;}
+    50% { opacity: 1;top:80px;}
+    75% { opacity: 0;top:80px;}
+    100% { opacity: 1;top:80px;}
+  }
+  @include keyframes(fadeInOut) {
+    0% { opacity: 0.5;top:80px;}
+    25% { opacity: 1;top:80px;}
+    50% { opacity: 0.5;top:80px;}
+    75% { opacity: 1;top:80px;}
+    100% { opacity: 0.5;top:80px;}
+  }
 }
