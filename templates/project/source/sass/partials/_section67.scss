@@ -82,6 +82,7 @@
     color: #00ADEE;
     background-color: rgba($black-5, .75);
     padding: 15px 10px;
+    letter-spacing: -.05em;
     @extend %cp;
   }
   li a:hover, li.active a {
@@ -90,7 +91,6 @@
     background-color: #00ADEE;
   }
   .active a {
-    font-size: 1.25em;
     border-bottom: none;
   }
 }

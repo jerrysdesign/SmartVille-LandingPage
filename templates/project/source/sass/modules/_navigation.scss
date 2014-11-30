@@ -26,7 +26,7 @@
 	ul li.active a,
 	ul li span {
 		text-decoration: none;
-		cursor: text;
+		@extend %cp;
 		// color: rgba(0, 0, 0, .4);
 	}
 }

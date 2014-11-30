@@ -1,6 +1,9 @@
 /* =======================
 	 Page/Home
 	 ======================= */
+%cp, .cp {
+	cursor: pointer;
+}
 
 section {
 	z-index: index($z-index, section);
