@@ -38,6 +38,4 @@ body {
 .logo-smartville--w {background-image: url(#{$imagesPath}/logo-martville--w.svg);@extend %logo;}
 
 %cp {cursor: pointer;}
-%no-repeat {
-  background-repeat: no-repeat;
-}
+%no-repeat {background-repeat: no-repeat;}

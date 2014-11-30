@@ -1,10 +1,6 @@
 /* =======================
 	 Page/Home
 	 ======================= */
-%cp, .cp {
-	cursor: pointer;
-}
-
 section {
 	z-index: index($z-index, section);
 	@extend %clearfix;
@@ -108,15 +104,15 @@ section {
 	// .header
 	position: relative;
 	z-index: index($z-index, header);
-	height: 100%;
 	margin-top: 74px;
 	padding: 0;
-	@include at-breakpoint($break-ipad) {
-		padding: 80px 0;
-		margin-top: 0;
-	};
 	.container {
 		position: relative;
+	}
+	@include at-breakpoint($break-ipad) {
+		height: 624px;
+		padding: 80px 0;
+		margin-top: 0;
 	}
 }
 
