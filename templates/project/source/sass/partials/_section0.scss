@@ -195,6 +195,19 @@
 	@include at-breakpoint($break-ipad) {
 		@include is-show;
 	}
+	z-index: index($z-index, section0);
+	position: absolute;
+	@include size(100% 620px);
+	top: 0px;
+	&:hover {
+		[class$='__bg'] {
+			@include transition(all .5s);
+			-webkit-filter: blur(10px); /* Chrome, Opera */
+			-moz-filter: blur(10px);
+			-ms-filter: blur(10px);    
+      filter: blur(10px); 
+		}
+	}
 }
 .slide-item {
 	@include size(100%);
