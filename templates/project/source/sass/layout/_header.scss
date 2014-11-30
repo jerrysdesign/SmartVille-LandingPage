@@ -47,7 +47,7 @@
 		margin-left: 20px;
 	}
 	@include at-breakpoint($break-ipad) {
-		height: 114px;
+		height: 104px;;
 		background: rgba(white,.5);
 		.smv-logo {
 		  @include size(206px 54px);
