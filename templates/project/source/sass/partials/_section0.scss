@@ -252,7 +252,7 @@
 }
 @include at-breakpoint($break-ipad) {
 	%slide__pad {
-		@extend %slide__bg ;
+		@extend %slide__bg;
 		position: absolute;
 		@include background-size (initial);
 		z-index: -1;
@@ -273,7 +273,7 @@
 	.slide-1-3__bg {
 		background-image: url(#{$imagesPath}/window.png);
 		background-attachment: inherit;
-		background-position: 30% 40%;
+		background-position: left top;
 		@extend %slide__pad;
 		background-repeat: no-repeat;
 	}
@@ -321,10 +321,6 @@
 		left: 0;
 		top: 120px;
 		@include center-block;
-	}
-	@include at-breakpoint($break-desktop) {
-		background-attachment: fixed;
-		position: fixed;
 	}
 	.gos2 {
 		margin-top: 10px;
