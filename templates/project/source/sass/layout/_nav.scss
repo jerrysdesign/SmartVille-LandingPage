@@ -67,6 +67,7 @@
 		@include border-radius(15px);
 		@include transition (background 0.3s ease);
 		@extend %cp;
+		@include text-shadow(0 1px 1px 1px rgba(white, .9));
 		&:hover {
 			background-color: #e2e2e2;
 		}
