@@ -40,13 +40,12 @@
     }
     svg {
       position: absolute;
-      // @extend %is-block;
       $icon-size: 64px;
       fill: $black-20;
       opacity: 1;
       left: 50%;
       margin-left: $icon-size/2*-1;
-      margin-top: (72-$icon-size)/2;
+      // margin-top: (72-$icon-size)/2;
       @include size($icon-size);
       @include transition(all .3s);
       @extend %ir;
