@@ -44,7 +44,12 @@
 		}
 	}
 }
+
 @include at-breakpoint($break-ipad) {
+	%screen-00 {
+		position: absolute;
+		@include size(100%);
+	}
 	// 平板screen shoot
 	.screen-bg {
 		position: absolute;
