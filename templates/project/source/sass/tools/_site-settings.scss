@@ -34,7 +34,7 @@ $baseBackground	: #E7E8EE;
 
 // Fonts
 
-$headingsFontFamily		: $fontMing;
+$headingsFontFamily : $fontMing;
 $inputFontFamily		: $baseFontFamily;
 $buttonFontFamily		: $baseFontFamily;
 $codeFontFamily			: $monospace;
@@ -45,15 +45,15 @@ $codeFontFamily			: $monospace;
 // ------------------------------------------------------------
 
 // Base color
-$bodyBackgroundColor	: $transparent;
-$bodyColor				: $black-80;
+$bodyBackgroundColor: $transparent;
+$bodyColor					: $black-80;
 $headingsColor			: $primary;
 
-$linkColor				: $primary;
+$linkColor					: $primary;
 $linkColorHover			: $primary;
 
 $colorLinkHover			: $linkColorHover;
-$action					: $linkColor;
+$action							: $linkColor;
 $actionRespond			: $linkColorHover;
 
 // Graphic chart
@@ -63,9 +63,9 @@ $facebook: #3b5998;
 $twitter: #43bfe1;
 
 // btn-color
-$color1		: #d35400;
-$btnColor1	: $color1;
-$btnColor2	: #439600;
+$color1: #d35400;
+$btnColor1: $color1;
+$btnColor2: #439600;
 
 // Text
 $color-text-base: #212121;
@@ -100,11 +100,11 @@ $wrapper-width: pxtoem(1140, 16);
 // = Prefix
 // -----------------------------
 
-$prefix-for-webkit:    true !default;
-$prefix-for-mozilla:   true !default;
-$prefix-for-microsoft: true !default;
-$prefix-for-opera:     true !default;
-$prefix-for-spec:      true !default; // required for keyframe mixin
+$prefix-for-webkit:     true !default;
+$prefix-for-mozilla:    true !default;
+$prefix-for-microsoft:  true !default;
+$prefix-for-opera:      true !default;
+$prefix-for-spec:       true !default; // required for keyframe mixin
 
 // = Responsive
 // -----------------------------
