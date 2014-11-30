@@ -73,6 +73,7 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
     @for $i from 1 through 3 {
       .icon-00#{$i} {
         @extend %icon-64;
+        @include icon-left;
         .current & {
           @include animation(icon#{$i} 6s linear infinite);
         }
@@ -81,6 +82,7 @@ $wireless-home: icon-64, icon-96, ihouse, hend-and-ipad, icon-96-wrapper, icon-w
     @for $i from 4 through 6 {
       .icon-00#{$i} {
         @extend %icon-64;
+        @include icon-right;
         .current & {
           @include animation(icon#{$i} 6s linear infinite);
         }
