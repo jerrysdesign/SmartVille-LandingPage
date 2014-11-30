@@ -23,15 +23,17 @@
 	@include at-breakpoint($break-ipad) {@include is-block;}
 	width: 52px;
 	.navigation-item {
-		@include size(52px 32px);
+		@include size(16px);
 		@include fl;
+	}
+	li:first-child {
 	}
 }
 .navigation-item {
 	@extend %ir;
 	@extend %is-inline-block;
 	@include size(16px);
-	margin: 8px;
+	margin: 8px 19px;
 	@extend %cp;
 	@include border-radius(100%);
 	background-color: white;
