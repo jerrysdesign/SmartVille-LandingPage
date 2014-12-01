@@ -7,7 +7,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 100000;
   text-align: center;
 }
 #loading_text {
@@ -38,6 +38,7 @@
   .logo-smartville--w {
     @extend %center-block;
     margin-bottom: 25px;
+    @include animation(loadlogo 1s infinite);
   }
 }
 @include keyframes(loadlogo) {
@@ -46,5 +47,44 @@
   100% { @include opacity(100); }
 }
 #loading_progress {
-  font-size: 1.25em;
+  // font-size: 1.25em;
+  display: none;
 }
+
+// LOADER ---------------------------------------------------------------
+@mixin animation-delay($delay) {
+  // -webkit-animation: bounce 1s 7; /* Safari 4+ */
+  // -moz-animation:    bounce 1s 7; /* Fx 5+ */
+  // -o-animation:      bounce 1s 7; /* Opera 12+ */
+  // animation:         bounce 1s 7; /* IE 10+, Fx 29+ */
+  @include animation(bounce 1s 7);
+  animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+}
+
+/* basic styling */
+.loader {
+  margin: auto;
+  text-align: center;
+  .loading-circle {
+    display: inline-block;
+    margin: 30px 7px;
+    @include size(15px);
+    border-radius:100%;
+    color:#fff;
+    text-align:center;
+    background: white;
+    @for $i from 2 through 8 {
+      &:nth-child(#{$i}) {
+        @include animation-delay(unquote($i + 's'));
+      }
+    }
+  }
+}
+// @include keyframes(ui-spinner-rotate-right) {
+//   0%{transform:rotate(0deg)}
+//   25%{transform:rotate(180deg)}
+//   50%{transform:rotate(180deg)}
+//   75%{transform:rotate(360deg)}
+//   100%{transform:rotate(360deg)}
+// }

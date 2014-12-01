@@ -6,13 +6,10 @@
 #menu_right {
 	@include is-hidden;
 	@include at-breakpoint($break-desktop) {@include is-show;}
-}
-#menu_right {
-	@include at-breakpoint($break-ipad) {@include is-block;}
 	position:fixed;
 	top: 300px;
 	right: 20px;
-	z-index: 99999;
+	z-index: 88888;
 	border-radius: 30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
