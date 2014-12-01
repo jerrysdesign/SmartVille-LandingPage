@@ -177,8 +177,9 @@ $centerY: 130px;
 @include at-breakpoint($break-ipad) {
   @include keyframes(dotshow) {
     0% { opacity: 0;}
-    35% { opacity: .5;}
-    95% { opacity: 1;}
+    35% { opacity: 0;}
+    45% { opacity: .5;}
+    95% { opacity: .9;}
     100% { opacity: 0;}
   }
   @include keyframes(icon1) {
