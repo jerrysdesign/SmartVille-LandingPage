@@ -172,6 +172,9 @@
 
 
 $(function(){
+	// ==========================================
+	// 不分裝置一律做
+	// ==========================================
 
 	// BxSlider API Setting
 	var slider = $('.bxslider').bxSlider({
@@ -297,6 +300,18 @@ $(function(){
 		verticalOffset: 0
 	});
 
+	// Close loading / Open Translation-effect
+	$win.load(function(){
+		clearInterval(loading_timer);
+		if(loading_count<100){
+			for(var i=loading_count;i<=100;i++){
+				$("#loading_progress").html("Please wait..  "+i + "%");
+			}
+		}
+		$('#loading_box').fadeOut(1000);
+	});
+	// Loading 
+	loading_timer = setInterval(loading_progress, 5);
 	// WOW Scrolling - effect
 	if(winWidth > 480){
 		wow = new WOW({
@@ -339,6 +354,23 @@ $(function(){
 		}
 	}).scroll();
 
+
+
+	$(function() {
+		var $content = $('.content-marsk'),
+			$toggleMenu = $('#open-button,#close-button');
+
+		$toggleMenu.click(function() {
+			$body.toggleClass("show-menu");
+		});
+
+		$content.click(function() {
+			if ($body.hasClass('show-menu')) {
+				$body.toggleClass("show-menu");
+			}
+		});
+	});
+
 	// GoToByScroll
 	function goToByScroll(datasection){
 		var goal = $('.section[data-section="' + datasection + '"]').offset().top;
@@ -367,6 +399,7 @@ $(function(){
 		goToByScroll(datasection);
 		$body.removeClass('show-menu')
 	});
+
 	// Video Background
 	$('.player .video-wrapper').css('background','#D8D8D8');
 
@@ -378,53 +411,15 @@ $(function(){
 	},function(){
 		$(this).css({'z-index':1});
 	});
-});
-
-
-$(function(){
-	// ==========================================
-	// 不分裝置一律做
-	// ==========================================
-
-	// Close loading / Open Translation-effect
-	$win.load(function(){
-		clearInterval(loading_timer);
-		if(loading_count<100){
-			for(var i=loading_count;i<=100;i++){
-				$("#loading_progress").html("Please wait..  "+i + "%");
-			}
-		}
-		$('#loading_box').fadeOut(1000);
-	});
-
-	// Loading 
-	loading_timer = setInterval(loading_progress, 5);
-
-
-	$(function() {
-		var $content = $('.content-marsk'),
-			$toggleMenu = $('#open-button,#close-button');
-
-		$toggleMenu.click(function() {
-			$body.toggleClass("show-menu");
-		});
-
-		$content.click(function() {
-			if ($body.hasClass('show-menu')) {
-				$body.toggleClass("show-menu");
-			}
-		});
-	});
-
 
 	// 行動裝置時
 	if(is_mobile() == true){
 
 		// banner 等於裝置高
-		$(function(){
-			var menuHeight = $menu.height();
-			$('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
-		}).resize();
+		// $(function(){
+		// 	var menuHeight = $menu.height();
+		// 	$('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
+		// }).resize();
 
 		// 手機 Banner Carousel
 		$(function(){
@@ -451,12 +446,12 @@ $(function(){
 
 	}
 
-
 	if (is_mobile = false) {
 
 		$(function(){
 			// 右選單垂直置中
 			$menuRight.verticalaligncenter();
+			$('.container').css({'min-width':980});
 		});
 	}
 });
