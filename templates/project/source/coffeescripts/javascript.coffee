@@ -166,8 +166,8 @@ _a = 0
   $.fn.fullsize = (options) ->
     
     # var $win    = $(window),
-    #   winWidth  = $win.width(),
-    #   winHeight = $win.Height();
+    # winWidth  = $win.width(),
+    # winHeight = $win.Height();
     defaults = {}
     opts = $.extend({}, defaults, options)
     @each ->
