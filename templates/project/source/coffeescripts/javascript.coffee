@@ -173,6 +173,8 @@ _a = 0
     @each ->
       _this = $(this)
       $selectHeight = options.height()
+      $selectHeight = $win.find(options).height()
+
       _Height = winHeight
       _this.css
         width: "100%"
@@ -183,7 +185,6 @@ _a = 0
         height: _Height - $selectHeight
 
       return
-
 
   return
 ) jQuery
@@ -371,12 +372,12 @@ $ ->
   ),
     offset: 104
 
-  $win.scroll(->
-    if $win.scrollTop() is 0
-      $Links.removeClass "active"
-      $(".navigation-top li[data-section=\"0\"]").addClass "active"
-    return
-  ).scroll()
+  # $win.scroll(->
+  #   if $win.scrollTop() is 0
+  #     $Links.removeClass "active"
+  #     # $(".navigation-top li[data-section=\"0\"]").addClass "active"
+  #   return
+  # ).scroll()
   $ ->
     $content = $(".content-marsk")
     $toggleMenu = $("#open-button,#close-button")

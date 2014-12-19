@@ -180,6 +180,7 @@ _a = 0;
 
       _this = $(this);
       $selectHeight = options.height();
+      $selectHeight = $win.find(options).height();
       _Height = winHeight;
       _this.css({
         width: "100%",
@@ -353,12 +354,6 @@ $(function() {
   }), {
     offset: 104
   });
-  $win.scroll(function() {
-    if ($win.scrollTop() === 0) {
-      $Links.removeClass("active");
-      $(".navigation-top li[data-section=\"0\"]").addClass("active");
-    }
-  }).scroll();
   $(function() {
     var $content, $toggleMenu;
 
