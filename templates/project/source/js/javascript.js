@@ -179,7 +179,6 @@ _a = 0;
       var $selectHeight, _Height, _this;
 
       _this = $(this);
-      $selectHeight = options.height();
       $selectHeight = $win.find(options).height();
       _Height = winHeight;
       _this.css({

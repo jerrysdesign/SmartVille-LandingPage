@@ -172,7 +172,7 @@ _a = 0
     opts = $.extend({}, defaults, options)
     @each ->
       _this = $(this)
-      $selectHeight = options.height()
+      # $selectHeight = options.height()
       $selectHeight = $win.find(options).height()
 
       _Height = winHeight
