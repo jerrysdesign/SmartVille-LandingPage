@@ -88,9 +88,8 @@
 	text-indent: 2.5em;
 	font-size: 1.25em;
 	color: transparent;
-	// background: transparent;
-	@extend %cp;
 	background-color: #fff;
+	@extend %cp;
 	&:before {
 		position: absolute;
 		top: 0.5em;
