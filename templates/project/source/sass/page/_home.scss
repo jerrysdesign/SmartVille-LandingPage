@@ -330,3 +330,16 @@ section {
 		border: 1px solid red !important;
 	}
 }
+
+.mq-debug {
+	position: fixed;
+	top: 4px;
+	left: 4px;
+	z-index: 10000;
+	padding: 6px;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,.9);
+	font-weight: 700;
+	font-size: 11px;
+	color: rgb(255,255,255);
+ 	}
