@@ -52,7 +52,7 @@ section {
 	@extend %bg-gradient;
 }
 %bg-gradient {
-	background-image: -svg(linear-gradient(-134deg, #349899 0%, #4AAF99 44%, #4AAF99 44%, #4AAF99 44%, #4DB29A 50%, #50B59A 56%, #66CC9A 100%));
+	@include background-image(linear-gradient(-134deg, #349899 0%, #4AAF99 44%, #4AAF99 44%, #4AAF99 44%, #4DB29A 50%, #50B59A 56%, #66CC9A 100%));
 	&:before, &:after {
 		background: #EFF2F5;
 	}

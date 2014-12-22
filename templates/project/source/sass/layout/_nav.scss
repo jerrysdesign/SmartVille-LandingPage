@@ -97,7 +97,7 @@
 		right: 0.5em;
 		bottom: 0.5em;
 		left: 0.5em;
-		background: linear-gradient($primary 20%, transparent 20%, transparent 40%, $primary 40%, $primary 60%, transparent 60%, transparent 80%, $primary 80%);
+		@include background-image (linear-gradient($primary 20%, transparent 20%, transparent 40%, $primary 40%, $primary 60%, transparent 60%, transparent 80%, $primary 80%));
 		content: '';
 	}
 	&:hover {
