@@ -327,7 +327,7 @@ $ ->
 		)
 		wow.init()
 	$topLinks = $(".navigation-top").find("li")
-	$sideLinks = $(".menu-side").find("li")
+	$sideLinks = $(".navigation-side").find("li")
 	$rightLinks = $(".navigation-right").find("li")
 	$Links = $(".navigation-top,.navigation-right").find("li")
 	$section = $(".section")
@@ -336,7 +336,7 @@ $ ->
 		datasection = $(this).attr("data-section")
 		$topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
 		$rightLinksDatasection = $(".navigation-right li[data-section=\"" + datasection + "\"]")
-		$sideLinksDatasection = $(".menu-side li[data-section=\"" + datasection + "\"]")
+		$sideLinksDatasection = $(".navigation-side li[data-section=\"" + datasection + "\"]")
 		$sectionDatasection = $(".section[data-section=\"" + datasection + "\"]")
 		$Links.removeClass "active"
 		$section.removeClass "current"
