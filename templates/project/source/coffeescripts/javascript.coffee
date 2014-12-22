@@ -16,113 +16,113 @@
 
 # 判斷瀏覽裝置為行動裝置
 is_mobile = ->
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test navigator.userAgent
+	/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test navigator.userAgent
 
 # 00
 loading_progress = ->
-  loading_count++
-  if loading_count > 100
-    clearInterval loading_timer
-    loading_count = 100
-  $("#loading_progress").html "Please wait..  " + loading_count + "%"
-  return
+	loading_count++
+	if loading_count > 100
+		clearInterval loading_timer
+		loading_count = 100
+	$("#loading_progress").html "Please wait..  " + loading_count + "%"
+	return
 
 # 01
 slide_mask = (idx, old) ->
-  _wrap = $(".slide-mask-wrapper")
-  _scbg = $(".screen-bg")
-  _mask = _wrap.children()
-  _spd = 1500
-  _dfh = 620
-  
-  # Mask
-  _wrap.stop().animate(
-    height: _dfh
-  , 0).delay(_spd).animate
-    height: 0
-  , 0
-  _mask.stop().animate(
-    top: _dfh
-  , _spd).animate
-    top: -_dfh
-  , 0
-  
-  # pad screenshot
-  _scbg.children().css("z-index", 0).eq(old).css("z-index", 3).end().eq(idx).css(
-    "z-index": 4
-    opacity: "0"
-  ).stop().delay(_spd / 1.5).animate
-    opacity: "1"
-  , _spd / 2.5
-  return
+	_wrap = $(".slide-mask-wrapper")
+	_scbg = $(".screen-bg")
+	_mask = _wrap.children()
+	_spd = 1500
+	_dfh = 620
+	
+	# Mask
+	_wrap.stop().animate(
+		height: _dfh
+	, 0).delay(_spd).animate
+		height: 0
+	, 0
+	_mask.stop().animate(
+		top: _dfh
+	, _spd).animate
+		top: -_dfh
+	, 0
+	
+	# pad screenshot
+	_scbg.children().css("z-index", 0).eq(old).css("z-index", 3).end().eq(idx).css(
+		"z-index": 4
+		opacity: "0"
+	).stop().delay(_spd / 1.5).animate
+		opacity: "1"
+	, _spd / 2.5
+	return
 
 # 02
 banner1_area = (obj) ->
-  _old = $(".screen-bg").attr("data-pic")
-  unless obj is _old
-    switch obj
-      when 0
-        $(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(0).css(
-          "z-index": 4
-          opacity: "0"
-        ).stop().animate
-          opacity: "1"
-        , 500
-        $(".screen-bg").attr "data-pic", 0
-      when 1
-        $(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(1).css(
-          "z-index": 4
-          opacity: "0"
-        ).stop().animate
-          opacity: "1"
-        , 500
-        $(".screen-bg").attr "data-pic", 1
-      when 2
-        $(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(2).css(
-          "z-index": 4
-          opacity: "0"
-        ).stop().animate
-          opacity: "1"
-        , 500
-        $(".screen-bg").attr "data-pic", 2
-      when 3
-        $(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(3).css(
-          "z-index": 4
-          opacity: "0"
-        ).stop().animate
-          opacity: "1"
-        , 500
-        $(".screen-bg").attr "data-pic", 3
+	_old = $(".screen-bg").attr("data-pic")
+	unless obj is _old
+		switch obj
+			when 0
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(0).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 0
+			when 1
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(1).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 1
+			when 2
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(2).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 2
+			when 3
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(3).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 3
 
 # 03
 tag_tab = (obj) ->
-  _this = obj
-  _cont = $(".scene-cont").children()
-  _wrap = $("#situation_svg")
-  _mask = _wrap.find(".mask")
-  _idx = obj.index()
-  _this.addClass("active").siblings().removeClass()
-  _cont.eq(_idx).show().siblings().hide()
-  _mask.hide().eq(_idx).show()
-  return
+	_this = obj
+	_cont = $(".scene-cont").children()
+	_wrap = $("#situation_svg")
+	_mask = _wrap.find(".mask")
+	_idx = obj.index()
+	_this.addClass("active").siblings().removeClass()
+	_cont.eq(_idx).show().siblings().hide()
+	_mask.hide().eq(_idx).show()
+	return
 
 # 04
 situation_svg = ->
-  _wrap = $("#situation_svg")
-  _mask = _wrap.find(".mask")
-  _link = _wrap.find(".link")
-  _tips = $(".scene-cont").children("li")
-  _tabs = $(".scene-tab-nav__list").find("li")
-  _atv = "active"
-  _link.mouseenter ->
-    _this = $(this)
-    _idx = _this.index()
-    _mask.hide().eq(_idx).show()
-    _tips.hide().eq(_idx).show()
-    _tabs.removeClass(_atv).eq(_idx).addClass _atv
-    return
+	_wrap = $("#situation_svg")
+	_mask = _wrap.find(".mask")
+	_link = _wrap.find(".link")
+	_tips = $(".scene-cont").children("li")
+	_tabs = $(".scene-tab-nav__list").find("li")
+	_atv = "active"
+	_link.mouseenter ->
+		_this = $(this)
+		_idx = _this.index()
+		_mask.hide().eq(_idx).show()
+		_tips.hide().eq(_idx).show()
+		_tabs.removeClass(_atv).eq(_idx).addClass _atv
+		return
 
-  return
+	return
 $win = $(window)
 $body = $("body")
 $section = $(".section")
@@ -144,314 +144,314 @@ _a = 0
 # 05
 # 垂直置中
 (($) ->
-  $.fn.verticalaligncenter = (options) ->
-    defaults = {}
-    opts = $.extend({}, defaults, options)
-    @each ->
-      _this = $(this)
-      _Height = _this.outerHeight(true)
-      _this.css
-        top: "50%"
-        "margin-top": (_Height / 2) * -1
+	$.fn.verticalaligncenter = (options) ->
+		defaults = {}
+		opts = $.extend({}, defaults, options)
+		@each ->
+			_this = $(this)
+			_Height = _this.outerHeight(true)
+			_this.css
+				top: "50%"
+				"margin-top": (_Height / 2) * -1
 
-      return
+			return
 
 
-  return
+	return
 ) jQuery
 
 # 06
 # 全畫面
 (($) ->
-  $.fn.fullsize = (options) ->
-    
-    # var $win    = $(window),
-    # winWidth  = $win.width(),
-    # winHeight = $win.Height();
-    defaults = {}
-    opts = $.extend({}, defaults, options)
-    @each ->
-      _this = $(this)
-      # $selectHeight = options.height()
-      $selectHeight = $win.find(options).height()
+	$.fn.fullsize = (options) ->
+		
+		# var $win    = $(window),
+		# winWidth  = $win.width(),
+		# winHeight = $win.Height();
+		defaults = {}
+		opts = $.extend({}, defaults, options)
+		@each ->
+			_this = $(this)
+			# $selectHeight = options.height()
+			$selectHeight = $win.find(options).height()
 
-      _Height = winHeight
-      _this.css
-        width: "100%"
-        height: _Height
+			_Height = winHeight
+			_this.css
+				width: "100%"
+				height: _Height
 
-      _this.css
-        width: "100%"
-        height: _Height - $selectHeight
+			_this.css
+				width: "100%"
+				height: _Height - $selectHeight
 
-      return
+			return
 
-  return
+	return
 ) jQuery
 $ ->
-  
-  # ==========================================
-  # 不分裝置一律做
-  # ==========================================
-  
-  # BxSlider API Setting
-  
-  # 重整 BxSlider
-  reloadslider = ->
-    slider.reloadSlider
-      captions: true
-      adaptiveHeight: true
-      mode: "fade"
+	
+	# ==========================================
+	# 不分裝置一律做
+	# ==========================================
+	
+	# BxSlider API Setting
+	
+	# 重整 BxSlider
+	reloadslider = ->
+		slider.reloadSlider
+			captions: true
+			adaptiveHeight: true
+			mode: "fade"
 
-    return
-  
-  # Window Scroll
-  # senction = 0
-  # senction 0 to section 1
-  # #menu_top - background opacity
-  # Menu-Area
-  # service - pages_btn 
-  # Service-Pages
-  # Prev & Next
-  #.scene-tab-nav__lists
-  # Situation_svg
-  # Scroll up bar
-  # $menu.scrollupbar();
-  # Parallax Scrolling
-  # Close loading / Open Translation-effect
-  # Loading 
-  # WOW Scrolling - effect
-  # Menu-top
-  # Scrolling - Toggle_style
-  # console.log('datasection'+':'+datasection);
-  
-  # GoToByScroll
-  goToByScroll = (datasection) ->
-    goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
-    goalPx = goal - 50
-    htmlbody.stop().animate
-      scrollTop: goalPx
-    , 1500, "easeInOutQuint"
-    return
-  slider = $(".bxslider").bxSlider(
-    captions: true
-    adaptiveHeight: true
-    mode: "fade"
-  )
-  $win.scroll(->
-    winScrollTop = $win.scrollTop()
-    margin = 0
-    $s2Top = $(".section").eq(1).offset().top
-    topOfWindow = winScrollTop + margin
-    $hpGroup.removeClass().addClass "hp-group"  if $s2Top > topOfWindow
-    $(".hand--l, .hand--r").removeClass "hide"  if winScrollTop <= 206 - 65
-    $(".hand--l, .hand--r").addClass "hide"  if winScrollTop > 207 - 65
-    if winScrollTop < 507
-      $hpGroup.removeClass "transform"
-      $hpGroup.removeClass "gogo"
-      $(".advantages").removeClass "current"
-      reloadslider()
-    if winScrollTop > 508
-      $hpGroup.addClass "transform"
-      $hpGroup.addClass "gogo"
-      $(".advantages").addClass "current"
-      reloadslider()
-    $previewBlock.delay(100).removeClass "show"  if $s2Top > topOfWindow
-    $previewBlock.delay(500).addClass "show"  if $s2Top - 200 < topOfWindow
-    if winScrollTop < 500
-      $(".slide__content").fadeIn 0
-      $menu.css "background-color", "rgba(255,255,255," + .25 + ")"  if winWidth > 768
-    if winScrollTop > 500
-      $(".slide__content").fadeOut 0
-      $menu.css "background-color", "rgba(255,255,255," + 1 + ")"
-    return
-  ).scroll()
-  $(".screen-bg > div:eq(0)").css "z-index", 4
-  $("#slide-btn li").click ->
-    _this = $(this)
-    _active = "active"
-    _old = $(".screen-bg").attr("data-pic")
-    $(".screen-bg").attr "data-pic", _this.index()
-    unless _this.hasClass(_active)
-      slide_mask _this.index(), Number(_old)
-      _this.addClass(_active).siblings().removeClass _active
-      setTimeout (->
-        $("#mian-slider > li").eq(_this.index()).show().siblings().hide()
-        return
-      ), 400
-    $(".bx-pager-item").eq(_this.index()).children().click()
-    return
+		return
+	
+	# Window Scroll
+	# senction = 0
+	# senction 0 to section 1
+	# #menu_top - background opacity
+	# Menu-Area
+	# service - pages_btn 
+	# Service-Pages
+	# Prev & Next
+	#.scene-tab-nav__lists
+	# Situation_svg
+	# Scroll up bar
+	# $menu.scrollupbar();
+	# Parallax Scrolling
+	# Close loading / Open Translation-effect
+	# Loading 
+	# WOW Scrolling - effect
+	# Menu-top
+	# Scrolling - Toggle_style
+	# console.log('datasection'+':'+datasection);
+	
+	# GoToByScroll
+	goToByScroll = (datasection) ->
+		goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
+		goalPx = goal - 50
+		htmlbody.stop().animate
+			scrollTop: goalPx
+		, 1500, "easeInOutQuint"
+		return
+	slider = $(".bxslider").bxSlider(
+		captions: true
+		adaptiveHeight: true
+		mode: "fade"
+	)
+	$win.scroll(->
+		winScrollTop = $win.scrollTop()
+		margin = 0
+		$s2Top = $(".section").eq(1).offset().top
+		topOfWindow = winScrollTop + margin
+		$hpGroup.removeClass().addClass "hp-group"  if $s2Top > topOfWindow
+		$(".hand--l, .hand--r").removeClass "hide"  if winScrollTop <= 206 - 65
+		$(".hand--l, .hand--r").addClass "hide"  if winScrollTop > 207 - 65
+		if winScrollTop < 507
+			$hpGroup.removeClass "transform"
+			$hpGroup.removeClass "gogo"
+			$(".advantages").removeClass "current"
+			reloadslider()
+		if winScrollTop > 508
+			$hpGroup.addClass "transform"
+			$hpGroup.addClass "gogo"
+			$(".advantages").addClass "current"
+			reloadslider()
+		$previewBlock.delay(100).removeClass "show"  if $s2Top > topOfWindow
+		$previewBlock.delay(500).addClass "show"  if $s2Top - 200 < topOfWindow
+		if winScrollTop < 500
+			$(".slide__content").fadeIn 0
+			$menu.css "background-color", "rgba(255,255,255," + .25 + ")"  if winWidth > 768
+		if winScrollTop > 500
+			$(".slide__content").fadeOut 0
+			$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
+		return
+	).scroll()
+	$(".screen-bg > div:eq(0)").css "z-index", 4
+	$("#slide-btn li").click ->
+		_this = $(this)
+		_active = "active"
+		_old = $(".screen-bg").attr("data-pic")
+		$(".screen-bg").attr "data-pic", _this.index()
+		unless _this.hasClass(_active)
+			slide_mask _this.index(), Number(_old)
+			_this.addClass(_active).siblings().removeClass _active
+			setTimeout (->
+				$("#mian-slider > li").eq(_this.index()).show().siblings().hide()
+				return
+			), 400
+		$(".bx-pager-item").eq(_this.index()).children().click()
+		return
 
-  $("body").on "click", ".bx-pager-item a", ->
-    _idx = $(this).parent().index()
-    banner1_area _idx
-    $("#slide-btn li").removeClass("active").eq(_idx).addClass "active"
-    setTimeout (->
-      $("#mian-slider > li").eq(_idx).show().siblings().hide()
-      return
-    ), 400
-    return
+	$("body").on "click", ".bx-pager-item a", ->
+		_idx = $(this).parent().index()
+		banner1_area _idx
+		$("#slide-btn li").removeClass("active").eq(_idx).addClass "active"
+		setTimeout (->
+			$("#mian-slider > li").eq(_idx).show().siblings().hide()
+			return
+		), 400
+		return
 
-  $("body").on "click", ".bx-controls-direction a", ->
-    _idx = $(".bx-pager-item .active").parent().index()
-    $(".bx-pager-item a").eq(_idx).click()
-    setTimeout (->
-      $("#mian-slider > li").eq(_idx).show().siblings().hide()
-      return
-    ), 400
-    return
+	$("body").on "click", ".bx-controls-direction a", ->
+		_idx = $(".bx-pager-item .active").parent().index()
+		$(".bx-pager-item a").eq(_idx).click()
+		setTimeout (->
+			$("#mian-slider > li").eq(_idx).show().siblings().hide()
+			return
+		), 400
+		return
 
-  $(".scene-tab-nav__list li").mouseenter ->
-    tag_tab $(this)
-    return
+	$(".scene-tab-nav__list li").mouseenter ->
+		tag_tab $(this)
+		return
 
-  $(".scene-cont").children().not(":eq(0)").hide()
-  situation_svg()
-  $.stellar
-    horizontalScrolling: false
-    verticalOffset: 0
+	$(".scene-cont").children().not(":eq(0)").hide()
+	situation_svg()
+	$.stellar
+		horizontalScrolling: false
+		verticalOffset: 0
 
-  $win.load ->
-    clearInterval loading_timer
-    if loading_count < 100
-      i = loading_count
+	$win.load ->
+		clearInterval loading_timer
+		if loading_count < 100
+			i = loading_count
 
-      while i <= 100
-        $("#loading_progress").html "Please wait..  " + i + "%"
-        i++
-    $("#loading_box").fadeOut 1000
-    return
+			while i <= 100
+				$("#loading_progress").html "Please wait..  " + i + "%"
+				i++
+		$("#loading_box").fadeOut 1000
+		return
 
-  loading_timer = setInterval(loading_progress, 5)
-  if winWidth > 480
-    wow = new WOW(
-      boxClass: "wow"
-      animateClass: "animated"
-      offset: 0
-      mobile: true
-      live: true
-    )
-    wow.init()
-  $topLinks = $(".navigation-top").find("li")
-  $sideLinks = $(".menu-side").find("li")
-  $rightLinks = $(".navigation-right").find("li")
-  $Links = $(".navigation-top,.navigation-right").find("li")
-  $section = $(".section")
-  htmlbody = $("html,body")
-  $section.waypoint (->
-    datasection = $(this).attr("data-section")
-    $topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
-    $rightLinksDatasection = $(".navigation-right li[data-section=\"" + datasection + "\"]")
-    $sideLinksDatasection = $(".menu-side li[data-section=\"" + datasection + "\"]")
-    $sectionDatasection = $(".section[data-section=\"" + datasection + "\"]")
-    $Links.removeClass "active"
-    $section.removeClass "current"
-    $topLinksDatasection.addClass "active"
-    $rightLinksDatasection.addClass "active"
-    $sectionDatasection.addClass "current"
-    return
-  ),
-    offset: 104
+	loading_timer = setInterval(loading_progress, 5)
+	if winWidth > 480
+		wow = new WOW(
+			boxClass: "wow"
+			animateClass: "animated"
+			offset: 0
+			mobile: true
+			live: true
+		)
+		wow.init()
+	$topLinks = $(".navigation-top").find("li")
+	$sideLinks = $(".menu-side").find("li")
+	$rightLinks = $(".navigation-right").find("li")
+	$Links = $(".navigation-top,.navigation-right").find("li")
+	$section = $(".section")
+	htmlbody = $("html,body")
+	$section.waypoint (->
+		datasection = $(this).attr("data-section")
+		$topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
+		$rightLinksDatasection = $(".navigation-right li[data-section=\"" + datasection + "\"]")
+		$sideLinksDatasection = $(".menu-side li[data-section=\"" + datasection + "\"]")
+		$sectionDatasection = $(".section[data-section=\"" + datasection + "\"]")
+		$Links.removeClass "active"
+		$section.removeClass "current"
+		$topLinksDatasection.addClass "active"
+		$rightLinksDatasection.addClass "active"
+		$sectionDatasection.addClass "current"
+		return
+	),
+		offset: 104
 
-  # $win.scroll(->
-  #   if $win.scrollTop() is 0
-  #     $Links.removeClass "active"
-  #     # $(".navigation-top li[data-section=\"0\"]").addClass "active"
-  #   return
-  # ).scroll()
-  $ ->
-    $content = $(".content-marsk")
-    $toggleMenu = $("#open-button,#close-button")
-    $toggleMenu.click ->
-      $body.toggleClass "show-menu"
-      return
+	# $win.scroll(->
+	#   if $win.scrollTop() is 0
+	#     $Links.removeClass "active"
+	#     # $(".navigation-top li[data-section=\"0\"]").addClass "active"
+	#   return
+	# ).scroll()
+	$ ->
+		$content = $(".content-marsk")
+		$toggleMenu = $("#open-button,#close-button")
+		$toggleMenu.click ->
+			$body.toggleClass "show-menu"
+			return
 
-    $content.click ->
-      $body.toggleClass "show-menu"  if $body.hasClass("show-menu")
-      return
+		$content.click ->
+			$body.toggleClass "show-menu"  if $body.hasClass("show-menu")
+			return
 
-    return
+		return
 
-  
-  # Logo
-  $(".menu_tag,.gos2").click (e) ->
-    e.preventDefault e
-    datasection = $(this).attr("data-section")
-    goToByScroll datasection
-    return
+	
+	# Logo
+	$(".menu_tag,.gos2").click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+		return
 
-  
-  # Menu & Nav
-  $Links.click (e) ->
-    e.preventDefault e
-    datasection = $(this).attr("data-section")
-    goToByScroll datasection
-    return
+	
+	# Menu & Nav
+	$Links.click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+		return
 
-  $sideLinks.click (e) ->
-    e.preventDefault e
-    datasection = $(this).attr("data-section")
-    goToByScroll datasection
-    $body.removeClass "show-menu"
-    return
+	$sideLinks.click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+		$body.removeClass "show-menu"
+		return
 
-  
-  # Video Background
-  $(".player .video-wrapper").css "background", "#D8D8D8"
-  
-  # Situation_svg - Tips Z-index
-  $icnTag = $(".icn-tag")
-  $icnTag.css "z-index": 1
-  $icnTag.hover (->
-    $(this).css "z-index": 9999
-    return
-  ), ->
-    $(this).css "z-index": 1
-    return
+	
+	# Video Background
+	$(".player .video-wrapper").css "background", "#D8D8D8"
+	
+	# Situation_svg - Tips Z-index
+	$icnTag = $(".icn-tag")
+	$icnTag.css "z-index": 1
+	$icnTag.hover (->
+		$(this).css "z-index": 9999
+		return
+	), ->
+		$(this).css "z-index": 1
+		return
 
-  
-  # 行動裝置時
-  if is_mobile() is true
-    
-    # banner 等於裝置高
-    # $(function(){
-    #   var menuHeight = $menu.height();
-    #   $('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
-    # }).resize();
-    
-    # 手機 Banner Carousel
-    $ ->
-      $(".banner--isphone").owlCarousel
-        navigation: true # Show next and prev buttons
-        slideSpeed: 1200
-        paginationSpeed: 10
-        singleItem: true
-        items: 1
-        loop: true
-        animateOut: "fadeOut"
-        autoplay: true
-        autoplayTimeout: 3000
-        autoHeight: false
-        autoHeightClass: "owl-height"
+	
+	# 行動裝置時
+	if is_mobile() is true
+		
+		# banner 等於裝置高
+		# $(function(){
+		#   var menuHeight = $menu.height();
+		#   $('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
+		# }).resize();
+		
+		# 手機 Banner Carousel
+		$ ->
+			$(".banner--isphone").owlCarousel
+				navigation: true # Show next and prev buttons
+				slideSpeed: 1200
+				paginationSpeed: 10
+				singleItem: true
+				items: 1
+				loop: true
+				animateOut: "fadeOut"
+				autoplay: true
+				autoplayTimeout: 3000
+				autoHeight: false
+				autoHeightClass: "owl-height"
 
-      return
+			return
 
-    
-    # 手機 Banner fix
-    $ ->
-      $(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize $("#menu_top")
-      $(".slide-item").fullsize $("#menu_top")
-      return
+		
+		# 手機 Banner fix
+		$ ->
+			$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize $("#menu_top")
+			$(".slide-item").fullsize $("#menu_top")
+			return
 
-  if is_mobile = false
-    $ ->
-      
-      # 右選單垂直置中
-      $menuRight.verticalaligncenter()
-      $(".container").css "min-width": 980
-      return
+	if is_mobile = false
+		$ ->
+			
+			# 右選單垂直置中
+			$menuRight.verticalaligncenter()
+			$(".container").css "min-width": 980
+			return
 
-  return
+	return
 
 $(".slide-item").fullsize()
 
