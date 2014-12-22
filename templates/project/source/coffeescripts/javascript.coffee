@@ -206,42 +206,23 @@ $ ->
     return
   
   # Window Scroll
-  
   # senction = 0
-  
   # senction 0 to section 1
-  
   # #menu_top - background opacity
-  
-  # #menu_top - background opacity
-  
   # Menu-Area
-  
   # service - pages_btn 
-  
   # Service-Pages
-  
   # Prev & Next
-  
   #.scene-tab-nav__lists
-  
   # Situation_svg
-  
   # Scroll up bar
   # $menu.scrollupbar();
-  
   # Parallax Scrolling
-  
   # Close loading / Open Translation-effect
-  
   # Loading 
-  
   # WOW Scrolling - effect
-  
   # Menu-top
-  
   # Scrolling - Toggle_style
-  
   # console.log('datasection'+':'+datasection);
   
   # GoToByScroll
