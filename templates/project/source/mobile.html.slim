@@ -393,21 +393,13 @@ html.no-js lang="zh-TW"
 		/! Elements Animation On Scroll
 		script src="vendor/wow/wow.min.js" 
 		script src="vendor/Snap.svg/dist/snap.svg-min.js"
-		script src="vendor/scroll-up-bar/dist/scroll-up-bar.min.js"
+		/ script src="vendor/scroll-up-bar/dist/scroll-up-bar.min.js"
 		script src="vendor/jquery-waypoints/waypoints.min.js"
 		script src="vendor/bxslider/jquery.bxslider.min.js"
 		script src="vendor/owl-carousel/owl.carousel.min.js"
 		script src="js/javascript.js"
-		/ = render "partials/layout_livereload"
-		/! Google Analytics: change UA-56572864-1 to be your site's ID.
-		/ javascript:
-		/ 	window.jQuery || document.write('<\/script>')
-		/ 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		/ 	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		/ 	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		/ 	e.src='//www.google-analytics.com/analytics.js';
-		/ 	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		/ 	ga('create','UA-56572864-1');ga('send','pageview');
+		= render "partials/layout_livereload"
+		/ = render "partials/layout_ga"
 		script src="js/jquery.mediaquery.debugger.js"
 		javascript:
 			$(function(){
