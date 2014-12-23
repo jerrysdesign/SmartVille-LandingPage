@@ -185,14 +185,15 @@ $ ->
 	# ==========================================
 	
 	# BxSlider API Setting
+	slider = $(".bxslider").bxSlider(
+		captions: true
+		adaptiveHeight: true
+		mode: "fade"
+	)
 	
 	# 重整 BxSlider
 	reloadslider = ->
 		slider.reloadSlider
-			captions: true
-			adaptiveHeight: true
-			mode: "fade"
-
 		return
 	
 	# GoToByScroll
@@ -203,11 +204,6 @@ $ ->
 			scrollTop: goalPx
 		, 1500, "easeInOutQuint"
 		return
-	slider = $(".bxslider").bxSlider(
-		captions: true
-		adaptiveHeight: true
-		mode: "fade"
-	)
 
 	$win.scroll(->
 		winScrollTop = $win.scrollTop()
@@ -221,14 +217,12 @@ $ ->
 			$hpGroup.removeClass "transform"
 			$hpGroup.removeClass "gogo"
 			$(".advantages").removeClass "current"
-			reloadslider()
 		if winScrollTop > 508
 			$hpGroup.addClass "transform"
 			$hpGroup.addClass "gogo"
 			$(".advantages").addClass "current"
+		if winScrollTop > 0 && winScrollTop < 1300
 			reloadslider()
-		$previewBlock.delay(100).removeClass "show"  if $s2Top > topOfWindow
-		$previewBlock.delay(500).addClass "show"  if $s2Top - 200 < topOfWindow
 		return
 	).scroll()
 	$(".screen-bg > div:eq(0)").css "z-index", 4
