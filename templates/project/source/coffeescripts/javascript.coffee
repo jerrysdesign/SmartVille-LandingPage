@@ -360,60 +360,46 @@ $ ->
 	), ->
 		$(this).css "z-index": 1
 		return
-
-# 行動裝置時
-if jQuery.browser.mobile
 	
-	# 行動裝置時
-	if is_mobile() is true
-		
-		# banner 等於裝置高
-		# $(function(){
-		#   var menuHeight = $menu.height();
-		#   $('#section-0,.banner--tablet').css({'height': winHeight-menuHeight +'px'});
-		# }).resize();
-		
-		# 手機 Banner Carousel
-		$ ->
-			$(".banner--isphone").owlCarousel
-				navigation: true # Show next and prev buttons
-				slideSpeed: 1200
-				paginationSpeed: 10
-				singleItem: true
-				items: 1
-				loop: true
-				animateOut: "fadeOut"
-				autoplay: true
-				autoplayTimeout: 3000
-				autoHeight: false
-				autoHeightClass: "owl-height"
-			return
+# 行動裝置時
+if is_mobile() is true
 
-		# 手機 Banner fix
-		$ ->
-			$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize()
-			$(".slide-item").fullsize()
-			return
+	# 手機 Banner Carousel
+	$(".banner--isphone").owlCarousel
+		navigation: true # Show next and prev buttons
+		slideSpeed: 1200
+		paginationSpeed: 10
+		singleItem: true
+		items: 1
+		loop: true
+		animateOut: "fadeOut"
+		autoplay: true
+		autoplayTimeout: 3000
+		autoHeight: false
+		autoHeightClass: "owl-height"
 
-	if is_mobile = false
-		$ ->
-			
-			# 右選單垂直置中
-			$menuRight.verticalaligncenter()
-			$(".container").css "min-width": 980
-			return
+	# 手機 Banner fix
+	# banner 等於裝置高
+	$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize()
+	$(".slide-item").fullsize()
+	alert 'ismibile'
 
-			$win.scroll(->
-				if winScrollTop < 500
-					$(".slide__content").fadeIn 0
-					$menu.css "background-color", "rgba(255,255,255," + .25 + ")"  if winWidth > 768
-				if winScrollTop > 500
-					$(".slide__content").fadeOut 0
-					$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
-				return
-			).scroll()
+else
+	alert 'isnotmibile'
+	
+	# 右選單垂直置中
+	$menuRight.verticalaligncenter()
+	$(".container").css "min-width": 980
 
-	return
+	$win.scroll ->
+		if winScrollTop < 500 && winWidth > 768
+			$(".slide__content").fadeIn 0
+			$menu.css "background-color", "rgba(255,255,255," + .25 + ")"
+			console.log ("")
+		if winScrollTop > 500
+			$(".slide__content").fadeOut 0
+			$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
+
 
 #dom bug
 # $('.icon-move').css(zindex,999);
