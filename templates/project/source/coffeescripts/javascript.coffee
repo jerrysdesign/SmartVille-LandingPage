@@ -193,7 +193,7 @@ $ ->
 	
 	# 重整 BxSlider
 	reloadslider = ->
-		slider.reloadSlider
+		slider.reloadSlider()
 		return
 	
 	# GoToByScroll
@@ -393,7 +393,6 @@ else
 		if winScrollTop < 500 && winWidth > 768
 			$(".slide__content").fadeIn 0
 			$menu.css "background-color", "rgba(255,255,255," + .25 + ")"
-			console.log ("")
 		if winScrollTop > 500
 			$(".slide__content").fadeOut 0
 			$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
