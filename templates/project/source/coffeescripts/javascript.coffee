@@ -164,32 +164,40 @@ _a = 0
 
 # 06
 # 全畫面
+
 (($) ->
-	$.fn.fullsize = (options) ->
-		
-		# var $win    = $(window),
-		# winWidth  = $win.width(),
-		# winHeight = $win.Height();
-		defaults = {}
-		opts = $.extend({}, defaults, options)
-		@each ->
-			_this = $(this)
-			# $selectHeight = options.height()
-			$selectHeight = $win.find(options).height()
+	$.fn.fullsize = ->
+		resizeEl = ->
+			thiswidth = bgEl.width()
+			thisheight = bgEl.height()
+			winwidth = $(window).width()
+			winheight = $(window).height()
+			widthratio = winwidth / thiswidth
+			heightratio = winheight / thisheight
+			widthdiff = heightratio * thiswidth
+			heightdiff = widthratio * thisheight
+			if heightdiff > winheight
+				bgEl.css
+					width: winwidth + "px"
+					height: heightdiff + "px"
 
-			_Height = winHeight
-			_this.css
-				width: "100%"
-				height: _Height
-
-			_this.css
-				width: "100%"
-				height: _Height - $selectHeight
+			else
+				bgEl.css
+					width: widthdiff + "px"
+					height: winheight + "px"
 
 			return
+		bgEl = $(this)
+		resizeEl()
+		$(window).resize ->
+			resizeEl()
+			return
+
+		return
 
 	return
 ) jQuery
+
 $ ->
 	
 	# ==========================================
@@ -405,6 +413,8 @@ $ ->
 		$(this).css "z-index": 1
 		return
 
+# 行動裝置時
+if jQuery.browser.mobile
 	
 	# 行動裝置時
 	if is_mobile() is true
