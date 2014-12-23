@@ -164,40 +164,20 @@ situation_svg = ->
 
 # 06
 # 全畫面
-
 (($) ->
-	$.fn.fullsize = ->
-		resizeEl = ->
-			thiswidth = bgEl.width()
-			thisheight = bgEl.height()
-			winwidth = $(window).width()
-			winheight = $(window).height()
-			widthratio = winwidth / thiswidth
-			heightratio = winheight / thisheight
-			widthdiff = heightratio * thiswidth
-			heightdiff = widthratio * thisheight
-			if heightdiff > winheight
-				bgEl.css
-					width: winwidth + "px"
-					height: heightdiff + "px"
-
-			else
-				bgEl.css
-					width: widthdiff + "px"
-					height: winheight + "px"
-
-			return
-		bgEl = $(this)
-		resizeEl()
-		$(window).resize ->
-			resizeEl()
-			return
-
-		return
-
-	return
+  $.fn.fullsize = (options) ->
+    defaults = {}
+    opts = $.extend({}, defaults, options)
+    @each ->
+      _this = $(this)
+      _menuHeight = $menu.height()
+      _Height = winHeight
+      _this.css
+        width: "100%"
+        height: _Height - _menuHeight
+      return
+  return
 ) jQuery
-
 $ ->
 	
 	# ==========================================
@@ -417,8 +397,8 @@ if jQuery.browser.mobile
 
 		# 手機 Banner fix
 		$ ->
-			$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize $("#menu_top")
-			$(".slide-item").fullsize $("#menu_top")
+			$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize()
+			$(".slide-item").fullsize()
 			return
 
 	if is_mobile = false
