@@ -219,26 +219,6 @@ $ ->
 
 		return
 	
-	# Window Scroll
-	# senction = 0
-	# senction 0 to section 1
-	# #menu_top - background opacity
-	# Menu-Area
-	# service - pages_btn 
-	# Service-Pages
-	# Prev & Next
-	#.scene-tab-nav__lists
-	# Situation_svg
-	# Scroll up bar
-	# $menu.scrollupbar();
-	# Parallax Scrolling
-	# Close loading / Open Translation-effect
-	# Loading 
-	# WOW Scrolling - effect
-	# Menu-top
-	# Scrolling - Toggle_style
-	# console.log('datasection'+':'+datasection);
-	
 	# GoToByScroll
 	goToByScroll = (datasection) ->
 		goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
@@ -462,25 +442,6 @@ if jQuery.browser.mobile
 			return
 
 			$win.scroll(->
-				winScrollTop = $win.scrollTop()
-				margin = 0
-				$s2Top = $(".section").eq(1).offset().top
-				topOfWindow = winScrollTop + margin
-				# $hpGroup.removeClass().addClass "hp-group"  if $s2Top > topOfWindow
-				# $(".hand--l, .hand--r").removeClass "hide"  if winScrollTop <= 206 - 65
-				# $(".hand--l, .hand--r").addClass "hide"  if winScrollTop > 207 - 65
-				# if winScrollTop < 507
-				# 	$hpGroup.removeClass "transform"
-				# 	$hpGroup.removeClass "gogo"
-				# 	$(".advantages").removeClass "current"
-				# 	reloadslider()
-				# if winScrollTop > 508
-				# 	$hpGroup.addClass "transform"
-				# 	$hpGroup.addClass "gogo"
-				# 	$(".advantages").addClass "current"
-				# 	reloadslider()
-				# $previewBlock.delay(100).removeClass "show"  if $s2Top > topOfWindow
-				# $previewBlock.delay(500).addClass "show"  if $s2Top - 200 < topOfWindow
 				if winScrollTop < 500
 					$(".slide__content").fadeIn 0
 					$menu.css "background-color", "rgba(255,255,255," + .25 + ")"  if winWidth > 768
@@ -491,8 +452,6 @@ if jQuery.browser.mobile
 			).scroll()
 
 	return
-
-$(".slide-item").fullsize()
 
 #dom bug
 # $('.icon-move').css(zindex,999);
