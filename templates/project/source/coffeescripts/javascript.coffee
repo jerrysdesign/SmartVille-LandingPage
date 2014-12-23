@@ -382,10 +382,8 @@ if is_mobile() is true
 	# banner 等於裝置高
 	$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize()
 	$(".slide-item").fullsize()
-	alert 'ismibile'
 
 else
-	alert 'isnotmibile'
 	
 	# 右選單垂直置中
 	$menuRight.verticalaligncenter()
