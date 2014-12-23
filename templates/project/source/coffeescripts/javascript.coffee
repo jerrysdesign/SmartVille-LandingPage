@@ -146,7 +146,6 @@ situation_svg = ->
 
 	return
 
-
 # 05
 # 垂直置中
 (($) ->
@@ -159,10 +158,7 @@ situation_svg = ->
 			_this.css
 				top: "50%"
 				"margin-top": (_Height / 2) * -1
-
 			return
-
-
 	return
 ) jQuery
 
@@ -232,6 +228,7 @@ $ ->
 		adaptiveHeight: true
 		mode: "fade"
 	)
+
 	$win.scroll(->
 		winScrollTop = $win.scrollTop()
 		margin = 0
@@ -311,6 +308,7 @@ $ ->
 		return
 
 	loading_timer = setInterval(loading_progress, 5)
+	
 	if winWidth > 480
 		wow = new WOW(
 			boxClass: "wow"
@@ -326,6 +324,7 @@ $ ->
 	$Links = $(".navigation-top,.navigation-right").find("li")
 	$section = $(".section")
 	htmlbody = $("html,body")
+	
 	$section.waypoint (->
 		datasection = $(this).attr("data-section")
 		$topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
@@ -341,12 +340,6 @@ $ ->
 	),
 		offset: 104
 
-	# $win.scroll(->
-	#   if $win.scrollTop() is 0
-	#     $Links.removeClass "active"
-	#     # $(".navigation-top li[data-section=\"0\"]").addClass "active"
-	#   return
-	# ).scroll()
 	$ ->
 		$content = $(".content-marsk")
 		$toggleMenu = $("#open-button,#close-button")
@@ -360,7 +353,6 @@ $ ->
 
 		return
 
-	
 	# Logo
 	$(".menu_tag,.gos2").click (e) ->
 		e.preventDefault e
@@ -368,7 +360,6 @@ $ ->
 		goToByScroll datasection
 		return
 
-	
 	# Menu & Nav
 	$Links.click (e) ->
 		e.preventDefault e
@@ -383,7 +374,6 @@ $ ->
 		$body.removeClass "show-menu"
 		return
 
-	
 	# Video Background
 	$(".player .video-wrapper").css "background", "#D8D8D8"
 	
@@ -423,10 +413,8 @@ if jQuery.browser.mobile
 				autoplayTimeout: 3000
 				autoHeight: false
 				autoHeightClass: "owl-height"
-
 			return
 
-		
 		# 手機 Banner fix
 		$ ->
 			$(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize $("#menu_top")
