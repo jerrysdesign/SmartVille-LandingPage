@@ -2,6 +2,23 @@
 #*  Global
 #*  ----------------------------------------
 #
+$win = $(window)
+$body = $("body")
+$section = $(".section")
+$menu = $("#menu_top")
+$menuTop = $menu.offset().top
+$hpGroup = $(".hp-group")
+$pad = $(".pad")
+$previewBlock = $(".preview-block")
+$banner = $(".banner--tablet")
+$mianSlider = $("#mian-slider")
+$menuRight = $("#menu_right")
+winWidth = $win.width()
+winHeight = $win.height()
+winScrollTop = $win.scrollTop()
+loading_timer = 0
+loading_count = 0
+_a = 0
 
 # ----------------------------------------
 #*  Function
@@ -128,23 +145,7 @@ situation_svg = ->
 		return
 
 	return
-$win = $(window)
-$body = $("body")
-$section = $(".section")
-$menu = $("#menu_top")
-$menuTop = $menu.offset().top
-$hpGroup = $(".hp-group")
-$pad = $(".pad")
-$previewBlock = $(".preview-block")
-$banner = $(".banner--tablet")
-$mianSlider = $("#mian-slider")
-$menuRight = $("#menu_right")
-winWidth = $win.width()
-winHeight = $win.height()
-winScrollTop = $win.scrollTop()
-loading_timer = 0
-loading_count = 0
-_a = 0
+
 
 # 05
 # 垂直置中
