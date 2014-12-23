@@ -200,7 +200,7 @@ $(function() {
     mode: "fade"
   });
   reloadslider = function() {
-    slider.reloadSlider;
+    slider.reloadSlider();
   };
   goToByScroll = function(datasection) {
     var goal, goalPx;
@@ -400,9 +400,7 @@ if (is_mobile() === true) {
   });
   $(".slide-1__bg, .slide-2__bg, .slide-3__bg, .slide-4__bg").fullsize();
   $(".slide-item").fullsize();
-  alert('ismibile');
 } else {
-  alert('isnotmibile');
   $menuRight.verticalaligncenter();
   $(".container").css({
     "min-width": 980
@@ -411,7 +409,6 @@ if (is_mobile() === true) {
     if (winScrollTop < 500 && winWidth > 768) {
       $(".slide__content").fadeIn(0);
       $menu.css("background-color", "rgba(255,255,255," + .25 + ")");
-      console.log("");
     }
     if (winScrollTop > 500) {
       $(".slide__content").fadeOut(0);
