@@ -104,8 +104,8 @@ section {
 	// .header
 	position: relative;
 	z-index: index($z-index, header);
-	margin-top: 74px;
 	padding: 0;
+	padding-top: 74px;
 	.container {
 		position: relative;
 	}
