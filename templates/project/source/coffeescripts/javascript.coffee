@@ -2,23 +2,45 @@
 #*  Global
 #*  ----------------------------------------
 #
-$win = $(window)
+initVariables = ->
+	$document = $(document)
+	$window = $(window)
+	$body = $("body")
+	$section = $(".section")
+	$menu = $("#menu_top")
+	$hpGroup = $(".hp-group")
+	$pad = $(".pad")
+	$previewBlock = $(".preview-block")
+	$banner = $(".banner--tablet")
+	$mianSlider = $("#mian-slider")
+	$menuRight = $("#menu_right")
+	winWidth = $window.width()
+	winHeight = $window.height()
+	winScrollTop = $window.scrollTop()
+	$menuTop = $menu.offset().top
+	loading_timer = 0
+	loading_count = 0
+	_a = 0
+	return
+$document = $(document)
+$window = $(window)
 $body = $("body")
 $section = $(".section")
 $menu = $("#menu_top")
-$menuTop = $menu.offset().top
 $hpGroup = $(".hp-group")
 $pad = $(".pad")
 $previewBlock = $(".preview-block")
 $banner = $(".banner--tablet")
 $mianSlider = $("#mian-slider")
 $menuRight = $("#menu_right")
-winWidth = $win.width()
-winHeight = $win.height()
-winScrollTop = $win.scrollTop()
+winWidth = $window.width()
+winHeight = $window.height()
+winScrollTop = $window.scrollTop()
+$menuTop = $menu.offset().top
 loading_timer = 0
 loading_count = 0
 _a = 0
+
 
 # ----------------------------------------
 #*  Function
