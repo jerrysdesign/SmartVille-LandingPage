@@ -273,13 +273,17 @@ slidePrevNextControl = ->
 			$("#mian-slider > li").eq(_idx).show().siblings().hide()
 		), 400
 
+
 sceneTabNavMouseIn = ->
 	$(".scene-tab-nav__list li").mouseenter ->
 		tag_tab $(this)
 	$(".scene-cont").children().not(":eq(0)").hide()
-	$.stellar
-		horizontalScrolling: false
-		verticalOffset: 0
+
+
+$.stellar
+	horizontalScrolling: false
+	verticalOffset: 0
+
 
 initWoWmobile = ->
 	if winWidth > 480
