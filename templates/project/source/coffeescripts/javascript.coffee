@@ -329,21 +329,18 @@ rwdToggleMenu = ->
 
 
 # Logo
-$(".menu_tag,.gos2").click (e) ->
-	e.preventDefault(e)
+$(".menu_tag,.gos2").click ->
 	datasection = $(this).attr("data-section")
 	goToByScroll(datasection)
 
 
 # Menu & Nav
-$Links.click (e) ->
-	# e.preventDefault(e)
+$Links.click ->
 	datasection = $(this).attr("data-section")
 	goToByScroll(datasection)
 
 
-$sideLinks.click (e) ->
-	e.preventDefault(e)
+$sideLinks.click ->
 	datasection = $(this).attr("data-section")
 	goToByScroll(datasection)
 	$body.removeClass("show-menu")
@@ -387,10 +384,9 @@ svgTipsZindex = ->
 
 
 rightMenuAlignCenter = ->
-	# 右選單垂直置中
+	# 右選單垂直置中 
 	$menuRight = $("#menu_right")
 	$menuRight.verticalaligncenter()
-	$(".container").css "min-width": 980
 	
 
 topMenuState = ->
@@ -418,15 +414,11 @@ initMobile = ->
 			topMenuState()
 
 
-
-
 $ ->
-
-	console.log '01'
 	initVariables()
 	initMobile()
 	sceneTabNavMouseIn()
-	svgTipsZindex
+	svgTipsZindex()
 	rwdToggleMenu()
 	situation_svg()
 
