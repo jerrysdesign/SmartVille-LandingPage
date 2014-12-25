@@ -239,8 +239,8 @@ scrollTransform = ->
 		reloadslider()
 
 
+$(".screen-bg > div:eq(0)").css "z-index", 4
 slideBtnClick = ->
-	$(".screen-bg > div:eq(0)").css "z-index", 4
 	$("#slide-btn li").click ->
 		_this = $(this)
 		_active = "active"
@@ -276,13 +276,10 @@ slidePrevNextControl = ->
 sceneTabNavMouseIn = ->
 	$(".scene-tab-nav__list li").mouseenter ->
 		tag_tab $(this)
-
-
-$(".scene-cont").children().not(":eq(0)").hide()
-
-$.stellar
-	horizontalScrolling: false
-	verticalOffset: 0
+	$(".scene-cont").children().not(":eq(0)").hide()
+	$.stellar
+		horizontalScrolling: false
+		verticalOffset: 0
 
 initWoWmobile = ->
 	if winWidth > 480
