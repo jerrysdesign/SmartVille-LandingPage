@@ -96,18 +96,53 @@ slide_mask = (idx, old) ->
 
 # 04 - Tag_Tab
 banner1_area = (obj) ->
+	# _old = $(".screen-bg").attr("data-pic")
+	# unless obj is _old
+	# 	i = 0
+	# 	while this < 3
+	# 		$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(i).css(
+	# 			"z-index": 4
+	# 			opacity: "0"
+	# 		).stop().animate
+	# 			opacity: "1"
+	# 		, 500
+	# 		$(".screen-bg").attr "data-pic", i
+	# 		i++
 	_old = $(".screen-bg").attr("data-pic")
 	unless obj is _old
-		i = 0
-		while this < 3
-			$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(i).css(
-				"z-index": 4
-				opacity: "0"
-			).stop().animate
-				opacity: "1"
-			, 500
-			$(".screen-bg").attr "data-pic", i
-			i++
+		switch obj
+			when 0
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(0).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 0
+			when 1
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(1).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 1
+			when 2
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(2).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 2
+			when 3
+				$(".screen-bg").children().css("z-index", 0).eq(_old).css("z-index", 3).end().eq(3).css(
+					"z-index": 4
+					opacity: "0"
+				).stop().animate
+					opacity: "1"
+				, 500
+				$(".screen-bg").attr "data-pic", 3
 
 
 # 05 - Situation_svg
@@ -256,8 +291,10 @@ slideBtnClick = ->
 
 
 slideDotControl = ->
-	$(".bx-pager-item a").click ->
+	$("body").on "click", ".bx-pager-item a", ->
+		console.log '.bx-pager-item a'
 		_idx = $(this).parent().index()
+		console.log (_idx)
 		banner1_area _idx
 		$("#slide-btn li").removeClass("active").eq(_idx).addClass "active"
 		setTimeout (->
@@ -266,7 +303,8 @@ slideDotControl = ->
 
 
 slidePrevNextControl = ->
-	$(".bx-controls-direction a").click ->
+	$("body").on "click", ".bx-controls-direction a", ->
+		console.log '.bx-controls-direction a'
 		_idx = $(".bx-pager-item .active").parent().index()
 		$(".bx-pager-item a").eq(_idx).click()
 		setTimeout (->
