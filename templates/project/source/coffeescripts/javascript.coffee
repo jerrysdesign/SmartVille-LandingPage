@@ -241,17 +241,6 @@ reloadslider = ->
 	return
 
 
-# GoToByScroll
-$body = $('body')
-goToByScroll = (datasection) ->
-	goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
-	goalPx = goal - 50
-	$body.stop().animate
-		scrollTop: goalPx
-	, 1500, "easeInOutQuint"
-	return
-
-
 # Section0 to Section2 Transform
 $hpGroup = $(".hp-group")
 winScrollTop = $(window).scrollTop()
@@ -334,7 +323,6 @@ initWoWmobile = ->
 		)
 		wow.init()
 
-
 $topLinks = $(".navigation-top").find("li")
 $sideLinks = $(".navigation-side").find("li")
 $rightLinks = $(".navigation-right").find("li")
@@ -343,19 +331,72 @@ $section = $(".section")
 
 # Menu Scroll State
 menuScrollState = ->
-	$section.waypoint (->
+
+	$section.waypoint((direction) ->
 		datasection = $(this).attr("data-section")
 		$topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
 		$rightLinksDatasection = $(".navigation-right li[data-section=\"" + datasection + "\"]")
 		$sideLinksDatasection = $(".navigation-side li[data-section=\"" + datasection + "\"]")
 		$sectionDatasection = $(".section[data-section=\"" + datasection + "\"]")
-		$Links.removeClass "active"
-		$section.removeClass "current"
-		$topLinksDatasection.addClass "active"
-		$rightLinksDatasection.addClass "active"
-		$sectionDatasection.addClass "current"
-	),
+		if direction is "down"
+			# 移除全部 $Links .active
+			$Links.removeClass "active"
+			$section.removeClass "current"
+			# 選中的 加上active
+			$topLinksDatasection.addClass "active"
+			$rightLinksDatasection.addClass "active"
+			$sectionDatasection.addClass "current"
+			# console.log (direction)
+	,
 		offset: 104
+	).waypoint ((direction) ->
+		datasection = $(this).attr("data-section")
+		$topLinksDatasection = $(".navigation-top li[data-section=\"" + datasection + "\"]")
+		$rightLinksDatasection = $(".navigation-right li[data-section=\"" + datasection + "\"]")
+		$sideLinksDatasection = $(".navigation-side li[data-section=\"" + datasection + "\"]")
+		$sectionDatasection = $(".section[data-section=\"" + datasection + "\"]")
+		if direction is "up"
+			# 移除全部 $Links .active
+			$Links.removeClass "active"
+			$section.removeClass "current"
+			# 選中的 加上active
+			$topLinksDatasection.addClass "active"
+			$rightLinksDatasection.addClass "active"
+			$sectionDatasection.addClass "current"
+			# console.log (direction)
+	),
+		offset: ->
+			-($(this).height() - 154)
+			# console.log ('offset'+$(this))
+
+
+
+# GoToByScroll
+$body = $('body')
+goToByScroll = (datasection) ->
+	goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
+	goalPx = goal - 50
+	$body.stop().animate
+		scrollTop: goalPx
+	, 1500, "easeInOutQuint"
+	return
+
+gogo = ->
+	$(".menu_tag,.gos2").click ->
+		datasection = $(this).attr("data-section")
+		goToByScroll(datasection)
+
+
+	# Menu & Nav
+	$Links.click ->
+		datasection = $(this).attr("data-section")
+		goToByScroll(datasection)
+
+
+	$sideLinks.click ->
+		datasection = $(this).attr("data-section")
+		goToByScroll(datasection)
+		$body.removeClass("show-menu")
 
 
 rwdToggleMenu = ->
@@ -365,24 +406,6 @@ rwdToggleMenu = ->
 		$body.toggleClass "show-menu"
 	$content.click ->
 		$body.toggleClass "show-menu"  if $body.hasClass("show-menu")
-
-
-# Logo
-$(".menu_tag,.gos2").click ->
-	datasection = $(this).attr("data-section")
-	goToByScroll(datasection)
-
-
-# Menu & Nav
-$Links.click ->
-	datasection = $(this).attr("data-section")
-	goToByScroll(datasection)
-
-
-$sideLinks.click ->
-	datasection = $(this).attr("data-section")
-	goToByScroll(datasection)
-	$body.removeClass("show-menu")
 
 
 # Video Background
@@ -473,6 +496,7 @@ $(window).on("resize load", ->
 	slidePrevNextControl()
 	menuScrollState()
 	reloadslider()
+	gogo()
 
 	).on("load", ->
 		# initVariables()
