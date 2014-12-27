@@ -281,9 +281,9 @@ slideBtnClick = ->
 
 slideDotControl = ->
 	$("body").on "click", ".bx-pager-item a", ->
-		console.log '.bx-pager-item a'
+		# console.log '.bx-pager-item a'
 		_idx = $(this).parent().index()
-		console.log (_idx)
+		# console.log (_idx)
 		banner1_area _idx
 		$("#slide-btn li").removeClass("active").eq(_idx).addClass "active"
 		setTimeout (->
@@ -293,7 +293,7 @@ slideDotControl = ->
 
 slidePrevNextControl = ->
 	$("body").on "click", ".bx-controls-direction a", ->
-		console.log '.bx-controls-direction a'
+		# console.log '.bx-controls-direction a'
 		_idx = $(".bx-pager-item .active").parent().index()
 		$(".bx-pager-item a").eq(_idx).click()
 		setTimeout (->
