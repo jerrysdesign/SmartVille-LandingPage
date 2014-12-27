@@ -132,7 +132,7 @@ section {
 
 // SECTCTION  2
 // 智慧家居解決方案
-#section-2{
+#section-2 {
 	z-index: index($z-index, section2);
 	padding-bottom: 100px;
 	.container {
@@ -141,24 +141,24 @@ section {
 
 // SECTCTION  3
 // 無限家庭 無限便利
-#section-3{
+#section-3 {
 	z-index: index($z-index, section3);
 }
 
 // SECTCTION  4
 // 裝置配件
-#section-4{
+#section-4 {
 	z-index: index($z-index, section4);
 }
 
 // SECTCTION  5
 // 使用說明影片
-#section-5{
+#section-5 {
 	z-index: index($z-index, section5);
 }
 // SECTCTION  6
 // 使用情境
-#section-6{
+#section-6 {
 	z-index: index($z-index, section6);
 	z-index: 0;
 	// padding-bottom: 40px;
@@ -167,8 +167,8 @@ section {
 	}
 }
 // 使用情境
-#section-7{
-	z-index: index($z-index, section7);
+#section-7 {
+	// z-index: index($z-index, section7);
 	overflow: hidden;
 	padding-top: 40px;
 	.container {
