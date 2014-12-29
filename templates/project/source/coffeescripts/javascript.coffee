@@ -371,32 +371,32 @@ menuScrollState = ->
 
 
 
-# GoToByScroll
-$body = $('body')
-goToByScroll = (datasection) ->
-	goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
-	goalPx = goal - 50
-	$body.stop().animate
-		scrollTop: goalPx
-	, 1500, "easeInOutQuint"
-	return
+# # GoToByScroll
+# $body = $('body')
+# goToByScroll = (datasection) ->
+# 	goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
+# 	goalPx = goal - 50
+# 	$body.stop().animate
+# 		scrollTop: goalPx
+# 	, 1500, "easeInOutQuint"
+# 	return
 
-gogo = ->
-	$(".menu_tag,.gos2").click ->
-		datasection = $(this).attr("data-section")
-		goToByScroll(datasection)
-
-
-	# Menu & Nav
-	$Links.click ->
-		datasection = $(this).attr("data-section")
-		goToByScroll(datasection)
+# gogo = ->
+# 	$(".menu_tag,.gos2").click ->
+# 		datasection = $(this).attr("data-section")
+# 		goToByScroll(datasection)
 
 
-	$sideLinks.click ->
-		datasection = $(this).attr("data-section")
-		goToByScroll(datasection)
-		$body.removeClass("show-menu")
+# 	# Menu & Nav
+# 	$Links.click ->
+# 		datasection = $(this).attr("data-section")
+# 		goToByScroll(datasection)
+
+
+# 	$sideLinks.click ->
+# 		datasection = $(this).attr("data-section")
+# 		goToByScroll(datasection)
+# 		$body.removeClass("show-menu")
 
 
 rwdToggleMenu = ->
@@ -475,6 +475,33 @@ initMobile = ->
 		$(window).scroll ->
 			topMenuState()
 
+$ ->
+	# GoToByScroll
+	htmlbody = $("html,body")
+	goToByScroll = (datasection) ->
+		goal = $(".section[data-section=\"" + datasection + "\"]").offset().top
+		goalPx = goal - 50
+		htmlbody.stop().animate
+			scrollTop: goalPx
+		, 1500, "easeInOutQuint"
+
+	$(".menu_tag,.gos2").click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+
+	# Menu & Nav
+	$Links.click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+
+	$sideLinks.click (e) ->
+		e.preventDefault e
+		datasection = $(this).attr("data-section")
+		goToByScroll datasection
+		$body.removeClass "show-menu"
+
 
 $ ->
 	initVariables()
@@ -496,7 +523,7 @@ $(window).on("resize load", ->
 	slidePrevNextControl()
 	menuScrollState()
 	reloadslider()
-	gogo()
+	# gogo()
 
 	).on("load", ->
 		# initVariables()
@@ -519,3 +546,4 @@ $(window).on("resize load", ->
 # console.log($section.eq(_a).offset());
 # _a++;
 # });
+
