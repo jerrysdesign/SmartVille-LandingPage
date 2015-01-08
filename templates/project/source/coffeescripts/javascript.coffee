@@ -313,15 +313,14 @@ $.stellar
 
 
 initWoWmobile = ->
-	if winWidth > 480
-		wow = new WOW(
-			boxClass: "wow"
-			animateClass: "animated"
-			offset: 0
-			mobile: true
-			live: true
-		)
-		wow.init()
+	wow = new WOW(
+		boxClass: "wow"
+		animateClass: "animated"
+		offset: 0
+		mobile: true
+		live: true
+	)
+	wow.init()
 
 $topLinks = $(".navigation-top").find("li")
 $sideLinks = $(".navigation-side").find("li")
@@ -467,7 +466,7 @@ initMobile = ->
 	# 行動裝置時
 	if is_mobile() is true
 		callFullSize()
-		mobileSideBanner
+		mobileSideBanner()
 		initWoWmobile()
 	# 非行動裝置
 	else

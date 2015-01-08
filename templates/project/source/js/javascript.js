@@ -301,16 +301,14 @@ $.stellar({
 initWoWmobile = function() {
   var wow;
 
-  if (winWidth > 480) {
-    wow = new WOW({
-      boxClass: "wow",
-      animateClass: "animated",
-      offset: 0,
-      mobile: true,
-      live: true
-    });
-    return wow.init();
-  }
+  wow = new WOW({
+    boxClass: "wow",
+    animateClass: "animated",
+    offset: 0,
+    mobile: true,
+    live: true
+  });
+  return wow.init();
 };
 
 $topLinks = $(".navigation-top").find("li");
@@ -443,7 +441,7 @@ topMenuState = function() {
 initMobile = function() {
   if (is_mobile() === true) {
     callFullSize();
-    mobileSideBanner;
+    mobileSideBanner();
     return initWoWmobile();
   } else {
     rightMenuAlignCenter();
