@@ -399,6 +399,7 @@ menuScrollState = ->
 
 
 rwdToggleMenu = ->
+	$body = $("body")
 	$content = $(".content-marsk")
 	$toggleMenu = $("#open-button,#close-button")
 	$toggleMenu.click ->

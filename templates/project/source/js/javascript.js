@@ -362,8 +362,9 @@ menuScrollState = function() {
 };
 
 rwdToggleMenu = function() {
-  var $content, $toggleMenu;
+  var $body, $content, $toggleMenu;
 
+  $body = $("body");
   $content = $(".content-marsk");
   $toggleMenu = $("#open-button,#close-button");
   $toggleMenu.click(function() {
