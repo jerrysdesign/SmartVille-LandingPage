@@ -100,7 +100,7 @@
 // }
 
 // 平板轉場至 section 2 動畫
-@include keyframes(GoSection2-iapd) {
+@include keyframes(GoSection2-ipad) {
 	0% {
 		@include transform(perspective(1200) rotate3d(0,-1,50, 0deg) translate3d(100px,-250px,0));
 	}
