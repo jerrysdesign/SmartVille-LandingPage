@@ -242,9 +242,10 @@ reloadslider = ->
 
 
 # Section0 to Section2 Transform
-$hpGroup = $(".hp-group")
-winScrollTop = $(window).scrollTop()
+
 scrollTransform = ->
+	$hpGroup = $(".hp-group")
+	winScrollTop = $(window).scrollTop()
 	margin = 0
 	$s2Top = $(".section").eq(1).offset().top
 	topOfWindow = winScrollTop + margin
@@ -259,8 +260,7 @@ scrollTransform = ->
 		$hpGroup.addClass("transform")
 		$hpGroup.addClass("gogo")
 		$(".advantages").addClass("current")
-	if winScrollTop > 0 && winScrollTop < 1300
-		reloadslider()
+	# return
 
 
 $(".screen-bg > div:eq(0)").css "z-index", 4
@@ -452,15 +452,16 @@ rightMenuAlignCenter = ->
 	
 
 topMenuState = ->
-	$menu = $("#menu_top")
-	winScrollTop = $(window).scrollTop()
-	winWidth = $(window).width()
-	if winScrollTop < 500 && winWidth > 768
-		$(".slide__content").fadeIn 0
-		$menu.css "background-color", "rgba(255,255,255," + .25 + ")"
-	if winScrollTop > 500
-		$(".slide__content").fadeOut 0
-		$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
+	$(window).scroll ->
+		$menu = $("#menu_top")
+		winScrollTop = $(window).scrollTop()
+		winWidth = $(window).width()
+		if winScrollTop < 500 && winWidth > 768
+			$(".slide__content").fadeIn 0
+			$menu.css "background-color", "rgba(255,255,255," + .25 + ")"
+		if winScrollTop > 500
+			$(".slide__content").fadeOut 0
+			$menu.css "background-color", "rgba(255,255,255," + 1 + ")"
 
 
 initMobile = ->
@@ -472,8 +473,7 @@ initMobile = ->
 	# 非行動裝置
 	else
 		rightMenuAlignCenter()
-		$(window).scroll ->
-			topMenuState()
+		topMenuState()
 
 $ ->
 	# GoToByScroll
@@ -514,6 +514,8 @@ $ ->
 $(window).scroll( ->
 	initVariables()
 	scrollTransform()
+	if $(window).scrollTop() > 0 && $(window).scrollTop() < 1300
+		reloadslider()
 ).scroll()
 
 $(window).on("resize load", ->
@@ -546,4 +548,3 @@ $(window).on("resize load", ->
 # console.log($section.eq(_a).offset());
 # _a++;
 # });
-

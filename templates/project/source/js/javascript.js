@@ -1,4 +1,4 @@
-var $Links, $hpGroup, $menu, $rightLinks, $section, $sideLinks, $topLinks, banner1_area, callFullSize, initMobile, initVariables, initWoWmobile, is_mobile, loading, loading_count, loading_progress, loading_timer, menuScrollState, mobileSideBanner, reloadslider, rightMenuAlignCenter, rwdToggleMenu, sceneTabNavMouseIn, scrollTransform, situation_svg, slideBtnClick, slideDotControl, slidePrevNextControl, slide_mask, slider, svgTipsZindex, tag_tab, topMenuState, winHeight, winScrollTop;
+var $Links, $menu, $rightLinks, $section, $sideLinks, $topLinks, banner1_area, callFullSize, initMobile, initVariables, initWoWmobile, is_mobile, loading, loading_count, loading_progress, loading_timer, menuScrollState, mobileSideBanner, reloadslider, rightMenuAlignCenter, rwdToggleMenu, sceneTabNavMouseIn, scrollTransform, situation_svg, slideBtnClick, slideDotControl, slidePrevNextControl, slide_mask, slider, svgTipsZindex, tag_tab, topMenuState, winHeight;
 
 initVariables = function() {
   var $banner, $body, $document, $menu, $menuTop, $mianSlider, $pad, $previewBlock, $section, $window, loading_count, loading_timer, winHeight, winScrollTop, winWidth, _a;
@@ -206,13 +206,11 @@ reloadslider = function() {
   slider.reloadSlider();
 };
 
-$hpGroup = $(".hp-group");
-
-winScrollTop = $(window).scrollTop();
-
 scrollTransform = function() {
-  var $s2Top, margin, topOfWindow;
+  var $hpGroup, $s2Top, margin, topOfWindow, winScrollTop;
 
+  $hpGroup = $(".hp-group");
+  winScrollTop = $(window).scrollTop();
   margin = 0;
   $s2Top = $(".section").eq(1).offset().top;
   topOfWindow = winScrollTop + margin;
@@ -233,10 +231,7 @@ scrollTransform = function() {
   if (winScrollTop > 508) {
     $hpGroup.addClass("transform");
     $hpGroup.addClass("gogo");
-    $(".advantages").addClass("current");
-  }
-  if (winScrollTop > 0 && winScrollTop < 1300) {
-    return reloadslider();
+    return $(".advantages").addClass("current");
   }
 };
 
@@ -424,19 +419,21 @@ rightMenuAlignCenter = function() {
 };
 
 topMenuState = function() {
-  var winWidth;
+  return $(window).scroll(function() {
+    var winScrollTop, winWidth;
 
-  $menu = $("#menu_top");
-  winScrollTop = $(window).scrollTop();
-  winWidth = $(window).width();
-  if (winScrollTop < 500 && winWidth > 768) {
-    $(".slide__content").fadeIn(0);
-    $menu.css("background-color", "rgba(255,255,255," + .25 + ")");
-  }
-  if (winScrollTop > 500) {
-    $(".slide__content").fadeOut(0);
-    return $menu.css("background-color", "rgba(255,255,255," + 1 + ")");
-  }
+    $menu = $("#menu_top");
+    winScrollTop = $(window).scrollTop();
+    winWidth = $(window).width();
+    if (winScrollTop < 500 && winWidth > 768) {
+      $(".slide__content").fadeIn(0);
+      $menu.css("background-color", "rgba(255,255,255," + .25 + ")");
+    }
+    if (winScrollTop > 500) {
+      $(".slide__content").fadeOut(0);
+      return $menu.css("background-color", "rgba(255,255,255," + 1 + ")");
+    }
+  });
 };
 
 initMobile = function() {
@@ -446,9 +443,7 @@ initMobile = function() {
     return initWoWmobile();
   } else {
     rightMenuAlignCenter();
-    return $(window).scroll(function() {
-      return topMenuState();
-    });
+    return topMenuState();
   }
 };
 
@@ -500,7 +495,10 @@ $(function() {
 
 $(window).scroll(function() {
   initVariables();
-  return scrollTransform();
+  scrollTransform();
+  if ($(window).scrollTop() > 0 && $(window).scrollTop() < 1300) {
+    return reloadslider();
+  }
 }).scroll();
 
 $(window).on("resize load", function() {
