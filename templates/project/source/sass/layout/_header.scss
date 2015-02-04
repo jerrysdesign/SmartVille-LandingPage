@@ -58,7 +58,7 @@
 	@include at-breakpoint($break-desktop) {
 		.container {
 			@include container;
-			background: rgba(white,.5);
+			// background: rgba(white,.5);
 		}
 	};
 }
